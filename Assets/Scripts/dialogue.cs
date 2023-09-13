@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-    public GameObject dialogueBox;
-    public Text dialogueText;
+    public GameObject DialogueBox;
+    public Text DialogueText;
     public string[] dialogue;
     private int index;
 
@@ -43,7 +43,7 @@ public class Dialogue : MonoBehaviour
         isDialogueActive = !isDialogueActive;
         if (isDialogueActive)
         {
-            dialogueBox.SetActive(true);
+            DialogueBox.SetActive(true);
             StartCoroutine(Typing());
             Time.timeScale = 0; // Pause the game when dialogue starts.
         }
@@ -56,9 +56,9 @@ public class Dialogue : MonoBehaviour
 
     public void ZeroText()
     {
-        dialogueText.text = "";
+        DialogueText.text = "";
         index = 0;
-        dialogueBox.SetActive(false);
+        DialogueBox.SetActive(false);
     }
 
     IEnumerator Typing()
@@ -66,7 +66,7 @@ public class Dialogue : MonoBehaviour
         isTyping = true;
         foreach (char letter in dialogue[index].ToCharArray())
         {
-            dialogueText.text += letter;
+            DialogueText.text += letter;
             yield return new WaitForSecondsRealtime(wordSpeed); // Use WaitForSecondsRealtime to pause time scale-independent.
         }
         isTyping = false;
@@ -79,7 +79,7 @@ public class Dialogue : MonoBehaviour
             if (index < dialogue.Length - 1)
             {
                 index++;
-                dialogueText.text = "";
+                DialogueText.text = "";
                 StartCoroutine(Typing());
             }
             else
