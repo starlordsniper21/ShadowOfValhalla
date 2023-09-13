@@ -74,7 +74,7 @@ public class Dialogue : MonoBehaviour
 
     public void NextLine()
     {
-        if (!isTyping) // Only proceed if the text is not currently typing.
+        if (!isTyping) 
         {
             if (index < dialogue.Length - 1)
             {
@@ -85,7 +85,7 @@ public class Dialogue : MonoBehaviour
             else
             {
                 ZeroText();
-                Time.timeScale = originalTimeScale; // Resume the game when dialogue ends.
+                Time.timeScale = originalTimeScale; 
             }
         }
     }
