@@ -35,11 +35,15 @@ public class Health : MonoBehaviour
             {
                     //die
                     dead = true;
-                    print("dead");
                     gameOverManager.gameOver();
                     print("dead");
                     //anim.SetTrigger("die");}
             } 
         }
     }
+
+
+
+
+
 }
