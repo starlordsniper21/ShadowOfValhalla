@@ -38,7 +38,9 @@ public class Health : MonoBehaviour
                     gameOverManager.gameOver();
                     print("dead");
                     //anim.SetTrigger("die");}
-            } 
+            }
+           
+
         }
     }
 

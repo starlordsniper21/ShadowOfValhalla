@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class AttackArea : MonoBehaviour
 {
-    private int damage = 3;
+    private int damage = 2;
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collider.GetComponent<Health>()  != null)
+        if (other.CompareTag("Enemy"))
         {
-            Health health = collider.GetComponent<Health>();
-            health.TakeDamage(damage);
-            print("Damaged");
+            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(damage);
+                Debug.Log("Damaged enemy");
+            }
         }
     }
-
-
-
-
-
 }

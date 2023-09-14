@@ -4,13 +4,24 @@ using UnityEngine.EventSystems;
 
 public class MovementJoystick : MonoBehaviour
 {
-
+    private Animator animator;
     public GameObject joystick;
     public GameObject joystickBG;
     public Vector2 joystickVec;
     private Vector2 joystickTouchPos;
     private Vector2 joystickOriginalPos;
     private float joystickRadius;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        
+    }
+
 
     // Start is called before the first frame update
     void Start()

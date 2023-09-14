@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    public Animator animator;
+    private Animator animator;
     public MovementJoystick movementJoystick;
     public float playerSpeed;
     private Rigidbody2D rb;
@@ -14,14 +14,16 @@ public class MovePlayer : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void Update()
     {
-        
+       
 
-        animator.SetFloat("Horizontal", movementJoystick.joystickVec.x);
-        animator.SetFloat("Vertical", movementJoystick.joystickVec.y);
-        animator.SetFloat("Speed", movementJoystick.joystickVec.sqrMagnitude);
-
+animator.SetBool("movement", movementJoystick.joystickVec.x != 0 || movementJoystick.joystickVec.y != 0);
 
 
     }

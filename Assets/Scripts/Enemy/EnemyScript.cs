@@ -9,9 +9,11 @@ public class Jester : MonoBehaviour
     public float attackRadius;
     [SerializeField]private float damage;
     public float moveSpeed;
-    
+    private BoxCollider2D boxCollider;
+    private bool hit;
 
-    
+
+
     void Start()
     {
         target = GameObject.FindWithTag("Player").transform;
@@ -39,5 +41,6 @@ public class Jester : MonoBehaviour
         }
     }
 
+   
 
 }
