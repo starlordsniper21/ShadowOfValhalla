@@ -8481,6 +8481,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+--- !u!70 &932418316
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932418304}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.86}
+  m_Size: {x: 1.28, y: 2.32}
+  m_Direction: 0
 --- !u!224 &952133665 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7456154753919340252, guid: d1a43c83bfbd01c428dd6bc2ad33cfc8, type: 3}
@@ -8775,7 +8810,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.39, y: 0}
+  m_Offset: {x: -0.06, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -15270,6 +15305,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4084936415608067154, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
       insertIndex: 4
       addedObject: {fileID: 932418310}
+    - targetCorrespondingSourceObject: {fileID: 4084936415608067154, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932418316}
   m_SourcePrefab: {fileID: 100100000, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
 --- !u!1 &1875728076
 GameObject:
@@ -112869,6 +112907,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1479780111}
     m_Modifications:
+    - target: {fileID: 1235444660086899907, guid: 9912b7ca67551d847837dbdb82f2c21b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2625739932929919075, guid: 9912b7ca67551d847837dbdb82f2c21b, type: 3}
       propertyPath: target
       value: 
@@ -113014,7 +113056,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 15860ffa2b645a14c9de9e6342589219, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a25d416f3ded0f9459b38cc263934a47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113299,7 +113341,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2, y: 1.2}
+    oldSize: {x: 1, y: 0.55}
     newSize: {x: 1.2, y: 1.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

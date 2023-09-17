@@ -21,12 +21,15 @@ public class MovePlayer : MonoBehaviour
 
     private void Update()
     {
-       
+        float horizontalInput = movementJoystick.joystickVec.x;
+        float verticalInput = movementJoystick.joystickVec.y;
 
-animator.SetBool("movement", movementJoystick.joystickVec.x != 0 || movementJoystick.joystickVec.y != 0);
-
-
+        // Set animator boolean parameters based on joystick input
+        animator.SetBool("movementright", horizontalInput > 0);
+        animator.SetBool("movementleft", horizontalInput < 0);
+        animator.SetBool("movementupanddown", verticalInput != 0);
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
