@@ -7,15 +7,11 @@ public class MovePlayer : MonoBehaviour
     public MovementJoystick movementJoystick;
     public float playerSpeed;
     private Rigidbody2D rb;
+    private bool isFacingRight = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void Awake()
-    {
         animator = GetComponent<Animator>();
     }
 
@@ -24,15 +20,21 @@ public class MovePlayer : MonoBehaviour
         float horizontalInput = movementJoystick.joystickVec.x;
         float verticalInput = movementJoystick.joystickVec.y;
 
-        // Set animator boolean parameters based on joystick input
         animator.SetBool("movementright", horizontalInput > 0);
-        animator.SetBool("movementleft", horizontalInput < 0);
+        animator.SetBool("movementleft", horizontalInput < 0); 
         animator.SetBool("movementupanddown", verticalInput != 0);
+
+        if (horizontalInput > 0 && !isFacingRight)
+        {
+            FlipCharacter();
+        }
+        else if (horizontalInput < 0 && isFacingRight)
+        {
+            FlipCharacter();
+        }
     }
 
-
-    // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (movementJoystick.joystickVec.y != 0)
         {
@@ -42,5 +44,13 @@ public class MovePlayer : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+    }
+
+    private void FlipCharacter()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }
