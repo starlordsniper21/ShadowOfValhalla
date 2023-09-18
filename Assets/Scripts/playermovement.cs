@@ -21,7 +21,7 @@ public class MovePlayer : MonoBehaviour
         float verticalInput = movementJoystick.joystickVec.y;
 
         animator.SetBool("movementright", horizontalInput > 0);
-        animator.SetBool("movementleft", horizontalInput < 0); 
+        animator.SetBool("movementleft", horizontalInput < 0 ); 
         animator.SetBool("movementupanddown", verticalInput != 0);
 
         if (horizontalInput > 0 && !isFacingRight)
@@ -32,7 +32,8 @@ public class MovePlayer : MonoBehaviour
         {
             FlipCharacter();
         }
-    }
+    
+}
 
     private void FixedUpdate()
     {
