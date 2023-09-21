@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class HealthBar : MonoBehaviour
 {
-
-    [SerializeField]private Health playerHealth;
-    [SerializeField]private Image totalhealthBar;
-    [SerializeField]private Image currentHealthbar;
+    [SerializeField] private Health playerHealth;
+    [SerializeField] private Image totalhealthBar;
+    [SerializeField] private Image currentHealthbar;
+    [SerializeField] private Text healthText; // Reference to the Text component.
 
     private void Start()
     {
@@ -18,8 +17,8 @@ public class HealthBar : MonoBehaviour
     private void Update()
     {
         currentHealthbar.fillAmount = playerHealth.currentHealth / 10;
+
+        // Update the Text component with the player's current health.
+        healthText.text = "HP: " + playerHealth.currentHealth.ToString();
     }
-
-
-
 }

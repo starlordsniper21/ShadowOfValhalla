@@ -12,7 +12,10 @@ EditorBuildSettings:
     path: Assets/Menu/Main Menu.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
-    path: Assets/Level/Chapter One.unity
+    path: Assets/Level/chapter 1.unity
+    guid: b654bf35d022bde4fa6b9172e3d90932
+  - enabled: 1
+    path: Assets/Level/chapter 2.unity
     guid: 125902b3cbe69c449b8d8d79254cbb2f
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7da03861c52efe645b48d1e88dbf6567, type: 2}
