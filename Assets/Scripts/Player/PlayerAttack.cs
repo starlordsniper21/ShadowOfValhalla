@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Import the UnityEngine.UI namespace for Button
 
 public class PlayerAttack : MonoBehaviour
 {
     private GameObject attackArea = default;
     private bool attacking = false;
-    private float timeToAttack = 0.25f;
+
+    [SerializeField] private float timeToAttack = 0.5f; // Serialized field
     private float timer = 0f;
     public Animator animator;
+
+    public float knockbackForce = 10f; // Serialized field
+    public LayerMask enemyLayer; // Serialized field
+
     void Start()
     {
         attackArea = transform.GetChild(0).gameObject;
@@ -17,7 +19,6 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        // Check for mobile button click (you can replace "MobileAttackButton" with your button's name)
         if (attacking)
         {
             timer += Time.deltaTime;
@@ -30,13 +31,11 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    // This function will be called when the mobile attack button is clicked
     public void MobileAttackButtonClicked()
     {
         if (!attacking)
         {
             Attack();
-            print("Attack");
             animator.SetTrigger("attack");
         }
     }
@@ -45,5 +44,15 @@ public class PlayerAttack : MonoBehaviour
     {
         attacking = true;
         attackArea.SetActive(attacking);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (attacking && enemyLayer == (enemyLayer | (1 << collision.gameObject.layer)))
+        {
+            // Enemy is hit; apply knockback
+            Vector2 direction = collision.contacts[0].point - (Vector2)transform.position;
+            collision.gameObject.GetComponent<EnemyController>().Knockback(direction * knockbackForce);
+        }
     }
 }
