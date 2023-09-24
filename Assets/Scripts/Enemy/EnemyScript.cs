@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Jester : MonoBehaviour
 {
     public Transform target;
@@ -41,6 +42,6 @@ public class Jester : MonoBehaviour
         }
     }
 
-   
+
 
 }
