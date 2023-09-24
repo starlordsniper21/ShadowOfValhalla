@@ -8,8 +8,8 @@ public class QuestManager : MonoBehaviour
     public int currentEnemiesKilled = 0;
     public TextMeshProUGUI questProgressText; // Reference to TextMeshPro Text element.
 
-    private enum QuestState { DefeatEnemies, GoToCastle }
-    private QuestState questState = QuestState.DefeatEnemies;
+    private enum QuestState { InvestigateVillage, DefeatEnemies, GoToCastle }
+    private QuestState questState = QuestState.InvestigateVillage;
 
     private void Start()
     {
@@ -19,15 +19,27 @@ public class QuestManager : MonoBehaviour
 
     public void EnemyKilled()
     {
-        currentEnemiesKilled++;
-
-        // Check if all enemies are defeated.
-        if (currentEnemiesKilled >= enemiesToKill)
+        if (questState == QuestState.DefeatEnemies)
         {
-            ChangeQuestState(QuestState.GoToCastle);
-        }
+            currentEnemiesKilled++;
 
-        UpdateQuestProgressText();
+            // Check if all enemies are defeated.
+            if (currentEnemiesKilled >= enemiesToKill)
+            {
+                ChangeQuestState(QuestState.GoToCastle);
+            }
+
+            UpdateQuestProgressText();
+        }
+    }
+
+    //  method to initiate the "Investigate the Village" quest.
+    public void InitiateInvestigateVillageQuest()
+    {
+        if (questState == QuestState.InvestigateVillage)
+        {
+            ChangeQuestState(QuestState.DefeatEnemies); // Transition to the next quest.
+        }
     }
 
     void UpdateQuestProgressText()
@@ -35,6 +47,9 @@ public class QuestManager : MonoBehaviour
         // Update the TextMeshPro Text element based on the current quest state.
         switch (questState)
         {
+            case QuestState.InvestigateVillage:
+                questProgressText.text = "Investigate the Village";
+                break;
             case QuestState.DefeatEnemies:
                 questProgressText.text = "Defeat All Enemies: " + currentEnemiesKilled + " / " + enemiesToKill;
                 break;
