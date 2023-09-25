@@ -51,7 +51,7 @@ public class QuestManager : MonoBehaviour
                 questProgressText.text = "Investigate the Village";
                 break;
             case QuestState.DefeatEnemies:
-                questProgressText.text = "Defeat All Enemies: " + currentEnemiesKilled + " / " + enemiesToKill;
+                questProgressText.text = "Defeat All Canute's goons: " + currentEnemiesKilled + " / " + enemiesToKill;
                 break;
             case QuestState.GoToCastle:
                 questProgressText.text = "Go to the Castle";

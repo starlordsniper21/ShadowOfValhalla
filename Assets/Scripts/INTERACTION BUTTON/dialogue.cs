@@ -9,7 +9,6 @@ public class Dialogue : MonoBehaviour
     public Text DialogueText;
     public string[] dialogue;
     private int index;
-
     public float wordSpeed;
     public bool playerIsClose;
 
@@ -18,23 +17,32 @@ public class Dialogue : MonoBehaviour
 
     private float originalTimeScale; // Store the original time scale.
 
+    private Button interactionButton; // Reference to the mobile interaction button
+
     private void Start()
     {
         originalTimeScale = Time.timeScale; // Store the original time scale at the start.
+
+        // Find the mobile interaction button in the scene
+        interactionButton = GameObject.Find("interaction button").GetComponent<Button>();
+
+        // Register a callback for the button click event
+        if (interactionButton != null)
+        {
+            interactionButton.onClick.AddListener(OnMobileButtonClick);
+        }
     }
 
-    void Update()
+    private void OnMobileButtonClick()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        // Check for mobile button press
+        if (playerIsClose && !isDialogueActive)
         {
-            if (isDialogueActive)
-            {
-                NextLine();
-            }
-            else
-            {
-                ToggleDialogue();
-            }
+            StartDialogue();
+        }
+        else if (isDialogueActive)
+        {
+            NextLine();
         }
     }
 
@@ -74,7 +82,8 @@ public class Dialogue : MonoBehaviour
 
     public void NextLine()
     {
-        if (!isTyping) 
+      
+        if (!isTyping)
         {
             if (index < dialogue.Length - 1)
             {
@@ -85,8 +94,21 @@ public class Dialogue : MonoBehaviour
             else
             {
                 ZeroText();
-                Time.timeScale = originalTimeScale; 
+                Time.timeScale = originalTimeScale;
             }
+        }
+    }
+
+    public bool IsDialogueActive()
+    {
+        return isDialogueActive;
+    }
+
+    public void StartDialogue()
+    {
+        if (!isDialogueActive)
+        {
+            ToggleDialogue();
         }
     }
 
@@ -106,4 +128,6 @@ public class Dialogue : MonoBehaviour
             playerIsClose = false;
         }
     }
+
+   
 }
