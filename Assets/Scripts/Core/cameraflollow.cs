@@ -6,17 +6,25 @@ public class cameraflollow : MonoBehaviour
 {
 
     public Transform target;
-    public Vector3 offset;
-    public float damping;
+    public float smoothing;
+    public Vector2 maxPosition;
+    public Vector2 minPosition;
 
-    private Vector3 velocity = Vector3.zero;
-
-    private void FixedUpdate()
+    void Start()
     {
-        Vector3 movePosition = target.position + offset;
-        transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, damping);
+        
     }
 
+    void LateUpdate()
+    {
+        if(transform.position != target.position)
+        {
+            Vector3 targetPosition = new Vector3(target.position.x, target.position.y,transform.position.z);
+            targetPosition.x = Mathf.Clamp(targetPosition.x, minPosition.x, maxPosition.x);
+            targetPosition.y = Mathf.Clamp(targetPosition.y, minPosition.y, maxPosition.y);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
+        }
+    }
 
 
 }
