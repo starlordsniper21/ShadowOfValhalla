@@ -16,8 +16,8 @@ public class Dialogue : MonoBehaviour
     private bool isTyping = false;
 
     private float originalTimeScale; // Store the original time scale.
-
-    private Button interactionButton; // Reference to the mobile interaction button
+    private Button interactionButton;
+    public Button nextButton; // Reference to the "Next" button
 
     private void Start()
     {
@@ -31,6 +31,13 @@ public class Dialogue : MonoBehaviour
         {
             interactionButton.onClick.AddListener(OnMobileButtonClick);
         }
+
+        // Register a callback for the "Next" button click event
+        if (nextButton != null)
+        {
+            nextButton.onClick.AddListener(NextLine);
+            nextButton.gameObject.SetActive(false); // Hide the "Next" button initially.
+        }
     }
 
     private void OnMobileButtonClick()
@@ -39,10 +46,6 @@ public class Dialogue : MonoBehaviour
         if (playerIsClose && !isDialogueActive)
         {
             StartDialogue();
-        }
-        else if (isDialogueActive)
-        {
-            NextLine();
         }
     }
 
@@ -54,6 +57,10 @@ public class Dialogue : MonoBehaviour
             DialogueBox.SetActive(true);
             StartCoroutine(Typing());
             Time.timeScale = 0; // Pause the game when dialogue starts.
+            if (nextButton != null)
+            {
+                nextButton.gameObject.SetActive(false); // Hide the "Next" button initially.
+            }
         }
         else
         {
@@ -78,11 +85,15 @@ public class Dialogue : MonoBehaviour
             yield return new WaitForSecondsRealtime(wordSpeed); // Use WaitForSecondsRealtime to pause time scale-independent.
         }
         isTyping = false;
+
+        if (nextButton != null)
+        {
+            nextButton.gameObject.SetActive(true); // Show the "Next" button after text is fully displayed.
+        }
     }
 
     public void NextLine()
     {
-      
         if (!isTyping)
         {
             if (index < dialogue.Length - 1)
@@ -95,6 +106,10 @@ public class Dialogue : MonoBehaviour
             {
                 ZeroText();
                 Time.timeScale = originalTimeScale;
+                if (nextButton != null)
+                {
+                    nextButton.gameObject.SetActive(false); // Hide the "Next" button when all dialogue is complete.
+                }
             }
         }
     }
@@ -128,6 +143,4 @@ public class Dialogue : MonoBehaviour
             playerIsClose = false;
         }
     }
-
-   
 }

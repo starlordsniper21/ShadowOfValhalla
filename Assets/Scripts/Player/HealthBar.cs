@@ -19,6 +19,6 @@ public class HealthBar : MonoBehaviour
         currentHealthbar.fillAmount = playerHealth.currentHealth / 10;
 
         // Update the Text component with the player's current health.
-        healthText.text = "HP: " + playerHealth.currentHealth.ToString();
+        healthText.text = playerHealth.currentHealth + "/10".ToString();
     }
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ public class cameraflollow : MonoBehaviour
 {
 
     public Transform target;
-    public float smoothing;
+    public float smoothing = 0.1f;
     public Vector2 maxPosition;
     public Vector2 minPosition;
 
