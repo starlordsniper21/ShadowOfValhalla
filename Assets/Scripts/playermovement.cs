@@ -8,6 +8,7 @@ public class MovePlayer : MonoBehaviour
     public float playerSpeed;
     private Rigidbody2D rb;
     private bool isFacingRight = true;
+    public GameObject projectile;
 
     void Start()
     {

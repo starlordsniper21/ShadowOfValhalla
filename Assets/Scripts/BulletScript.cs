@@ -6,6 +6,7 @@ public class BulletScript : MonoBehaviour
 {
     GameObject target;
     public float speed;
+    public int damage = 2;
     Rigidbody2D bulletRB;
 
     void Start()
@@ -17,5 +18,16 @@ public class BulletScript : MonoBehaviour
         Destroy(this.gameObject, 2);
     }
 
-
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Health playerHealth = other.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+            }
+            Destroy(gameObject);
+        }
+    }
 }
