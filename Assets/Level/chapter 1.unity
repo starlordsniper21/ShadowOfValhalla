@@ -657,6 +657,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &95961014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95961015}
+  m_Layer: 0
+  m_Name: BulletParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &95961015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95961014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4977096997330477111}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &99914127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
 --- !u!1 &147039726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,6 +1665,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
 --- !u!1 &233676895
 GameObject:
   m_ObjectHideFlags: 0
@@ -6967,6 +7002,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
 --- !u!1001 &373851410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8863,6 +8900,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
 --- !u!1 &609211254 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6495174072611855716, guid: 9f8955c13943b1249a347af70497f773, type: 3}
@@ -10211,10 +10250,22 @@ PrefabInstance:
       propertyPath: movementJoystick
       value: 
       objectReference: {fileID: 1308920870}
+    - target: {fileID: 2535836284471823897, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+      propertyPath: hurtSoundPlayer
+      value: 
+      objectReference: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+    - target: {fileID: 2535836284471823897, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+      propertyPath: deathSoundPlayer
+      value: 
+      objectReference: {fileID: 8300000, guid: cef55fa3f0c33264bbba46fffd52597c, type: 3}
     - target: {fileID: 4894666472519163335, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7133754278047268702, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+      propertyPath: swordSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e4822d2249669f40b3d7709d4f1e657, type: 3}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -10443,6 +10494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 841153746}
   - component: {fileID: 841153745}
+  - component: {fileID: 841153747}
   m_Layer: 0
   m_Name: bg music
   m_TagString: Untagged
@@ -10561,6 +10613,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &841153747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841153744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829beb0c496122e4fb34287ab3845ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &864578450
 GameObject:
   m_ObjectHideFlags: 0
@@ -114904,6 +114968,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
 --- !u!1 &929146029
 GameObject:
   m_ObjectHideFlags: 0
@@ -115966,6 +116032,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
 --- !u!1 &1047049906
 GameObject:
   m_ObjectHideFlags: 0
@@ -121434,6 +121502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
 --- !u!1 &1597402037
 GameObject:
   m_ObjectHideFlags: 0
@@ -122949,6 +123019,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 532994328185848970, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099441867535536386, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1510175790788020155, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -122961,6 +123039,10 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 46209972}
+    - target: {fileID: 4114265677940206309, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5951090650316035920, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -123866,6 +123948,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
 --- !u!4 &1741907050 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5061536121803507144, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
@@ -124672,6 +124756,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
 --- !u!1 &1839112764
 GameObject:
   m_ObjectHideFlags: 0
@@ -124866,6 +124952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
 --- !u!1 &1849205849
 GameObject:
   m_ObjectHideFlags: 0
@@ -127395,6 +127483,58 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5d0fcf077b757245b0ee2bfc7377c9f, type: 3}
+--- !u!212 &1235444659149367510
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953159991939138884}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 46867b74d154fc043807db5ffcb70659, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5, y: 5}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &1435650747812186122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127521,6 +127661,42 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374038319c9499349b5b64e47f20efe5, type: 3}
+--- !u!1 &3953159991939138884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4977096997330477111}
+  - component: {fileID: 1235444659149367510}
+  - component: {fileID: 7472845128029747517}
+  - component: {fileID: 8406831818268250347}
+  - component: {fileID: 8406831818268250348}
+  m_Layer: 0
+  m_Name: Armored Mage (Ranged)
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4977096997330477111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953159991939138884}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.5, y: 6.9, z: 0}
+  m_LocalScale: {x: 2.1019626, y: 2.0835352, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 95961015}
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5518159178099018789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127643,6 +127819,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19e06095618ec6e49bbfc01606d4935f, type: 3}
+--- !u!114 &7472845128029747517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953159991939138884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd4168ddf96fdc4aa6ac8dc40c789bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  deathSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
 --- !u!1001 &7745275184522592775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127708,3 +127899,65 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f72d3569c8eb6846891050f0869dbd2, type: 3}
+--- !u!61 &8406831818268250347
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953159991939138884}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008802593, y: -1.5413233}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5}
+    newSize: {x: 5, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0457028, y: 0.7069895}
+  m_EdgeRadius: 0
+--- !u!114 &8406831818268250348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953159991939138884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7278f96732ae91409b7da5f0240aec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  lineOfSite: 15.8
+  shootingRange: 12.1
+  bullet: {fileID: 460424102582798303, guid: 19cf7d3fa1d23f64cb86f901818f8a67, type: 3}
+  bulletParent: {fileID: 95961014}

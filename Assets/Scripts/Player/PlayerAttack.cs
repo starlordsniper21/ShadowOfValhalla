@@ -5,12 +5,12 @@ public class PlayerAttack : MonoBehaviour
     private GameObject attackArea = default;
     private bool attacking = false;
 
-    [SerializeField] private float timeToAttack = 0.5f; // Serialized field
+    [SerializeField] private float timeToAttack = 0.5f;
     private float timer = 0f;
     public Animator animator;
-
-    public float knockbackForce = 10f; // Serialized field
-    public LayerMask enemyLayer; // Serialized field
+    [SerializeField] private AudioClip swordSound;
+    public float knockbackForce = 10f;
+    public LayerMask enemyLayer;
 
     void Start()
     {
@@ -35,6 +35,16 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!attacking)
         {
+            
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.PlaySound(swordSound);
+            }
+            else
+            {
+                Debug.LogWarning("SoundManager is not properly initialized.");
+            }
+
             Attack();
             animator.SetTrigger("attack");
         }

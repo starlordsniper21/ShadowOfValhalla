@@ -8,15 +8,16 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
-    //private Animator anim;
+    private Animator anim;
     private bool dead;
     private GameOverManager gameOverManager;
-    
+    [SerializeField]private AudioClip deathSoundPlayer;
+    [SerializeField]private AudioClip hurtSoundPlayer;
 
     private void Awake()
     {
         currentHealth = startingHealth;
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         gameOverManager = FindObjectOfType<GameOverManager>();    
     }
 
@@ -26,8 +27,8 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
-          //hurt
-          //anim.SetTrigger("hurt");
+          anim.SetTrigger("hurt");
+            SoundManager.instance.PlaySound(hurtSoundPlayer);
         }
         else
         {
@@ -35,8 +36,10 @@ public class Health : MonoBehaviour
             {
                     //die
                     dead = true;
+                    SoundManager.instance.PlaySound(deathSoundPlayer);
                     gameOverManager.gameOver();
                     print("dead");
+                    
                     //anim.SetTrigger("die");}
             }
            
