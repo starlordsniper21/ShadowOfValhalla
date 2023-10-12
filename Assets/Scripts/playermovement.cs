@@ -10,16 +10,22 @@ public class MovePlayer : MonoBehaviour
     private bool isFacingRight = true;
 
     private PlayerBow playerBow;
+    private bool canMove = true; // Added variable for controlling movement
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent <Animator>();
+        animator = GetComponent<Animator>();
         playerBow = GetComponent<PlayerBow>();
     }
 
     private void Update()
     {
+        if (!canMove)
+        {
+            return; // Exit the function if movement is disabled
+        }
+
         float horizontalInput = movementJoystick.joystickVec.x;
         float verticalInput = movementJoystick.joystickVec.y;
 
@@ -41,6 +47,12 @@ public class MovePlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!canMove)
+        {
+            rb.velocity = Vector2.zero; // Stop player's movement
+            return;
+        }
+
         if (movementJoystick.joystickVec.y != 0)
         {
             rb.velocity = new Vector2(movementJoystick.joystickVec.x * playerSpeed, movementJoystick.joystickVec.y * playerSpeed);
@@ -57,5 +69,10 @@ public class MovePlayer : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    public void EnableMovement(bool enable)
+    {
+        canMove = enable;
     }
 }

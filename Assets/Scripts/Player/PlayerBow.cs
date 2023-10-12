@@ -49,6 +49,13 @@ public class PlayerBow : MonoBehaviour
             {
                 Debug.LogWarning("lmao walang rigidbody2d ang arrow");
             }
+
+            // Pass the player's direction to the arrow
+            Arrow arrowScript = arrow.GetComponent<Arrow>();
+            if (arrowScript != null)
+            {
+                arrowScript.Setup(playerDirection);
+            }
         }
         else
         {
@@ -58,6 +65,6 @@ public class PlayerBow : MonoBehaviour
 
     public void SetPlayerDirection(Vector2 direction)
     {
-        playerDirection = direction;
+        playerDirection = direction.normalized;
     }
 }
