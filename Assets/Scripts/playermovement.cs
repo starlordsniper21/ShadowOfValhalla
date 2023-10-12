@@ -8,12 +8,14 @@ public class MovePlayer : MonoBehaviour
     public float playerSpeed;
     private Rigidbody2D rb;
     private bool isFacingRight = true;
-    public GameObject projectile;
+
+    private PlayerBow playerBow;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animator = GetComponent <Animator>();
+        playerBow = GetComponent<PlayerBow>();
     }
 
     private void Update()
@@ -22,8 +24,10 @@ public class MovePlayer : MonoBehaviour
         float verticalInput = movementJoystick.joystickVec.y;
 
         animator.SetBool("movementright", horizontalInput > 0);
-        animator.SetBool("movementleft", horizontalInput < 0 ); 
+        animator.SetBool("movementleft", horizontalInput < 0);
         animator.SetBool("movementupanddown", verticalInput != 0);
+        Vector2 direction = new Vector2(horizontalInput, verticalInput);
+        playerBow.SetPlayerDirection(direction);
 
         if (horizontalInput > 0 && !isFacingRight)
         {
@@ -33,8 +37,7 @@ public class MovePlayer : MonoBehaviour
         {
             FlipCharacter();
         }
-    
-}
+    }
 
     private void FixedUpdate()
     {
