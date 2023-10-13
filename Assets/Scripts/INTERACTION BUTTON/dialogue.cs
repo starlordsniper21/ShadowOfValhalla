@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +17,7 @@ public class Dialogue : MonoBehaviour
     private float originalTimeScale; // Store the original time scale.
     private Button interactionButton;
     public Button nextButton; // Reference to the "Next" button
+    public Canvas backgroundCanvas; // Reference to the Canvas containing background UI
 
     private void Start()
     {
@@ -55,8 +55,10 @@ public class Dialogue : MonoBehaviour
         if (isDialogueActive)
         {
             DialogueBox.SetActive(true);
+            backgroundCanvas.enabled = false; // Hide the background Canvas
             StartCoroutine(Typing());
-            Time.timeScale = 0; // Pause the game when dialogue starts.
+            Time.timeScale = 0;
+
             if (nextButton != null)
             {
                 nextButton.gameObject.SetActive(false); // Hide the "Next" button initially.
@@ -65,7 +67,12 @@ public class Dialogue : MonoBehaviour
         else
         {
             ZeroText();
-            Time.timeScale = originalTimeScale; // Resume the game when dialogue ends.
+            Time.timeScale = originalTimeScale;
+
+            if (nextButton != null)
+            {
+                nextButton.gameObject.SetActive(false); // Hide the "Next" button when all dialogue is complete.
+            }
         }
     }
 
@@ -106,10 +113,7 @@ public class Dialogue : MonoBehaviour
             {
                 ZeroText();
                 Time.timeScale = originalTimeScale;
-                if (nextButton != null)
-                {
-                    nextButton.gameObject.SetActive(false); // Hide the "Next" button when all dialogue is complete.
-                }
+                ShowBackgroundCanvas(); // Show the background Canvas
             }
         }
     }
@@ -142,5 +146,10 @@ public class Dialogue : MonoBehaviour
             ZeroText();
             playerIsClose = false;
         }
+    }
+
+    public void ShowBackgroundCanvas()
+    {
+        backgroundCanvas.enabled = true; // Show the background Canvas
     }
 }
