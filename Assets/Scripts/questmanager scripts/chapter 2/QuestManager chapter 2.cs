@@ -171,7 +171,7 @@ public class QuestManager2 : MonoBehaviour
                 questProgressText.text = "Defeat the enemy Guards: " + currentDungeonGuardsDefeated + " / " + dungeonGuardsToDefeat;
                 break;
             case QuestState.GoToDungeon:
-                questProgressText.text = "Go down to the Castle's Dungeon"; // Eighth quest text
+                questProgressText.text = "Go down to the Castle's Dungeon"; 
                 break;
         }
     }

@@ -6,7 +6,11 @@ public class Dialogue : MonoBehaviour
 {
     public GameObject DialogueBox;
     public Text DialogueText;
-    public string[] dialogue;
+    public Text CharacterNameTextA;
+    public Text CharacterNameTextB;
+    public string[] characterNamesA;
+    public string[] characterNamesB;
+    public string[] characterDialogues;
     private int index;
     public float wordSpeed;
     public bool playerIsClose;
@@ -14,35 +18,31 @@ public class Dialogue : MonoBehaviour
     private bool isDialogueActive = false;
     private bool isTyping = false;
 
-    private float originalTimeScale; // Store the original time scale.
+    private float originalTimeScale;
     private Button interactionButton;
-    public Button nextButton; // Reference to the "Next" button
-    public Canvas backgroundCanvas; // Reference to the Canvas containing background UI
+    public Button nextButton;
+    public Canvas backgroundCanvas;
 
     private void Start()
     {
-        originalTimeScale = Time.timeScale; // Store the original time scale at the start.
+        originalTimeScale = Time.timeScale;
 
-        // Find the mobile interaction button in the scene
         interactionButton = GameObject.Find("interaction button").GetComponent<Button>();
 
-        // Register a callback for the button click event
         if (interactionButton != null)
         {
             interactionButton.onClick.AddListener(OnMobileButtonClick);
         }
 
-        // Register a callback for the "Next" button click event
         if (nextButton != null)
         {
             nextButton.onClick.AddListener(NextLine);
-            nextButton.gameObject.SetActive(false); // Hide the "Next" button initially.
+            nextButton.gameObject.SetActive(false);
         }
     }
 
     private void OnMobileButtonClick()
     {
-        // Check for mobile button press
         if (playerIsClose && !isDialogueActive)
         {
             StartDialogue();
@@ -55,24 +55,15 @@ public class Dialogue : MonoBehaviour
         if (isDialogueActive)
         {
             DialogueBox.SetActive(true);
-            backgroundCanvas.enabled = false; // Hide the background Canvas
+            backgroundCanvas.enabled = false;
             StartCoroutine(Typing());
             Time.timeScale = 0;
-
-            if (nextButton != null)
-            {
-                nextButton.gameObject.SetActive(false); // Hide the "Next" button initially.
-            }
         }
         else
         {
             ZeroText();
             Time.timeScale = originalTimeScale;
-
-            if (nextButton != null)
-            {
-                nextButton.gameObject.SetActive(false); // Hide the "Next" button when all dialogue is complete.
-            }
+            ShowBackgroundCanvas();
         }
     }
 
@@ -86,16 +77,21 @@ public class Dialogue : MonoBehaviour
     IEnumerator Typing()
     {
         isTyping = true;
-        foreach (char letter in dialogue[index].ToCharArray())
+
+        SetCharacterNameText(characterNamesA[index], characterNamesB[index]);
+
+        string currentDialogue = characterDialogues[index];
+
+        foreach (char letter in currentDialogue.ToCharArray())
         {
             DialogueText.text += letter;
-            yield return new WaitForSecondsRealtime(wordSpeed); // Use WaitForSecondsRealtime to pause time scale-independent.
+            yield return new WaitForSecondsRealtime(wordSpeed);
         }
         isTyping = false;
 
         if (nextButton != null)
         {
-            nextButton.gameObject.SetActive(true); // Show the "Next" button after text is fully displayed.
+            nextButton.gameObject.SetActive(true);
         }
     }
 
@@ -103,7 +99,7 @@ public class Dialogue : MonoBehaviour
     {
         if (!isTyping)
         {
-            if (index < dialogue.Length - 1)
+            if (index < characterDialogues.Length - 1)
             {
                 index++;
                 DialogueText.text = "";
@@ -113,7 +109,8 @@ public class Dialogue : MonoBehaviour
             {
                 ZeroText();
                 Time.timeScale = originalTimeScale;
-                ShowBackgroundCanvas(); // Show the background Canvas
+                ShowBackgroundCanvas();
+                ToggleDialogue();
             }
         }
     }
@@ -150,6 +147,12 @@ public class Dialogue : MonoBehaviour
 
     public void ShowBackgroundCanvas()
     {
-        backgroundCanvas.enabled = true; // Show the background Canvas
+        backgroundCanvas.enabled = true;
+    }
+
+    private void SetCharacterNameText(string nameA, string nameB)
+    {
+        CharacterNameTextA.text = nameA;
+        CharacterNameTextB.text = nameB;
     }
 }

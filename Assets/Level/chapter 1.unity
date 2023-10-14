@@ -287,7 +287,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.58, y: 1.72}
+  m_Size: {x: 1.48, y: 1.72}
   m_EdgeRadius: 0
 --- !u!212 &55522646
 SpriteRenderer:
@@ -1560,7 +1560,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 5.1}
+  m_Size: {x: 6, y: 6.26}
   m_EdgeRadius: 0
 --- !u!212 &166879753
 SpriteRenderer:
@@ -7358,6 +7358,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 222177636}
   m_SourcePrefab: {fileID: 100100000, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
+--- !u!114 &418571972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4589713415055888480, guid: b9f6f7d5a0670cd4394b479047e6b795, type: 3}
+  m_PrefabInstance: {fileID: 4052740041231170331}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &472337591
 GameObject:
   m_ObjectHideFlags: 0
@@ -10337,17 +10348,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8455773437487292955, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+      propertyPath: m_Size.x
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455773437487292955, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455773437487292955, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -135.74
+      value: -136.6
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.73
+      value: -19.9
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -114735,7 +114758,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.77, y: 0.04}
+  m_Size: {x: 3.97, y: 0.04}
   m_EdgeRadius: 0
 --- !u!212 &868493221
 SpriteRenderer:
@@ -115708,7 +115731,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.77, y: 0.04}
+  m_Size: {x: 2.72, y: 0.04}
   m_EdgeRadius: 0
 --- !u!212 &1033461073
 SpriteRenderer:
@@ -117388,6 +117411,17 @@ CapsuleCollider2D:
   m_Offset: {x: -0.22, y: 0}
   m_Size: {x: 0.74, y: 1.53}
   m_Direction: 0
+--- !u!114 &1142341200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 580354124315758697, guid: b9f6f7d5a0670cd4394b479047e6b795, type: 3}
+  m_PrefabInstance: {fileID: 4052740041231170331}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1172142540
 GameObject:
   m_ObjectHideFlags: 0
@@ -118587,7 +118621,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1.16}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -118598,7 +118632,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.8, y: 9.79}
+  m_Size: {x: 8.67, y: 14.25}
   m_EdgeRadius: 0
 --- !u!212 &1239798217
 SpriteRenderer:
@@ -122212,11 +122246,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueBox: {fileID: 2035480627}
   DialogueText: {fileID: 140714987}
-  dialogue:
-  - HEELPP!!!!!
-  - The village was raided by Canute's soldiers they have slaughtered many of the
-    villagers and took the rest as prisoners including my family.
-  - Please i beg you save them and avenge the fallen people of gresit.
+  CharacterNameTextA: {fileID: 1142341200}
+  CharacterNameTextB: {fileID: 418571972}
+  characterNamesA:
+  - fjord
+  - 
+  - 
+  - fjord
+  characterNamesB:
+  - 
+  - villager
+  - villager
+  - 
+  characterDialogues:
+  - Sir! what happened here? why is there no villagers around?
+  - Canute's troops attacked the village by surprise and took a lot of the villagers
+    as prisoners
+  - 'Are you from the village of wallachia? '
+  - Yes how do you know?
   wordSpeed: 0.01
   playerIsClose: 0
   nextButton: {fileID: 582742266}
@@ -123121,6 +123168,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1099441867535536386, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -64
+      objectReference: {fileID: 0}
     - target: {fileID: 1510175790788020155, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -123137,6 +123188,10 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 46209972}
+    - target: {fileID: 4202347989649133169, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -192
+      objectReference: {fileID: 0}
     - target: {fileID: 5951090650316035920, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -123342,7 +123397,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.01, y: 5.34}
+  m_Size: {x: 6.01, y: 6.26}
   m_EdgeRadius: 0
 --- !u!212 &1682986914
 SpriteRenderer:
@@ -123747,8 +123802,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueBox: {fileID: 362150509}
   DialogueText: {fileID: 362150508}
-  dialogue:
-  - WELCOME TO THE TOWN OF GRESIT.
+  CharacterNameTextA: {fileID: 0}
+  CharacterNameTextB: {fileID: 0}
+  characterNamesA: []
+  characterNamesB: []
+  characterDialogues: []
   wordSpeed: 0.01
   playerIsClose: 0
   nextButton: {fileID: 362150507}
@@ -124414,8 +124472,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueBox: {fileID: 362150509}
   DialogueText: {fileID: 362150508}
-  dialogue:
-  - CASTLE ---->>
+  CharacterNameTextA: {fileID: 0}
+  CharacterNameTextB: {fileID: 0}
+  characterNamesA: []
+  characterNamesB: []
+  characterDialogues: []
   wordSpeed: 0.06
   playerIsClose: 0
   nextButton: {fileID: 362150507}
@@ -127841,10 +127902,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1797358001614577316, guid: b9f6f7d5a0670cd4394b479047e6b795, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -169.1875
-      objectReference: {fileID: 0}
     - target: {fileID: 4264710259261158590, guid: b9f6f7d5a0670cd4394b479047e6b795, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -127928,10 +127985,6 @@ PrefabInstance:
     - target: {fileID: 4264710259261158590, guid: b9f6f7d5a0670cd4394b479047e6b795, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7845894665251470932, guid: b9f6f7d5a0670cd4394b479047e6b795, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -192.59375
       objectReference: {fileID: 0}
     - target: {fileID: 8809164505459907888, guid: b9f6f7d5a0670cd4394b479047e6b795, type: 3}
       propertyPath: m_Name
