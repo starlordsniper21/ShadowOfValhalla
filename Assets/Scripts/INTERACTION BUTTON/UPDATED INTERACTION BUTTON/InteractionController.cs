@@ -4,12 +4,12 @@ using UnityEngine.UI;
 public class InteractionController : MonoBehaviour
 {
     public float interactionDistance = 2f;
-    public Button interactionButton; // Reference to the UI Button
-    public Dialogue dialogueScript; // Reference to the Dialogue script on the NPC GameObject.
+    public Button interactionButton; 
+    public Dialogue dialogueScript;
 
     private void Start()
     {
-        // Register a callback for the button click event
+       
         if (interactionButton != null)
         {
             interactionButton.onClick.AddListener(Interact);
@@ -18,11 +18,11 @@ public class InteractionController : MonoBehaviour
 
     public void Interact()
     {
-        // Create a ray from the camera to the front of the player
+       
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
 
-        // Check if the ray hits an interactable object
+       
         if (Physics.Raycast(ray, out hit, interactionDistance))
         {
             if (hit.collider.CompareTag("InteractableObject"))
@@ -39,7 +39,7 @@ public class InteractionController : MonoBehaviour
             }
             else if (hit.collider.CompareTag("NPC"))
             {
-                // Check if the Dialogue script on the NPC is not active
+                
                 if (dialogueScript != null && !dialogueScript.IsDialogueActive())
                 {
                     // Start the dialogue
