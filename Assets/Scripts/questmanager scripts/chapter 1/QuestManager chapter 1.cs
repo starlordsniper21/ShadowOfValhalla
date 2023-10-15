@@ -6,9 +6,11 @@ public class QuestManager : MonoBehaviour
 {
     public int enemiesToKill = 5;
     public int currentEnemiesKilled = 0;
+    public int guardsToKill = 5;
+    public int currentguardsKilled = 0;
     public TextMeshProUGUI questProgressText; // Reference to TextMeshPro Text element.
 
-    private enum QuestState { InvestigateVillage, DefeatEnemies, GoToCastle }
+    private enum QuestState { InvestigateVillage, DefeatEnemies, traveltoakumajoCastle, EntertheakumajoCastle, DefeatGuards, GoInsideCastle }
     private QuestState questState = QuestState.InvestigateVillage;
 
     private void Start()
@@ -23,17 +25,15 @@ public class QuestManager : MonoBehaviour
         {
             currentEnemiesKilled++;
 
-            // Check if all enemies are defeated.
             if (currentEnemiesKilled >= enemiesToKill)
             {
-                ChangeQuestState(QuestState.GoToCastle);
+                ChangeQuestState(QuestState.traveltoakumajoCastle);
             }
 
             UpdateQuestProgressText();
         }
     }
 
-    //  method to initiate the "Investigate the Village" quest.
     public void InitiateInvestigateVillageQuest()
     {
         if (questState == QuestState.InvestigateVillage)
@@ -42,9 +42,60 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    public void traveltoakumajocastle()
+    {
+        if (questState == QuestState.DefeatEnemies)
+        {
+            ChangeQuestState(QuestState.traveltoakumajoCastle);
+        }
+    }
+
+    public void EntertheakumajoCastle()
+    {
+        if (questState == QuestState.traveltoakumajoCastle)
+        {
+            ChangeQuestState(QuestState.EntertheakumajoCastle);
+        }
+    }
+
+    // Method to transition to the "Defeat Guards" quest.
+    public void DefeatTheGuards()
+    {
+        if (questState == QuestState.EntertheakumajoCastle)
+        {
+            ChangeQuestState(QuestState.DefeatGuards);
+        }
+    }
+
+    // Separate logic for the "Defeat Guards" quest.
+    public void GuardsDefeated()
+    {
+        if (questState == QuestState.DefeatGuards)
+        {
+            currentguardsKilled++;
+
+            if (currentguardsKilled >= guardsToKill)
+            {
+                ChangeQuestState(QuestState.GoInsideCastle);
+            }
+
+            UpdateQuestProgressText();
+        }
+    }
+
+    // Method to transition to the 7th quest "Go Inside the Castle."
+    public void GoInsideCastle()
+    {
+        if (questState == QuestState.GoInsideCastle)
+        {
+            // Implement any logic or actions related to entering the castle.
+            // For example, load the interior castle scene.
+            // SceneManager.LoadScene("CastleInteriorScene");
+        }
+    }
+
     void UpdateQuestProgressText()
     {
-        // Update the TextMeshPro Text element based on the current quest state.
         switch (questState)
         {
             case QuestState.InvestigateVillage:
@@ -53,8 +104,17 @@ public class QuestManager : MonoBehaviour
             case QuestState.DefeatEnemies:
                 questProgressText.text = "Defeat All Canute's goons: " + currentEnemiesKilled + " / " + enemiesToKill;
                 break;
-            case QuestState.GoToCastle:
-                questProgressText.text = "Go to the Castle";
+            case QuestState.traveltoakumajoCastle:
+                questProgressText.text = "travel to the akumajo Castle";
+                break;
+            case QuestState.EntertheakumajoCastle:
+                questProgressText.text = "Enter the  akumajo Castle";
+                break;
+            case QuestState.DefeatGuards:
+                questProgressText.text = "Defeat The Guards in front of the entrance: " + currentguardsKilled + " / " + guardsToKill;
+                break;
+            case QuestState.GoInsideCastle:
+                questProgressText.text = "Go Inside the Castle";
                 break;
         }
     }
@@ -62,6 +122,7 @@ public class QuestManager : MonoBehaviour
     void ChangeQuestState(QuestState newState)
     {
         questState = newState;
+       
         UpdateQuestProgressText();
     }
 

@@ -15,14 +15,17 @@ public class EnemyController : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Call this when the enemy is defeated.
+        
         questManager.EnemyKilled();
+        questManager.GuardsDefeated();
     }
+
+   
 
     // Function to apply knockback to the enemy
     public void Knockback(Vector2 direction)
     {
-        rb.velocity = Vector2.zero; // Reset velocity
+        rb.velocity = Vector2.zero; 
         rb.AddForce(direction.normalized * knockbackForce, ForceMode2D.Impulse);
     }
 }
