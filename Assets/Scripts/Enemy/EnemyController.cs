@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
         questManager.GuardsDefeated();
     }
 
+
+
    
 
     // Function to apply knockback to the enemy

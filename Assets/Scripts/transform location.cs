@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class TeleportController : MonoBehaviour
 {
     public Transform destination;
-    public Canvas blackScreenCanvas; // Reference to the UI Canvas
-    public float pauseTime = 5.0f; // Time to pause in seconds
+    public Canvas blackScreenCanvas; 
+    public float pauseTime = 5.0f; 
 
     private bool isTeleporting = false;
 
@@ -30,7 +30,7 @@ public class TeleportController : MonoBehaviour
 
     private IEnumerator ResumeAndTeleport(Transform playerTransform)
     {
-        // Wait for the specified pause time.
+        
         yield return new WaitForSecondsRealtime(pauseTime);
 
         // Deactivate the black screen panel.

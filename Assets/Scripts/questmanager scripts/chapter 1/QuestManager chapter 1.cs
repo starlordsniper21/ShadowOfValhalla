@@ -88,9 +88,7 @@ public class QuestManager : MonoBehaviour
     {
         if (questState == QuestState.GoInsideCastle)
         {
-            // Implement any logic or actions related to entering the castle.
-            // For example, load the interior castle scene.
-            // SceneManager.LoadScene("CastleInteriorScene");
+           
         }
     }
 
