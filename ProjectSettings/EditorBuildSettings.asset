@@ -12,11 +12,20 @@ EditorBuildSettings:
     path: Assets/Menu/Main Menu.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
+    path: Assets/Level/Chatper 1 Cutscene.unity
+    guid: f52d1b8612c1e52408e92badfffa6785
+  - enabled: 1
     path: Assets/Level/chapter 1.unity
     guid: b654bf35d022bde4fa6b9172e3d90932
   - enabled: 1
+    path: Assets/Level/Chatper 2 Cutscene.unity
+    guid: d3adb7aa1610baa4994b9b948bab1d55
+  - enabled: 1
     path: Assets/Level/chapter 2.unity
     guid: 81b43a097343a7541ba3c9b4a5ff9b27
+  - enabled: 1
+    path: Assets/Level/Chatper 3 Cutscene.unity
+    guid: 5fe57c63cf3a2dc4b997c16923eaeb07
   - enabled: 1
     path: Assets/Level/chapter 3.unity
     guid: 125902b3cbe69c449b8d8d79254cbb2f

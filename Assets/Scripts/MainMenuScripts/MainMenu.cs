@@ -6,6 +6,22 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     // This function will be called when the "Chapter 1" button is clicked.
+
+    public void PlayCutscene1()
+    {
+        SceneManager.LoadSceneAsync("CHATPER 1 CUTSCENE");
+    }
+
+    public void PlayCutscene2()
+    {
+        SceneManager.LoadSceneAsync("CHATPER 2 CUTSCENE");
+    }
+
+    public void PlayCutscene3()
+    {
+        SceneManager.LoadSceneAsync("CHATPER 3 CUTSCENE");
+    }
+
     public void PlayChapter1()
     {
         SceneManager.LoadSceneAsync("CHAPTER 1");
