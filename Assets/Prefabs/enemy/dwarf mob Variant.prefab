@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5855478272577185442, guid: efbb88dd24a4bf546a8f0e7de29317e0, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5855478272577185442, guid: efbb88dd24a4bf546a8f0e7de29317e0, type: 3}
       propertyPath: m_LocalScale.x
@@ -67,32 +67,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1796490517463522684, guid: efbb88dd24a4bf546a8f0e7de29317e0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 556870734997895651}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efbb88dd24a4bf546a8f0e7de29317e0, type: 3}
---- !u!1 &4829979014272848510 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1796490517463522684, guid: efbb88dd24a4bf546a8f0e7de29317e0, type: 3}
-  m_PrefabInstance: {fileID: 6623074083256291074}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &556870734997895651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4829979014272848510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b5c36b86e6b1c44eadb7adee2ce89f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 4
-  enemyName: dwarf mob
-  baseAttack: 1
-  moveSpeed: 1.5
-  target: {fileID: 0}
-  chaseRadius: 10
-  attackRadius: 2
