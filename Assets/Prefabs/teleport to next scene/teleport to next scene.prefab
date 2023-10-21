@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4036560519000178538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.43, y: 0.65, z: 0}
+  m_LocalPosition: {x: 54.4, y: -30.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 7711913226053628460}
+  blackScreenCanvas: {fileID: 0}
+  pauseTime: 0
 --- !u!61 &1555034558890382172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -76,7 +78,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -171,7 +173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5588124532099376960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.27, y: -4.12, z: 0}
+  m_LocalPosition: {x: -6.59, y: -4.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -191,6 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 7711913226053628460}
+  blackScreenCanvas: {fileID: 0}
+  pauseTime: 5
 --- !u!61 &5449951719318473616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -319,5 +323,5 @@ Transform:
   - {fileID: 7302940805961617765}
   - {fileID: 7711913226053628460}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

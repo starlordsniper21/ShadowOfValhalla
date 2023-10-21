@@ -156,7 +156,7 @@ public class QuestManager2 : MonoBehaviour
                 questProgressText.text = "Defeat enemy Guards: " + currentGuardsDefeated + " / " + guardsToDefeat;
                 break;
             case QuestState.GoToMainHall:
-                questProgressText.text = "Go to the Main Hall";
+                questProgressText.text = "Investigate the Blockage to the main hall";
                 break;
             case QuestState.FindAnotherWay:
                 questProgressText.text = "Find Another Way to the Main Hall";
