@@ -2777,12 +2777,12 @@ RectTransform:
   - {fileID: 2735884959505592685}
   - {fileID: 1099441867535536386}
   - {fileID: 3550122253060743615}
-  - {fileID: 8269099049346845204}
   - {fileID: 1621128215438762761}
   - {fileID: 765000365544559828}
   - {fileID: 2251201504766180539}
+  - {fileID: 8269099049346845204}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/chapter 3.unity
     guid: 125902b3cbe69c449b8d8d79254cbb2f
+  - enabled: 1
+    path: Assets/Level/to be continued scene.unity
+    guid: 161d37baaccaaa04c8018e8cd064a565
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7da03861c52efe645b48d1e88dbf6567, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 692cb9f4c2d29ab4fbba154c64165406, type: 2}

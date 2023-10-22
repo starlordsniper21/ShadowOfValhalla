@@ -9,8 +9,8 @@ public class DialogueTrigger : MonoBehaviour
     public string[] dialogues;
     public string[] characterNameArrayA;
     public string[] characterNameArrayB;
-    public Text characterNameTextA; 
-    public Text characterNameTextB; 
+    public Text characterNameTextA;
+    public Text characterNameTextB;
     public Button nextButton;
     public Canvas backgroundCanvas;
 
@@ -46,6 +46,7 @@ public class DialogueTrigger : MonoBehaviour
             ZeroText();
             Time.timeScale = 1;
             ShowBackgroundCanvas();
+            Destroy(gameObject); // Destroy the object when dialogue finishes.
         }
     }
 
@@ -69,7 +70,7 @@ public class DialogueTrigger : MonoBehaviour
             ZeroText();
             Time.timeScale = 1;
             ShowBackgroundCanvas();
-            ToggleDialogue();
+            Destroy(gameObject); // Destroy the object when dialogue finishes.
         }
     }
 
@@ -80,7 +81,6 @@ public class DialogueTrigger : MonoBehaviour
 
     private void SetCharacterNames(string nameA, string nameB)
     {
-    
         characterNameTextA.text = nameA;
         characterNameTextB.text = nameB;
     }
