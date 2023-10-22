@@ -7,6 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     // This function will be called when the "Chapter 1" button is clicked.
 
+
+    public void PlayIntroductionCutscene()
+    {
+        SceneManager.LoadSceneAsync("Introduction");
+    }
     public void PlayCutscene1()
     {
         SceneManager.LoadSceneAsync("CHATPER 1 CUTSCENE");

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Menu/Main Menu.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
+    path: Assets/Level/Introduction.unity
+    guid: 622ededc5f45ddb40976d3965adba5f2
+  - enabled: 1
     path: Assets/Level/Chatper 1 Cutscene.unity
     guid: f52d1b8612c1e52408e92badfffa6785
   - enabled: 1
