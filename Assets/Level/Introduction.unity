@@ -3802,7 +3802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84dc34c958bd154a859aa5dddd7d1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeTime: 120
+  changeTime: 245
   sceneName: Chatper 1 Cutscene
 --- !u!114 &2018426150
 MonoBehaviour:

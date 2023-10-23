@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fb77cb46c05714eb7535e90f605f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 20
   deathSoundPlayer: {fileID: 8300000, guid: d8a526097ccf94b42875d7c3e483dc41, type: 3}
   hurtSoundPlayer: {fileID: 8300000, guid: 15ef553ec01a4ff47b2c196429c582b6, type: 3}
   invulnerabilityDuration: 2
