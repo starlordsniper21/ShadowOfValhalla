@@ -223,8 +223,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 10
-  deathSoundPlayer: {fileID: 8300000, guid: cef55fa3f0c33264bbba46fffd52597c, type: 3}
-  hurtSoundPlayer: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  deathSoundPlayer: {fileID: 8300000, guid: d8a526097ccf94b42875d7c3e483dc41, type: 3}
+  hurtSoundPlayer: {fileID: 8300000, guid: 15ef553ec01a4ff47b2c196429c582b6, type: 3}
+  invulnerabilityDuration: 2
 --- !u!95 &2146145834965154615
 Animator:
   serializedVersion: 5
