@@ -52,7 +52,7 @@ public class PlayerAttack : MonoBehaviour
             // Initiate the attack and stop player movement
             Attack();
             animator.SetTrigger("attack");
-            movePlayer.EnableMovement(false);
+            movePlayer.EnableMovement(false);   
         }
     }
 
@@ -62,13 +62,5 @@ public class PlayerAttack : MonoBehaviour
         attackArea.SetActive(attacking);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (attacking && enemyLayer == (enemyLayer | (1 << collision.gameObject.layer)))
-        {
-            // Enemy is hit; apply knockback
-            Vector2 direction = collision.contacts[0].point - (Vector2)transform.position;
-            collision.gameObject.GetComponent<EnemyController>().Knockback(direction * knockbackForce);
-        }
-    }
+   
 }
