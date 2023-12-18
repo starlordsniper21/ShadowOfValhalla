@@ -8,7 +8,7 @@ public class bgScroll : MonoBehaviour
 
     private void Update()
     {
-        transform.position += new Vector3(-50 * Time.deltaTime, 0);
+        transform.position += new Vector3(-10 * Time.deltaTime, 0);
         
     }
 }
