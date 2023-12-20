@@ -21,6 +21,7 @@ public class Dialogue : MonoBehaviour
     private float originalTimeScale;
     private Button interactionButton;
     public Button nextButton;
+    public Button skipButton; // Added skip button
     public Canvas backgroundCanvas;
 
     private void Start()
@@ -38,6 +39,12 @@ public class Dialogue : MonoBehaviour
         {
             nextButton.onClick.AddListener(NextLine);
             nextButton.gameObject.SetActive(false);
+        }
+
+        // Initialize skip button
+        if (skipButton != null)
+        {
+            skipButton.onClick.AddListener(SkipDialogue);
         }
     }
 
@@ -57,12 +64,12 @@ public class Dialogue : MonoBehaviour
             DialogueBox.SetActive(true);
             backgroundCanvas.enabled = false;
             StartCoroutine(Typing());
-            Time.timeScale = 0;
+            // Time.timeScale = 0;  // Removed this line
         }
         else
         {
-            ZeroText();
-            Time.timeScale = originalTimeScale;
+            ZeroText(); // Close the dialogue box instantly
+            Time.timeScale = originalTimeScale; // Unfreeze the game
             ShowBackgroundCanvas();
         }
     }
@@ -84,9 +91,12 @@ public class Dialogue : MonoBehaviour
 
         foreach (char letter in currentDialogue.ToCharArray())
         {
+            if (!isTyping) break; // Stop typing instantly if skip button is pressed.
+
             DialogueText.text += letter;
             yield return new WaitForSecondsRealtime(wordSpeed);
         }
+
         isTyping = false;
 
         if (nextButton != null)
@@ -113,6 +123,22 @@ public class Dialogue : MonoBehaviour
                 ToggleDialogue();
             }
         }
+    }
+
+    private void SkipDialogue()
+    {
+        if (isTyping)
+        {
+            // If the text is still typing, finish it instantly.
+            StopCoroutine(Typing());
+            DialogueText.text = characterDialogues[index];
+            isTyping = false;
+        }
+
+        ZeroText(); // Close the dialogue box instantly
+        Time.timeScale = originalTimeScale; // Unfreeze the game
+        ShowBackgroundCanvas();
+        skipButton.gameObject.SetActive(false); // Hide the skip button
     }
 
     public bool IsDialogueActive()

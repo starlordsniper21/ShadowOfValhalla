@@ -12,6 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     public Text characterNameTextA;
     public Text characterNameTextB;
     public Button nextButton;
+    public Button skipButton; // Added skip button
     public Canvas backgroundCanvas;
 
     private int currentDialogueIndex = 0;
@@ -21,6 +22,12 @@ public class DialogueTrigger : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         nextButton.onClick.AddListener(ShowNextDialogue);
+
+        // Initialize skip button
+        if (skipButton != null)
+        {
+            skipButton.onClick.AddListener(SkipDialogue);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -83,5 +90,13 @@ public class DialogueTrigger : MonoBehaviour
     {
         characterNameTextA.text = nameA;
         characterNameTextB.text = nameB;
+    }
+
+    private void SkipDialogue()
+    {
+        ZeroText(); // Close the dialogue box instantly
+        Time.timeScale = 1; // Unfreeze the game
+        ShowBackgroundCanvas();
+        Destroy(gameObject); // Destroy the object when dialogue finishes.
     }
 }
