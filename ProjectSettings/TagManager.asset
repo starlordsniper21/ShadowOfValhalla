@@ -21,7 +21,7 @@ TagManager:
   - Postprocessing
   - Player Projectile
   - MinimapIcon
-  - 
+  - Village
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 600718349
+    locked: 0
+  - name: Village
+    uniqueID: 1414482343
     locked: 0
