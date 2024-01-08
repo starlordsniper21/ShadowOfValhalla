@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 666987573809013516}
   - component: {fileID: 9159307456032324721}
   - component: {fileID: 6647670802029597187}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 8963245805760468447}
   - component: {fileID: 9094095938171057261}
   - component: {fileID: 8710250741182817843}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 707107300591795806}
   - component: {fileID: 3355640515585057754}
   - component: {fileID: 2566491896920844834}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ Transform:
   - {fileID: 7757532060744431903}
   - {fileID: 8956659463105045885}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2077093738385321370
 SpriteRenderer:
@@ -441,7 +441,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4084936415608067154}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -517,10 +517,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd4168ddf96fdc4aa6ac8dc40c789bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 10
   healthBar: {fileID: 0}
-  deathSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
-  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
+  deathSoundEnemy: {fileID: 8300000, guid: 9c7b31276eacc3949b50b23bb518c7d7, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: f8ec0b6c3df770f4299cb5a0b50ed88c, type: 3}
 --- !u!114 &3059933219867864948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,7 +571,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1130cced72c5de04e8ac81b2ad6bfdf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 1
 --- !u!70 &6865416906770292245
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -579,7 +578,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4084936415608067154}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -616,7 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1072634152660798953}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +655,7 @@ GameObject:
   - component: {fileID: 4073043759812085314}
   - component: {fileID: 6879516204665135830}
   - component: {fileID: 2308827269381891289}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

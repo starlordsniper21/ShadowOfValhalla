@@ -5,7 +5,7 @@ public class EnemyController : MonoBehaviour
     private QuestManager questManager;
     private Rigidbody2D rb;
 
-    public float knockbackForce = 10f;
+    //public float knockbackForce = 10f;
 
     private void Start()
     {
@@ -25,9 +25,9 @@ public class EnemyController : MonoBehaviour
    
 
     // Function to apply knockback to the enemy
-    public void Knockback(Vector2 direction)
-    {
-        rb.velocity = Vector2.zero; 
-        rb.AddForce(direction.normalized * knockbackForce, ForceMode2D.Impulse);
-    }
+    //public void Knockback(Vector2 direction)
+    //{
+    //    rb.velocity = Vector2.zero; 
+    //    rb.AddForce(direction.normalized * knockbackForce, ForceMode2D.Impulse);
+    //}
 }

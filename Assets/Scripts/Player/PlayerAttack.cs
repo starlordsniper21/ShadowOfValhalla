@@ -9,7 +9,7 @@ public class PlayerAttack : MonoBehaviour
     private float timer = 0f;
     public Animator animator;
     [SerializeField] private AudioClip swordSound;
-    public float knockbackForce = 10f;
+    //public float knockbackForce = 10f;
     public LayerMask enemyLayer;
     private MovePlayer movePlayer; // Reference to the MovePlayer script
 
