@@ -9,14 +9,18 @@ public class Jester : MonoBehaviour
     public float attackRadius;
     [SerializeField] private float damage;
     public float moveSpeed;
-    private BoxCollider2D boxCollider;
-    private bool hit;
     private SpriteRenderer spriteRenderer;
+    public MovePlayer movePlayer;
 
     void Start()
     {
         target = GameObject.FindWithTag("Player").transform;
-        spriteRenderer = GetComponent<SpriteRenderer>(); 
+        if (target == null)
+        {
+            Debug.LogError("Player Script di nakalagay sa hirerachy ng enemies");
+        }
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -26,13 +30,11 @@ public class Jester : MonoBehaviour
 
     void CheckDistance()
     {
-        if (Vector2.Distance(target.position, transform.position) <= chaseRadius)
+        if (target != null && Vector2.Distance(target.position, transform.position) <= chaseRadius)
         {
             Vector2 moveDirection = (target.position - transform.position).normalized;
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 
-
-            // kung mabasa mo to michael nagawa ko na flip ng enemies
             // Flip the enemy based on movement direction
             if (moveDirection.x > 0)
                 spriteRenderer.flipX = false; // Enemy faces right
@@ -43,9 +45,21 @@ public class Jester : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && movePlayer != null)
         {
-            collision.GetComponent<Health>().TakeDamage(damage);
+            movePlayer.KBCounter = movePlayer.KBTotalTime;
+
+            if (collision.transform.position.x <= transform.position.x)
+            {
+                movePlayer.KnockFromRight = true;
+            }
+            if (collision.transform.position.x > transform.position.x)
+            {
+                movePlayer.KnockFromRight = false;
+            }
+
+            Health healthComponent = collision.GetComponent<Health>();
+            healthComponent?.TakeDamage(damage);
         }
     }
 }

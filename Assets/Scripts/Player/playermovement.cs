@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,11 @@ public class MovePlayer : MonoBehaviour
 
     private PlayerBow playerBow;
     private bool canMove = true; // Added variable for controlling movement
+
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+    public bool KnockFromRight;
 
     void Start()
     {
@@ -47,20 +53,33 @@ public class MovePlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!canMove)
+        if (KBCounter <= 0)
         {
-            rb.velocity = Vector2.zero; // Stop player's movement
-            return;
-        }
-
-        if (movementJoystick.joystickVec.y != 0)
-        {
-            rb.velocity = new Vector2(movementJoystick.joystickVec.x * playerSpeed, movementJoystick.joystickVec.y * playerSpeed);
+            HandleRegularMovement();
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            HandleKnockback();
         }
+    }
+
+    private void HandleRegularMovement()
+    {
+        rb.velocity = new Vector2(movementJoystick.joystickVec.x * playerSpeed, movementJoystick.joystickVec.y * playerSpeed);
+    }
+
+    private void HandleKnockback()
+    {
+        if (KnockFromRight)
+        {
+            rb.velocity = new Vector2(-KBForce, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(KBForce, rb.velocity.y);
+        }
+
+        KBCounter -= Time.deltaTime;
     }
 
     private void FlipCharacter()

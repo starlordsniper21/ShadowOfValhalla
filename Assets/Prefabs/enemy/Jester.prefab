@@ -538,6 +538,7 @@ MonoBehaviour:
   attackRadius: 2
   damage: 1
   moveSpeed: 2
+  movePlayer: {fileID: 0}
 --- !u!95 &2428639857251292976
 Animator:
   serializedVersion: 5
