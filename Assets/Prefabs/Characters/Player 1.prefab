@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 7133754278047268702}
   - component: {fileID: 3339754931372471506}
   - component: {fileID: 6202010503906355493}
+  - component: {fileID: 7257598804362125591}
   m_Layer: 7
   m_Name: Player 1
   m_TagString: Player
@@ -134,7 +135,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4894666472519163335}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -167,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementJoystick: {fileID: 0}
   playerSpeed: 6
+  manaSystem: {fileID: 7257598804362125591}
   KBForce: 6
   KBCounter: 0
   KBTotalTime: 0.2
@@ -301,6 +303,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 5
   knockTime: 0.3
+--- !u!114 &7257598804362125591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4894666472519163335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50acdf6d5ef8ef246b82e1a4c9e1b431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMana: 20
+  currentMana: 0
 --- !u!1 &7833771660884943063
 GameObject:
   m_ObjectHideFlags: 0

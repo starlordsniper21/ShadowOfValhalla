@@ -13,6 +13,10 @@ public class MovePlayer : MonoBehaviour
     private PlayerBow playerBow;
     private bool canMove = true; // Added variable for controlling movement
 
+    public ManaSystem manaSystem;
+
+    private bool isInvulnerable = false;
+
     public float KBForce;
     public float KBCounter;
     public float KBTotalTime;
@@ -49,6 +53,13 @@ public class MovePlayer : MonoBehaviour
         {
             FlipCharacter();
         }
+
+        if (Input.GetKeyDown(KeyCode.Q)) 
+        {
+            ReduceMana();
+        }
+
+
     }
 
     private void FixedUpdate()
@@ -82,6 +93,29 @@ public class MovePlayer : MonoBehaviour
         KBCounter -= Time.deltaTime;
     }
 
+    public void ActivateInvulnerability(float duration)
+    {
+        StartCoroutine(InvulnerabilityCoroutine(duration));
+    }
+
+
+    private IEnumerator InvulnerabilityCoroutine(float duration)
+    {
+        isInvulnerable = true;
+
+        yield return new WaitForSeconds(duration);
+        isInvulnerable = false;
+
+    }
+
+
+    void ReduceMana()
+    {
+        manaSystem.UseMana();
+    }
+
+
+
     private void FlipCharacter()
     {
         isFacingRight = !isFacingRight;
@@ -94,4 +128,7 @@ public class MovePlayer : MonoBehaviour
     {
         canMove = enable;
     }
+
+
+
 }
