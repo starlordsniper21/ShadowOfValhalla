@@ -8,8 +8,11 @@ public class EnemyHealth : MonoBehaviour
     private int currentHealth;  // Current health of the enemy
     [SerializeField] FloatingHealthBar healthBar;
     private Animator anim;
-    [SerializeField]private AudioClip deathSoundEnemy;
+    [SerializeField] private AudioClip deathSoundEnemy;
     [SerializeField] private AudioClip hurtSoundEnemy;
+
+    public GameObject[] itemPrefabs;
+    public float dropChance = 0.2f;
 
     void Start()
     {
@@ -34,6 +37,7 @@ public class EnemyHealth : MonoBehaviour
             anim.SetTrigger("hurt");
             SoundManager.instance.PlaySound(hurtSoundEnemy);
         }
+
         // Check if the enemy has been defeated
         if (currentHealth <= 0)
         {
@@ -50,7 +54,16 @@ public class EnemyHealth : MonoBehaviour
     // Function to handle the enemy's death
     void Die()
     {
-        // Add any death-related logic here, e.g., play death animation, drop items, etc.
+        if (Random.value <= dropChance)
+        {
+            SpawnItem();
+        }
         Destroy(gameObject);
+    }
+
+    void SpawnItem()
+    {
+        int randomIndex = Random.Range(0, itemPrefabs.Length);
+        Instantiate(itemPrefabs[randomIndex], transform.position, Quaternion.identity);
     }
 }
