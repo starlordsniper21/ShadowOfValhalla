@@ -9,7 +9,6 @@ public class PlayerAttack : MonoBehaviour
     private float timer = 0f;
     public Animator animator;
     [SerializeField] private AudioClip swordSound;
-    //public float knockbackForce = 10f;
     public LayerMask enemyLayer;
     private MovePlayer movePlayer; // Reference to the MovePlayer script
 
@@ -52,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
             // Initiate the attack and stop player movement
             Attack();
             animator.SetTrigger("attack");
-            movePlayer.EnableMovement(false);   
+            movePlayer.EnableMovement(false);
         }
     }
 
@@ -61,6 +60,4 @@ public class PlayerAttack : MonoBehaviour
         attacking = true;
         attackArea.SetActive(attacking);
     }
-
-   
 }
