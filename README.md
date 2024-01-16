@@ -23,7 +23,7 @@ Follow these steps to embark on the adventure in Shadow Valhalla on your Android
 bash
 Copy code
 # Clone the repository
-git clone https://github.com/your-username/ShadowValhalla.git
+git clone https://github.com/starlordsniper21/ShadowValhalla.git
 
 # Open the project in Unity
 # Build and deploy to your Android device
