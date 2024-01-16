@@ -11,12 +11,15 @@ public class Arrow : MonoBehaviour
     // Modify the Setup method
     public void Setup(Vector2 playerDirection)
     {
+        if (playerDirection == Vector2.zero)
+        {
+            playerDirection = Vector2.right;
+        }
+
         Vector2 velocity = playerDirection.normalized * speed;
         myRigidbody.velocity = velocity;
 
-        // Determine the rotation angle based on the direction
-        float angle = Vector2.SignedAngle(Vector2.right, playerDirection);
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        transform.right = playerDirection.normalized;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
