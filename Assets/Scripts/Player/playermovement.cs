@@ -59,12 +59,10 @@ public class MovePlayer : MonoBehaviour
             FlipCharacter();
         }
 
-        if (Input.GetKeyDown(KeyCode.Q)) 
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             ReduceMana();
         }
-
-
     }
 
     private void FixedUpdate()
@@ -103,23 +101,25 @@ public class MovePlayer : MonoBehaviour
         StartCoroutine(InvulnerabilityCoroutine(duration));
     }
 
-
     private IEnumerator InvulnerabilityCoroutine(float duration)
     {
         isInvulnerable = true;
 
         yield return new WaitForSeconds(duration);
         isInvulnerable = false;
-
     }
-
 
     void ReduceMana()
     {
-        manaSystem.UseMana();
+        if (manaSystem != null)
+        {
+            manaSystem.UseMana();
+        }
+        else
+        {
+            Debug.LogWarning("ManaSystem is not assigned to the player.");
+        }
     }
-
-
 
     private void FlipCharacter()
     {
@@ -133,7 +133,4 @@ public class MovePlayer : MonoBehaviour
     {
         canMove = enable;
     }
-
-
-
 }

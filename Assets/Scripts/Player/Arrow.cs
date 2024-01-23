@@ -28,7 +28,17 @@ public class Arrow : MonoBehaviour
         if (enemyHealth != null)
         {
             enemyHealth.TakeDamage((int)damage);
+
+            Rigidbody2D enemyRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (enemyRigidbody != null)
+            {
+                enemyRigidbody.velocity = Vector2.zero;
+                enemyRigidbody.angularVelocity = 0f;
+                enemyRigidbody.gravityScale = 0f;
+            }
         }
+
         Destroy(gameObject);
     }
 }
+

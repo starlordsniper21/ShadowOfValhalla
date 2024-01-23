@@ -20,7 +20,6 @@ public class ManaSystem : MonoBehaviour
         if (CanCastSpell())
         {
             currentMana--;
-            // Code to spawn a fireball or perform the spell
         }
     }
 
