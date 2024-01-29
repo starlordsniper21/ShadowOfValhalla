@@ -3413,6 +3413,7 @@ RectTransform:
   - {fileID: 2441922603706792662}
   - {fileID: 5986935226163342951}
   - {fileID: 901633176408768046}
+  - {fileID: 3337058936469226912}
   m_Father: {fileID: 5951090650316035920}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3643,6 +3644,50 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!1 &4723978262436464001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3337058936469226912}
+  - component: {fileID: 2024927485476282927}
+  m_Layer: 0
+  m_Name: Armormanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3337058936469226912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4723978262436464001}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1026.6831, y: -696.2257, z: -3.1572125}
+  m_LocalScale: {x: 1.4142183, y: 1.4142183, z: 1.4142183}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2994148103308636297}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2024927485476282927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4723978262436464001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a372fc964af859e41a8b6e9c80c4a1f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4752897577673323094
 GameObject:
   m_ObjectHideFlags: 0
