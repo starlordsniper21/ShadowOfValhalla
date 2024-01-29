@@ -70,7 +70,17 @@ public class MovePlayer : MonoBehaviour
         isAttacking = true;
         animator.SetTrigger("attack");
         canMove = false;
+
+        // Get the initial position before the attack
+        Vector2 initialPosition = rb.position;
+
+        // Wait for the attack animation duration
         yield return new WaitForSeconds(0.5f);
+
+        // Reset velocity to zero and set the position to the initial position
+        rb.velocity = Vector2.zero;
+        rb.position = initialPosition;
+
         isAttacking = false;
         canMove = true;
     }

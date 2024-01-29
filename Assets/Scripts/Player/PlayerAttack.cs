@@ -28,7 +28,13 @@ public class PlayerAttack : MonoBehaviour
             Attack();
             animator.SetTrigger("attack");
             movePlayer.enabled = false;
-            timer = 0;
+
+           
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.velocity = Vector2.zero;
+            rb.position = rb.position;
+
+            timer = 0.5f; 
         }
 
         if (attacking)
@@ -57,10 +63,16 @@ public class PlayerAttack : MonoBehaviour
                 Debug.LogWarning("SoundManager is not properly initialized.");
             }
 
+            
             // Initiate the attack and stop player movement
             Attack();
             animator.SetTrigger("attack");
-            movePlayer.enabled = false; // Disable MovePlayer script to stop movement
+            movePlayer.enabled = false;
+
+            // boss michael kung mababasa mo to, ito pala yung gagawin para mag stop yung player ahahaha
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.velocity = Vector2.zero;
+            rb.position = rb.position;
         }
     }
 
