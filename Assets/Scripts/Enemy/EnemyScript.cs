@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Jester : MonoBehaviour
@@ -7,10 +5,14 @@ public class Jester : MonoBehaviour
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
-    [SerializeField] private float damage;
+    [SerializeField] private float armorDamage;
+    [SerializeField] private float healthDamage;
     public float moveSpeed;
     private SpriteRenderer spriteRenderer;
     public MovePlayer movePlayer;
+
+    private float totalArmorDamage = 0f;
+    private float totalHealthDamage = 0f;
 
     void Start()
     {
@@ -45,21 +47,33 @@ public class Jester : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && movePlayer != null)
+        if (collision.CompareTag("Player") && movePlayer != null)
         {
             movePlayer.KBCounter = movePlayer.KBTotalTime;
 
             if (collision.transform.position.x <= transform.position.x)
-            {
                 movePlayer.KnockFromRight = true;
-            }
-            if (collision.transform.position.x > transform.position.x)
-            {
+            else
                 movePlayer.KnockFromRight = false;
-            }
 
-            Health healthComponent = collision.GetComponent<Health>();
-            healthComponent?.TakeDamage(damage);
+            Armor armorComponent = collision.GetComponent<Armor>();
+
+            if (armorComponent != null && armorComponent.currentArmor > 0)
+            {
+                armorComponent.TakeDamage(armorDamage);
+                totalArmorDamage += armorDamage;
+                Debug.Log("Total Armor Damage: " + totalArmorDamage);
+            }
+            else
+            {
+                Health healthComponent = collision.GetComponent<Health>();
+                if (healthComponent != null)
+                {
+                    healthComponent.TakeDamage(healthDamage);
+                    totalHealthDamage += healthDamage;
+                    Debug.Log("Total Health Damage: " + totalHealthDamage);
+                }
+            }
         }
     }
 }

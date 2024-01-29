@@ -10,7 +10,10 @@ public class PlayerAttack : MonoBehaviour
     public Animator animator;
     [SerializeField] private AudioClip swordSound;
     public LayerMask enemyLayer;
-    private MovePlayer movePlayer; // Reference to the MovePlayer script
+
+    [SerializeField] private KeyCode attackKey = KeyCode.Space;
+
+    private MovePlayer movePlayer;
 
     void Start()
     {
@@ -20,6 +23,14 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(attackKey) && !attacking)
+        {
+            Attack();
+            animator.SetTrigger("attack");
+            movePlayer.enabled = false;
+            timer = 0;
+        }
+
         if (attacking)
         {
             timer += Time.deltaTime;
@@ -28,9 +39,7 @@ public class PlayerAttack : MonoBehaviour
                 timer = 0;
                 attacking = false;
                 attackArea.SetActive(attacking);
-
-                // After the attack animation is done, allow the player to move again
-                movePlayer.EnableMovement(true);
+                movePlayer.enabled = true;
             }
         }
     }
@@ -51,7 +60,7 @@ public class PlayerAttack : MonoBehaviour
             // Initiate the attack and stop player movement
             Attack();
             animator.SetTrigger("attack");
-            movePlayer.EnableMovement(false);
+            movePlayer.enabled = false; // Disable MovePlayer script to stop movement
         }
     }
 

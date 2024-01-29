@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2916138384536717379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.278, y: 0, z: 0}
+  m_LocalPosition: {x: 0.431, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 3339754931372471506}
   - component: {fileID: 6202010503906355493}
   - component: {fileID: 7257598804362125591}
+  - component: {fileID: 7113331594616666105}
   m_Layer: 7
   m_Name: Player 1
   m_TagString: Player
@@ -273,6 +274,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
+  attackKey: 127
 --- !u!114 &3339754931372471506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +321,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxMana: 20
   currentMana: 0
+--- !u!114 &7113331594616666105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4894666472519163335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6dc6526752b20d4395361a2225d9177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingArmor: 5
 --- !u!1 &7833771660884943063
 GameObject:
   m_ObjectHideFlags: 0
