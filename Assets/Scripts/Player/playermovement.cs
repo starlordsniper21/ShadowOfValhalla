@@ -11,6 +11,7 @@ public class MovePlayer : MonoBehaviour
     private bool isFacingRight = true;
 
     private PlayerBow playerBow;
+    private PlayerFireball playerFireball;
     private bool canMove = true;
 
     public ManaSystem manaSystem;
@@ -29,6 +30,7 @@ public class MovePlayer : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerBow = GetComponent<PlayerBow>();
+        playerFireball = GetComponent<PlayerFireball>();
     }
 
     private void Update()
@@ -48,7 +50,15 @@ public class MovePlayer : MonoBehaviour
             direction = isFacingRight ? Vector2.right : Vector2.left;
         }
 
-        playerBow.SetPlayerDirection(direction);
+        // Communicate the direction to the appropriate component
+        if (playerBow != null)
+        {
+            playerBow.SetPlayerDirection(direction);
+        }
+        if (playerFireball != null)
+        {
+            playerFireball.SetPlayerDirection(direction);
+        }
 
         if (horizontalInput > 0 && !isFacingRight)
         {

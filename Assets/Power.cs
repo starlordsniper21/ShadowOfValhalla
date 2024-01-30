@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Power : MonoBehaviour
+public class FireballBullet : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D myRigidbody;
     [SerializeField] private float damage;
 
+    // Modify the Setup method
     public void Setup(Vector2 playerDirection)
     {
         if (playerDirection == Vector2.zero)
@@ -15,27 +16,29 @@ public class Power : MonoBehaviour
             playerDirection = Vector2.right;
         }
 
-        Vector2 spellDirection = playerDirection;
-        if (playerDirection.x < 0)
-        {
-            spellDirection = new Vector2(-spellDirection.x, spellDirection.y);
-        }
-
-        Vector2 velocity = spellDirection.normalized * speed;
+        Vector2 velocity = playerDirection.normalized * speed;
         myRigidbody.velocity = velocity;
 
-        float angle = Mathf.Atan2(spellDirection.y, spellDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.right = playerDirection.normalized;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemyHealth != null)
         {
             enemyHealth.TakeDamage((int)damage);
+
+            Rigidbody2D enemyRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (enemyRigidbody != null)
+            {
+                enemyRigidbody.velocity = Vector2.zero;
+                enemyRigidbody.angularVelocity = 0f;
+                enemyRigidbody.gravityScale = 0f;
+            }
         }
 
         Destroy(gameObject);
     }
 }
+
