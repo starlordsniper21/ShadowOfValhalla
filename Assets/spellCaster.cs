@@ -27,7 +27,7 @@ public class PlayerFireball : MonoBehaviour
     {
         cooldownTimer -= Time.deltaTime;
 
-        if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Fire")) && cooldownTimer <= 0f)
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetButtonDown("FireBall")) && cooldownTimer <= 0f)
         {
             ShootFireball();
             cooldownTimer = cooldownTime;
