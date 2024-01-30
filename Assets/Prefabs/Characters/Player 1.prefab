@@ -121,7 +121,7 @@ Transform:
   - {fileID: 8870655480086894385}
   - {fileID: 4621170443046752756}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7573903623015899644
 SpriteRenderer:
@@ -334,12 +334,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d351f28bb7dae6f48af49402b23d8089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 2596283808603283408, guid: 9a61529450f6ee54ea21b6b7501ad519, type: 3}
+  arrowPrefab: {fileID: 0}
   firePoint: {fileID: 7603477561882322248}
   animator: {fileID: 0}
   arrowSpeed: 5
   cooldownTime: 0.5
   maxArrows: 10
+  noArrowsText: {fileID: 0}
 --- !u!114 &6202010503906355493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,6 +399,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   fireballSpeed: 10
   cooldownTime: 0.5
+  notEnoughManaText: {fileID: 0}
 --- !u!1 &5829371847128373757
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerBow : MonoBehaviour
 {
@@ -13,12 +14,16 @@ public class PlayerBow : MonoBehaviour
     private Vector2 playerDirection = Vector2.right;
     private int remainingArrows;
     private float cooldownTimer = 0f;
-    private int collectedArrows = 0; 
+    private int collectedArrows = 0;
+
+    public TextMeshProUGUI noArrowsText; // Reference to the TextMeshPro Text element
+    private bool isNoArrowsDisplayed = false;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
         remainingArrows = maxArrows;
+        HideNoArrowsText(); // Hide the text element initially
     }
 
     void Update()
@@ -30,10 +35,20 @@ public class PlayerBow : MonoBehaviour
             FireArrow();
             remainingArrows--;
             cooldownTimer = cooldownTime;
+
+            // If arrows are fired and the message is displayed, hide the "No arrows left" message
+            if (isNoArrowsDisplayed)
+            {
+                HideNoArrowsText();
+            }
         }
-        else if (remainingArrows <= 0)
+        else if (remainingArrows <= 0 && !isNoArrowsDisplayed)
         {
-            Debug.Log("No arrows left!");
+            ShowNoArrowsText();
+        }
+        else if (remainingArrows > 0 && isNoArrowsDisplayed)
+        {
+            HideNoArrowsText();
         }
         else if (cooldownTimer > 0f)
         {
@@ -54,10 +69,19 @@ public class PlayerBow : MonoBehaviour
             FireArrow();
             remainingArrows--;
             cooldownTimer = cooldownTime;
+
+            if (isNoArrowsDisplayed)
+            {
+                HideNoArrowsText();
+            }
         }
-        else if (remainingArrows <= 0)
+        else if (remainingArrows <= 0 && !isNoArrowsDisplayed)
         {
-            Debug.Log("No arrows left!");
+            ShowNoArrowsText();
+        }
+        else if (remainingArrows > 0 && isNoArrowsDisplayed)
+        {
+            HideNoArrowsText();
         }
         else if (cooldownTimer > 0f)
         {
@@ -84,7 +108,7 @@ public class PlayerBow : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("lmao walang rigidbody2d ang arrow");
+                Debug.LogWarning("Arrow prefab is missing Rigidbody2D component.");
             }
 
             // Pass the player's direction to the arrow
@@ -115,5 +139,17 @@ public class PlayerBow : MonoBehaviour
             collectedArrows = maxArrows;
         }
         remainingArrows += amount;
+    }
+
+    void ShowNoArrowsText()
+    {
+        noArrowsText.gameObject.SetActive(true);
+        isNoArrowsDisplayed = true;
+    }
+
+    void HideNoArrowsText()
+    {
+        noArrowsText.gameObject.SetActive(false);
+        isNoArrowsDisplayed = false;
     }
 }

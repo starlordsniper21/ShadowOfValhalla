@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; // Import TextMeshPro namespace
 
 public class PlayerFireball : MonoBehaviour
 {
@@ -13,10 +14,13 @@ public class PlayerFireball : MonoBehaviour
     private float cooldownTimer = 0f;
     private ManaSystem manaSystem;
 
+    public TextMeshProUGUI notEnoughManaText;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         manaSystem = GetComponent<ManaSystem>();
+        notEnoughManaText.gameObject.SetActive(false);
     }
 
     void Update()
@@ -47,8 +51,9 @@ public class PlayerFireball : MonoBehaviour
 
                 if (rb != null)
                 {
-                    rb.velocity = playerDirection * fireballSpeed;
+                    rb.velocity = playerDirection * fireballSpeed; // Assuming fireball moves along the player's facing direction
 
+                    // Optional: Flip fireball sprite if player is facing left
                     if (transform.localScale.x < 0)
                     {
                         Vector3 scale = fireball.transform.localScale;
@@ -68,8 +73,15 @@ public class PlayerFireball : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough mana to shoot fireball.");
+            notEnoughManaText.gameObject.SetActive(true);
+            StartCoroutine(HideNotEnoughManaText());
         }
+    }
+
+    IEnumerator HideNotEnoughManaText()
+    {
+        yield return new WaitForSeconds(2f);
+        notEnoughManaText.gameObject.SetActive(false);
     }
 
     public void SetPlayerDirection(Vector2 direction)
