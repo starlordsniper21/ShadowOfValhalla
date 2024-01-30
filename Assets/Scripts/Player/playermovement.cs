@@ -43,7 +43,9 @@ public class MovePlayer : MonoBehaviour
 
         animator.SetBool("movementright", horizontalInput > 0);
         animator.SetBool("movementleft", horizontalInput < 0);
-        animator.SetBool("movementupanddown", verticalInput != 0);
+        animator.SetBool("movementupanddown", verticalInput > 0);
+       
+
         Vector2 direction = new Vector2(horizontalInput, verticalInput);
         if (direction == Vector2.zero)
         {
