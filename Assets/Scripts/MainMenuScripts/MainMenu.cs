@@ -56,6 +56,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync("CHAPTER 5");
     }
 
+    public void PlayTutorial()
+    {
+        SceneManager.LoadSceneAsync("TUTORIAL LEVEL");
+    }
+
     public void QuitGame()
     {
         Application.Quit();

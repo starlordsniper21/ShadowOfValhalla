@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - NPC
   - InteractableObject
+  - Runes
+  - Rune
   layers:
   - Default
   - TransparentFX
