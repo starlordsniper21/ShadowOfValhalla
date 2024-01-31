@@ -37,14 +37,19 @@ public class MovePlayer : MonoBehaviour
     {
         if (isAttacking)
             return;
-
+        // new UPDATED MOVEMENT SA JOYSTICK BOSS!!!
         float horizontalInput = canMove ? movementJoystick.joystickVec.x : 0f;
         float verticalInput = canMove ? movementJoystick.joystickVec.y : 0f;
 
         animator.SetBool("movementright", horizontalInput > 0);
         animator.SetBool("movementleft", horizontalInput < 0);
         animator.SetBool("movementupanddown", verticalInput > 0);
-       
+
+        animator.SetFloat("Horizontal",movementJoystick.joystickVec.x);
+        animator.SetFloat("Vertical", movementJoystick.joystickVec.y);
+        animator.SetFloat("speed", movementJoystick.joystickVec.sqrMagnitude);
+
+
 
         Vector2 direction = new Vector2(horizontalInput, verticalInput);
         if (direction == Vector2.zero)
@@ -52,7 +57,7 @@ public class MovePlayer : MonoBehaviour
             direction = isFacingRight ? Vector2.right : Vector2.left;
         }
 
-        // Communicate the direction to the appropriate component
+        
         if (playerBow != null)
         {
             playerBow.SetPlayerDirection(direction);
@@ -83,13 +88,13 @@ public class MovePlayer : MonoBehaviour
         animator.SetTrigger("attack");
         canMove = false;
 
-        // Get the initial position before the attack
+     
         Vector2 initialPosition = rb.position;
 
-        // Wait for the attack animation duration
+        
         yield return new WaitForSeconds(0.5f);
 
-        // Reset velocity to zero and set the position to the initial position
+
         rb.velocity = Vector2.zero;
         rb.position = initialPosition;
 
