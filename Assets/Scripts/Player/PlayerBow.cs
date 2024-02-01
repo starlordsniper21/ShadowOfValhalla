@@ -16,14 +16,12 @@ public class PlayerBow : MonoBehaviour
     private float cooldownTimer = 0f;
     private int collectedArrows = 0;
 
-    public TextMeshProUGUI noArrowsText; // Reference to the TextMeshPro Text element
-    private bool isNoArrowsDisplayed = false;
+    public TextMeshProUGUI arrowsText; // Reference to the TextMeshPro Text element
 
     void Awake()
     {
         animator = GetComponent<Animator>();
         remainingArrows = maxArrows;
-        HideNoArrowsText(); // Hide the text element initially
     }
 
     void Update()
@@ -35,25 +33,10 @@ public class PlayerBow : MonoBehaviour
             FireArrow();
             remainingArrows--;
             cooldownTimer = cooldownTime;
+        }
 
-            // If arrows are fired and the message is displayed, hide the "No arrows left" message
-            if (isNoArrowsDisplayed)
-            {
-                HideNoArrowsText();
-            }
-        }
-        else if (remainingArrows <= 0 && !isNoArrowsDisplayed)
-        {
-            ShowNoArrowsText();
-        }
-        else if (remainingArrows > 0 && isNoArrowsDisplayed)
-        {
-            HideNoArrowsText();
-        }
-        else if (cooldownTimer > 0f)
-        {
-            Debug.Log("Cooldown");
-        }
+        // Update the TextMeshPro text with the remaining arrows
+        arrowsText.text =  remainingArrows.ToString();
 
         // For testing purposes, simulate arrow collection by pressing a key
         if (Input.GetKeyDown(KeyCode.C))
@@ -69,23 +52,6 @@ public class PlayerBow : MonoBehaviour
             FireArrow();
             remainingArrows--;
             cooldownTimer = cooldownTime;
-
-            if (isNoArrowsDisplayed)
-            {
-                HideNoArrowsText();
-            }
-        }
-        else if (remainingArrows <= 0 && !isNoArrowsDisplayed)
-        {
-            ShowNoArrowsText();
-        }
-        else if (remainingArrows > 0 && isNoArrowsDisplayed)
-        {
-            HideNoArrowsText();
-        }
-        else if (cooldownTimer > 0f)
-        {
-            Debug.Log("Cooldown in progress. Wait before shooting again.");
         }
         animator.SetTrigger("bow");
     }
@@ -139,17 +105,5 @@ public class PlayerBow : MonoBehaviour
             collectedArrows = maxArrows;
         }
         remainingArrows += amount;
-    }
-
-    void ShowNoArrowsText()
-    {
-        noArrowsText.gameObject.SetActive(true);
-        isNoArrowsDisplayed = true;
-    }
-
-    void HideNoArrowsText()
-    {
-        noArrowsText.gameObject.SetActive(false);
-        isNoArrowsDisplayed = false;
     }
 }

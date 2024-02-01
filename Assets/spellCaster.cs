@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // Import TextMeshPro namespace
+using TMPro;
 
 public class PlayerFireball : MonoBehaviour
 {
@@ -51,9 +51,8 @@ public class PlayerFireball : MonoBehaviour
 
                 if (rb != null)
                 {
-                    rb.velocity = playerDirection * fireballSpeed; // Assuming fireball moves along the player's facing direction
+                    rb.velocity = playerDirection * fireballSpeed;
 
-                    // Optional: Flip fireball sprite if player is facing left
                     if (transform.localScale.x < 0)
                     {
                         Vector3 scale = fireball.transform.localScale;
@@ -73,9 +72,14 @@ public class PlayerFireball : MonoBehaviour
         }
         else
         {
-            notEnoughManaText.gameObject.SetActive(true);
-            StartCoroutine(HideNotEnoughManaText());
+            ShowNotEnoughManaText();
         }
+    }
+
+    void ShowNotEnoughManaText()
+    {
+        notEnoughManaText.gameObject.SetActive(true);
+        StartCoroutine(HideNotEnoughManaText());
     }
 
     IEnumerator HideNotEnoughManaText()
