@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerFireball : MonoBehaviour
 {
@@ -15,12 +16,16 @@ public class PlayerFireball : MonoBehaviour
     private ManaSystem manaSystem;
 
     public TextMeshProUGUI notEnoughManaText;
+    public Button mobileFireButton;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         manaSystem = GetComponent<ManaSystem>();
         notEnoughManaText.gameObject.SetActive(false);
+
+        // Hook up the mobile button click event
+        mobileFireButton.onClick.AddListener(OnMobileFireButtonClick);
     }
 
     void Update()
@@ -33,6 +38,20 @@ public class PlayerFireball : MonoBehaviour
             cooldownTimer = cooldownTime;
         }
         else if (cooldownTimer > 0f)
+        {
+            Debug.Log("Cooldown");
+        }
+    }
+
+    // Called when the mobile fire button is clicked
+    void OnMobileFireButtonClick()
+    {
+        if (cooldownTimer <= 0f)
+        {
+            ShootFireball();
+            cooldownTimer = cooldownTime;
+        }
+        else
         {
             Debug.Log("Cooldown");
         }

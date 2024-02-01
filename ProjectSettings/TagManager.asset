@@ -9,6 +9,7 @@ TagManager:
   - InteractableObject
   - Runes
   - Rune
+  - ManaPotion
   layers:
   - Default
   - TransparentFX

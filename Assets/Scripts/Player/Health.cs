@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.Processors;
 
 public class Health : MonoBehaviour
 {
@@ -19,33 +15,27 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         currentHealth = startingHealth;
-        anim = GetComponent<Animator>(); 
+        anim = GetComponent<Animator>();
         gameOverManager = FindObjectOfType<GameOverManager>();
     }
 
     private void Update()
     {
-      
         if (invulnerabilityTimer > 0)
         {
             invulnerabilityTimer -= Time.deltaTime;
-
-         
         }
     }
 
-    public void TakeDamage(float _damage)
+    public void TakeDamage(float damage)
     {
-        
         if (invulnerabilityTimer <= 0)
         {
-            currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+            currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
 
             if (currentHealth > 0)
             {
-                
                 invulnerabilityTimer = invulnerabilityDuration;
-
                 anim.SetTrigger("hurt");
                 SoundManager.instance.PlaySound(hurtSoundPlayer);
             }
@@ -53,21 +43,24 @@ public class Health : MonoBehaviour
             {
                 if (!dead)
                 {
-                    
                     dead = true;
                     SoundManager.instance.PlaySound(deathSoundPlayer);
                     gameOverManager.gameOver();
-                    print("dead");
-                    
+                    Debug.Log("dead");
                 }
             }
         }
     }
 
-    public void AddHealth(float _value)
+    public void AddHealth(float value)
     {
-        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+        currentHealth = Mathf.Clamp(currentHealth + value, 0, startingHealth);
     }
 
-
+    // New method to handle health restoration (called when using a health potion)
+    public void RestoreHealth(float amount)
+    {
+        AddHealth(amount);
+        Debug.Log("Health Restored: " + amount);
+    }
 }

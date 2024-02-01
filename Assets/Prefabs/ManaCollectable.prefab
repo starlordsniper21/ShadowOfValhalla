@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4703499966239982726}
   - component: {fileID: 6440364617221891343}
   - component: {fileID: 1982413303401163227}
-  - component: {fileID: 5193042508972287220}
   - component: {fileID: 2710365521071531573}
   m_Layer: 0
   m_Name: ManaCollectable
@@ -33,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6440364617221891343
 SpriteRenderer:
@@ -108,19 +107,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5193042508972287220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8214570648193453879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003164b08b4fffb4fbcbe15f4e79c211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manaRestoreAmount: 5
 --- !u!61 &2710365521071531573
 BoxCollider2D:
   m_ObjectHideFlags: 0
