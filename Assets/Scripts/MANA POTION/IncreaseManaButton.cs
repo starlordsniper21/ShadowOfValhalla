@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class IncreaseManaButton : MonoBehaviour
 {
-    // Reference to the button in your UI
+  
     public Button increaseManaButton;
 
     // Reference to the ManaSystem script on the player
@@ -11,7 +11,7 @@ public class IncreaseManaButton : MonoBehaviour
 
     private void Start()
     {
-        // Find the player object using a suitable method (e.g., by tag)
+        
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         // Check if the player object has a ManaSystem script

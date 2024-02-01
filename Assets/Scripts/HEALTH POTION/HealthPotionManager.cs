@@ -1,4 +1,3 @@
-// HealthPotionManager.cs
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -9,10 +8,10 @@ public class HealthPotionManager : MonoBehaviour
     public Button healthPotionButton;
     public int initialHealthPotionCount = 0;
 
-    [SerializeField] private float healthRestoreAmount = 20.0f; // Serialized field for adjustable amount
+    [SerializeField] private float healthRestoreAmount = 20.0f; 
 
     private int healthPotionCount;
-    private Health healthSystem;  // Reference to the Health script on the player
+    private Health healthSystem;  
 
     private void Start()
     {
@@ -42,7 +41,7 @@ public class HealthPotionManager : MonoBehaviour
         if (healthPotionCount > 0 && healthSystem != null)
         {
             healthPotionCount--;
-            healthSystem.RestoreHealth(healthRestoreAmount); // Use the serialized field
+            healthSystem.RestoreHealth(healthRestoreAmount); 
             UpdateHealthPotionUI();
         }
     }

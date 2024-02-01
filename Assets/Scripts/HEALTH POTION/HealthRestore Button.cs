@@ -27,7 +27,7 @@ public class IncreaseHealthButton : MonoBehaviour
     {
         if (healthSystem != null)
         {
-            healthSystem.RestoreHealth(20.0f); // Adjust the amount as needed
+            healthSystem.RestoreHealth(20.0f); 
         }
     }
 }

@@ -1,4 +1,3 @@
-// HealthPotion.cs
 using UnityEngine;
 
 public class HealthPotion : MonoBehaviour
@@ -14,7 +13,7 @@ public class HealthPotion : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            healthPotionManager.CollectHealthPotion(); // No argument needed
+            healthPotionManager.CollectHealthPotion(); 
             Destroy(gameObject);
         }
     }

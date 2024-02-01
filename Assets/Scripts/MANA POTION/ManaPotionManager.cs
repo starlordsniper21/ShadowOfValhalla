@@ -13,7 +13,6 @@ public class ManaPotionManager : MonoBehaviour
 
     private void Start()
     {
-        // Find the player object using a suitable method (e.g., by tag)
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         // Check if the player object has a ManaSystem script
