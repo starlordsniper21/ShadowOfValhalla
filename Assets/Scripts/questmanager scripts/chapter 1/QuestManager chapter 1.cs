@@ -9,6 +9,8 @@ public class QuestManager : MonoBehaviour
     public int guardsToKill = 5;
     public int currentguardsKilled = 0;
     public TextMeshProUGUI questProgressText; // Reference to TextMeshPro Text element.
+    public GameObject hiddenObjectForSecondQuest; // Reference to the hidden game object for the second quest.
+    public GameObject hiddenObjectForFifthQuest; // Reference to the hidden game object for the fifth quest.
 
     private enum QuestState { InvestigateVillage, DefeatEnemies, traveltoakumajoCastle, EntertheakumajoCastle, DefeatGuards, GoInsideCastle }
     private QuestState questState = QuestState.InvestigateVillage;
@@ -17,6 +19,9 @@ public class QuestManager : MonoBehaviour
     {
         // Initialize your quest system here.
         UpdateQuestProgressText();
+        // Initially hide the game objects.
+        hiddenObjectForSecondQuest.SetActive(false);
+        hiddenObjectForFifthQuest.SetActive(false);
     }
 
     public void EnemyKilled()
@@ -27,6 +32,7 @@ public class QuestManager : MonoBehaviour
 
             if (currentEnemiesKilled >= enemiesToKill)
             {
+                hiddenObjectForSecondQuest.SetActive(true);
                 ChangeQuestState(QuestState.traveltoakumajoCastle);
             }
 
@@ -76,6 +82,7 @@ public class QuestManager : MonoBehaviour
 
             if (currentguardsKilled >= guardsToKill)
             {
+                hiddenObjectForFifthQuest.SetActive(true);
                 ChangeQuestState(QuestState.GoInsideCastle);
             }
 
@@ -88,7 +95,7 @@ public class QuestManager : MonoBehaviour
     {
         if (questState == QuestState.GoInsideCastle)
         {
-           
+            // Implement logic for what happens when the player goes inside the castle.
         }
     }
 
@@ -120,7 +127,7 @@ public class QuestManager : MonoBehaviour
     void ChangeQuestState(QuestState newState)
     {
         questState = newState;
-       
+
         UpdateQuestProgressText();
     }
 
