@@ -63,4 +63,11 @@ public class Health : MonoBehaviour
         AddHealth(amount);
         Debug.Log("Health Restored: " + amount);
     }
+
+    public void ActivateInvulnerability(float duration)
+    {
+        invulnerabilityTimer = duration;
+        Debug.Log("Invulnerability activated!");
+    }
+
 }

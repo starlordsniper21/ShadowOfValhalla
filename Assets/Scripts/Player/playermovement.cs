@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
@@ -24,6 +23,7 @@ public class MovePlayer : MonoBehaviour
     public bool KnockFromRight;
 
     private bool isAttacking = false;
+    private bool isSpeedPowerUpActive = false;
 
     void Start()
     {
@@ -45,7 +45,7 @@ public class MovePlayer : MonoBehaviour
         animator.SetBool("movementleft", horizontalInput < 0);
         animator.SetBool("movementupanddown", verticalInput > 0);
 
-        animator.SetFloat("Horizontal",movementJoystick.joystickVec.x);
+        animator.SetFloat("Horizontal", movementJoystick.joystickVec.x);
         animator.SetFloat("Vertical", movementJoystick.joystickVec.y);
         animator.SetFloat("speed", movementJoystick.joystickVec.sqrMagnitude);
 
@@ -57,7 +57,7 @@ public class MovePlayer : MonoBehaviour
             direction = isFacingRight ? Vector2.right : Vector2.left;
         }
 
-        
+
         if (playerBow != null)
         {
             playerBow.SetPlayerDirection(direction);
@@ -88,10 +88,10 @@ public class MovePlayer : MonoBehaviour
         animator.SetTrigger("attack");
         canMove = false;
 
-     
+
         Vector2 initialPosition = rb.position;
 
-        
+
         yield return new WaitForSeconds(0.5f);
 
 
@@ -144,6 +144,25 @@ public class MovePlayer : MonoBehaviour
 
         yield return new WaitForSeconds(duration);
         isInvulnerable = false;
+    }
+
+    public void ActivateSpeedPowerUp(float speedMultiplier, float duration)
+    {
+        if (!isSpeedPowerUpActive)
+        {
+            StartCoroutine(SpeedPowerUpCoroutine(speedMultiplier, duration));
+        }
+    }
+
+    private IEnumerator SpeedPowerUpCoroutine(float speedMultiplier, float duration)
+    {
+        isSpeedPowerUpActive = true;
+        playerSpeed *= speedMultiplier;
+
+        yield return new WaitForSeconds(duration);
+
+        playerSpeed /= speedMultiplier;
+        isSpeedPowerUpActive = false;
     }
 
     void ReduceMana()
