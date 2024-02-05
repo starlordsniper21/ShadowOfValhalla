@@ -8,9 +8,13 @@ public class QuestManager2 : MonoBehaviour
     public int currentGuardsDefeated = 0;
     public int enemiesToDefeat = 5;
     public int currentEnemiesDefeated = 0;
-    public int dungeonGuardsToDefeat = 5; // Number of guards to defeat in the dungeon
-    public int currentDungeonGuardsDefeated = 0; // Current number of dungeon guards defeated
+    public int dungeonGuardsToDefeat = 5;
+    public int currentDungeonGuardsDefeated = 0;
     public TextMeshProUGUI questProgressText;
+
+    public GameObject objectToDestroy;
+    public GameObject newObjectToDestroy;
+    public GameObject hiddenObjectToActivate; // Reference to the new hidden object
 
     public enum QuestState
     {
@@ -21,7 +25,7 @@ public class QuestManager2 : MonoBehaviour
         DefeatEnemies,
         FollowRightPath,
         DefeatDungeonGuards,
-        GoToDungeon // Added the eighth quest state "GoToDungeon"
+        GoToDungeon
     }
 
     private QuestState questState = QuestState.ExploreCastle;
@@ -31,6 +35,12 @@ public class QuestManager2 : MonoBehaviour
     private void Start()
     {
         UpdateQuestProgressText();
+
+        // Deactivate the hiddenObjectToActivate at the start
+        if (hiddenObjectToActivate != null)
+        {
+            hiddenObjectToActivate.SetActive(false);
+        }
     }
 
     public void GuardDefeated()
@@ -46,7 +56,6 @@ public class QuestManager2 : MonoBehaviour
 
             UpdateQuestProgressText();
         }
-       
     }
 
     public void EnemyDefeated()
@@ -62,7 +71,6 @@ public class QuestManager2 : MonoBehaviour
 
             UpdateQuestProgressText();
         }
-        
     }
 
     public void DungeonGuardsDefeated()
@@ -73,15 +81,12 @@ public class QuestManager2 : MonoBehaviour
 
             if (currentDungeonGuardsDefeated >= dungeonGuardsToDefeat)
             {
-                // Transition to the next quest state, which is "GoToDungeon."
                 InitiateGoToDungeonQuest();
             }
 
             UpdateQuestProgressText();
         }
     }
-
-
 
     public void InitiateExploreCastleQuest()
     {
@@ -132,11 +137,35 @@ public class QuestManager2 : MonoBehaviour
         }
     }
 
-    public void InitiateGoToDungeonQuest() // Method to initiate the eighth quest "GoToDungeon"
+    public void InitiateGoToDungeonQuest()
     {
         if (questState == QuestState.DefeatDungeonGuards)
         {
             ChangeQuestState(QuestState.GoToDungeon);
+        }
+    }
+
+    private void DestroyObjectToDestroy()
+    {
+        if (objectToDestroy != null && questState == QuestState.FindAnotherWay)
+        {
+            Destroy(objectToDestroy);
+        }
+    }
+
+    private void DestroyNewObjectToDestroy()
+    {
+        if (newObjectToDestroy != null && questState == QuestState.FollowRightPath)
+        {
+            Destroy(newObjectToDestroy);
+        }
+    }
+
+    private void ActivateHiddenObject()
+    {
+        if (hiddenObjectToActivate != null && questState == QuestState.GoToDungeon)
+        {
+            hiddenObjectToActivate.SetActive(true);
         }
     }
 
@@ -171,7 +200,7 @@ public class QuestManager2 : MonoBehaviour
                 questProgressText.text = "Defeat the enemy Guards: " + currentDungeonGuardsDefeated + " / " + dungeonGuardsToDefeat;
                 break;
             case QuestState.GoToDungeon:
-                questProgressText.text = "Go down to the Castle's Dungeon"; 
+                questProgressText.text = "Go down to the Castle's Dungeon";
                 break;
         }
     }
@@ -180,5 +209,8 @@ public class QuestManager2 : MonoBehaviour
     {
         questState = newState;
         UpdateQuestProgressText();
+        DestroyObjectToDestroy();
+        DestroyNewObjectToDestroy();
+        ActivateHiddenObject();
     }
 }
