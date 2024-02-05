@@ -4257,8 +4257,8 @@ GameObject:
   - component: {fileID: 2994148103308636297}
   - component: {fileID: 4085381850561415435}
   m_Layer: 5
-  m_Name: Armorbar
-  m_TagString: Untagged
+  m_Name: ArmorBar
+  m_TagString: ArmorBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
