@@ -40,11 +40,11 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 54250dd03766ff14d8620178ffd2f852, type: 3}
-    duration: 2
+  - logo: {fileID: 21300000, guid: eb7021335d8f54742b61a1a5ef6ed64e, type: 3}
+    duration: 3
   - logo: {fileID: 10404, guid: 0000000000000000f000000000000000, type: 0}
     duration: 3
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: eb7021335d8f54742b61a1a5ef6ed64e, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
@@ -794,7 +794,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -814,11 +820,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 45a8c270-ce1b-4be2-82a6-9a0c27391d1a
+  cloudProjectId: 02a989be-9124-484b-a139-1d35664d1de4
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Shadow Of Vallhala
-  organizationId: starlordsniper21
+  organizationId: charlie141
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
