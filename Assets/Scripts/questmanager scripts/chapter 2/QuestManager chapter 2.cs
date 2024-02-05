@@ -15,6 +15,7 @@ public class QuestManager2 : MonoBehaviour
     public GameObject objectToDestroy;
     public GameObject newObjectToDestroy;
     public GameObject hiddenObjectToActivate; // Reference to the new hidden object
+    public GameObject newHiddenObjectToActivate; // Reference to the new hidden object for "GoToMainHall" quest
 
     public enum QuestState
     {
@@ -40,6 +41,12 @@ public class QuestManager2 : MonoBehaviour
         if (hiddenObjectToActivate != null)
         {
             hiddenObjectToActivate.SetActive(false);
+        }
+
+        // Deactivate the newHiddenObjectToActivate at the start
+        if (newHiddenObjectToActivate != null)
+        {
+            newHiddenObjectToActivate.SetActive(false);
         }
     }
 
@@ -169,6 +176,15 @@ public class QuestManager2 : MonoBehaviour
         }
     }
 
+    private void ActivateNewHiddenObject()
+    {
+        if (newHiddenObjectToActivate != null)
+        {
+            bool isGoToMainHallQuestActive = questState == QuestState.GoToMainHall;
+            newHiddenObjectToActivate.SetActive(isGoToMainHallQuestActive);
+        }
+    }
+
     public QuestState GetQuestState()
     {
         return questState;
@@ -212,5 +228,6 @@ public class QuestManager2 : MonoBehaviour
         DestroyObjectToDestroy();
         DestroyNewObjectToDestroy();
         ActivateHiddenObject();
+        ActivateNewHiddenObject(); // Activate or deactivate the new hidden object based on the quest state
     }
 }
