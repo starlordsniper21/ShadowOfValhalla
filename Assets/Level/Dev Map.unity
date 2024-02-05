@@ -2091,6 +2091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmorCollectable
       objectReference: {fileID: 0}
+    - target: {fileID: 2224282638772476068, guid: 7113bfe8e99329048be9c9fe4734d17b, type: 3}
+      propertyPath: m_TagString
+      value: ArmorCollectible
+      objectReference: {fileID: 0}
     - target: {fileID: 7842499103013058659, guid: 7113bfe8e99329048be9c9fe4734d17b, type: 3}
       propertyPath: m_RootOrder
       value: 10

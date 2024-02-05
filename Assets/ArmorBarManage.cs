@@ -22,4 +22,12 @@ public class ArmorBarManager : MonoBehaviour
             armorBar.gameObject.SetActive(false);
         }
     }
+
+    public void EnableAllArmorBars()
+    {
+        foreach (ArmorBar armorBar in armorBars)
+        {
+            armorBar.gameObject.SetActive(true);
+        }
+    }
 }

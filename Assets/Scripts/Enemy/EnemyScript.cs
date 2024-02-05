@@ -61,8 +61,7 @@ public class Jester : MonoBehaviour
             if (armorComponent != null && armorComponent.currentArmor > 0)
             {
                 armorComponent.TakeDamage(armorDamage);
-                totalArmorDamage += armorDamage;
-                Debug.Log("Total Armor Damage: " + totalArmorDamage);
+                Debug.Log("Armor Damage: " + armorDamage);
             }
             else
             {
@@ -70,10 +69,10 @@ public class Jester : MonoBehaviour
                 if (healthComponent != null)
                 {
                     healthComponent.TakeDamage(healthDamage);
-                    totalHealthDamage += healthDamage;
-                    Debug.Log("Total Health Damage: " + totalHealthDamage);
+                    Debug.Log("Health Damage: " + healthDamage);
                 }
             }
         }
     }
+
 }

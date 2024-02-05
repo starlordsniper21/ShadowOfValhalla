@@ -9,41 +9,42 @@ public class ArmorBar : MonoBehaviour
 
     private void Start()
     {
-        UpdateArmorBar();
-    }
-
-    private void Update()
-    {
-        UpdateArmorBar();
-    }
-
-    private void UpdateArmorBar()
-    {
-        float maxArmor = playerArmor.maxArmor;
-        float currentArmor = playerArmor.currentArmor;
-
-        if (maxArmor > 0)
+        if (playerArmor != null)
         {
-            totalArmorBar.fillAmount = currentArmor / maxArmor;
-            currentArmorBar.fillAmount = currentArmor / maxArmor;
-
-            if (currentArmor <= 0)
-            {
-                totalArmorBar.gameObject.SetActive(false);
-                currentArmorBar.gameObject.SetActive(false);
-            }
-            else
-            {
-                totalArmorBar.gameObject.SetActive(true);
-                currentArmorBar.gameObject.SetActive(true);
-            }
+            playerArmor.OnArmorChanged += UpdateArmorBar; // Subscribe to the OnArmorChanged event
+            UpdateArmorBar(playerArmor.currentArmor > 0); // Call UpdateArmorBar initially
         }
         else
         {
-            totalArmorBar.fillAmount = 0f;
-            currentArmorBar.fillAmount = 0f;
+            Debug.LogError("Player Armor component is not assigned to ArmorBar.");
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (playerArmor != null)
+            playerArmor.OnArmorChanged -= UpdateArmorBar; // Unsubscribe from the OnArmorChanged event
+    }
+
+    private void UpdateArmorBar(bool hasArmor)
+    {
+        if (hasArmor)
+        {
+            // Enable the UI elements when armor is present
             totalArmorBar.gameObject.SetActive(true);
             currentArmorBar.gameObject.SetActive(true);
+
+            // Update fill amounts of the UI elements
+            float maxArmor = playerArmor.maxArmor;
+            float currentArmor = playerArmor.currentArmor;
+            totalArmorBar.fillAmount = currentArmor / maxArmor;
+            currentArmorBar.fillAmount = currentArmor / maxArmor;
+        }
+        else
+        {
+            // Disable the UI elements when armor is destroyed
+            totalArmorBar.gameObject.SetActive(false);
+            currentArmorBar.gameObject.SetActive(false);
         }
     }
 }

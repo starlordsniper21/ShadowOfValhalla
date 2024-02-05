@@ -8,8 +8,8 @@ public class ArmorCollect : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Armor>().RepairArmor(armorValue);
-            gameObject.SetActive(false);
+            collision.GetComponent<Armor>().RestoreArmor(armorValue); // Restore armor instead of repairing
+            gameObject.SetActive(false); // Disable the collectible object
         }
     }
 }
