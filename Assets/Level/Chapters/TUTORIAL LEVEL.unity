@@ -908,6 +908,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 776846021}
     - target: {fileID: 3339754931372471506, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+      propertyPath: arrowsText
+      value: 
+      objectReference: {fileID: 1469584546}
+    - target: {fileID: 3339754931372471506, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: noArrowsText
       value: 
       objectReference: {fileID: 1469584546}
@@ -915,6 +919,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8927163312156816264, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+      propertyPath: mobileFireButton
+      value: 
+      objectReference: {fileID: 1259975382}
     - target: {fileID: 8927163312156816264, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: notEnoughManaText
       value: 
@@ -68683,6 +68691,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1259975382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6488915478695731620, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+  m_PrefabInstance: {fileID: 1283306098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1267906218
 GameObject:
   m_ObjectHideFlags: 0
