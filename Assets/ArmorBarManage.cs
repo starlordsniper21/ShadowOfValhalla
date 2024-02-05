@@ -3,7 +3,7 @@ using UnityEngine;
 public class ArmorBarManager : MonoBehaviour
 {
     public static ArmorBarManager instance;
-    private ArmorBar[] armorBars;
+    private GameObject[] armorBars;
 
     private void Awake()
     {
@@ -12,22 +12,22 @@ public class ArmorBarManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        armorBars = FindObjectsOfType<ArmorBar>();
+        armorBars = GameObject.FindGameObjectsWithTag("ArmorBar");
     }
 
     public void DisableAllArmorBars()
     {
-        foreach (ArmorBar armorBar in armorBars)
+        foreach (GameObject armorBar in armorBars)
         {
-            armorBar.gameObject.SetActive(false);
+            armorBar.SetActive(false);
         }
     }
 
     public void EnableAllArmorBars()
     {
-        foreach (ArmorBar armorBar in armorBars)
+        foreach (GameObject armorBar in armorBars)
         {
-            armorBar.gameObject.SetActive(true);
+            armorBar.SetActive(true);
         }
     }
 }

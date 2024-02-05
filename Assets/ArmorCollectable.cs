@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArmorCollect : MonoBehaviour
+public class ArmorCollectible : MonoBehaviour
 {
     [SerializeField] private float armorValue;
 
@@ -8,8 +8,22 @@ public class ArmorCollect : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Armor>().RestoreArmor(armorValue); // Restore armor instead of repairing
-            gameObject.SetActive(false); // Disable the collectible object
+            Armor armorComponent = collision.GetComponent<Armor>();
+            if (armorComponent != null)
+            {
+                armorComponent.RestoreArmor(armorValue);
+                EnableArmorBars();
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void EnableArmorBars()
+    {
+        ArmorBar[] armorBars = FindObjectsOfType<ArmorBar>();
+        foreach (ArmorBar armorBar in armorBars)
+        {
+            armorBar.gameObject.SetActive(true);
         }
     }
 }

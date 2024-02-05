@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6041541687045370624}
   m_Layer: 0
   m_Name: ArmorCollectable
-  m_TagString: Untagged
+  m_TagString: ArmorCollectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8781586031865121228
 SpriteRenderer:

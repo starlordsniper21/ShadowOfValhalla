@@ -239,37 +239,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155253401}
   m_CullTransparentMesh: 1
---- !u!1 &157368462
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 157368463}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &157368463
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157368462}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 616.7043, y: 280.2332, z: -0.75453794}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &158575354
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +371,18 @@ PrefabInstance:
       propertyPath: playerArmor
       value: 
       objectReference: {fileID: 1123833280}
+    - target: {fileID: 4501908882443122290, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_Name
+      value: ArmorBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501908882443122290, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501908882443122290, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_TagString
+      value: ArmorBar
+      objectReference: {fileID: 0}
     - target: {fileID: 5951090650316035920, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -851,11 +832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5061536121803507144, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -91.97
+      value: -144.1
       objectReference: {fileID: 0}
     - target: {fileID: 5061536121803507144, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.08
+      value: 14.03
       objectReference: {fileID: 0}
     - target: {fileID: 5061536121803507144, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -905,7 +886,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4703499966239982726, guid: 6d89e5727d8edbe4bb0a412f29b403b7, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4703499966239982726, guid: 6d89e5727d8edbe4bb0a412f29b403b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1204,14 +1185,6 @@ PrefabInstance:
       objectReference: {fileID: 846083647}
     - target: {fileID: 3339754931372471506, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: arrowsText
-      value: 
-      objectReference: {fileID: 433639263}
-    - target: {fileID: 3339754931372471506, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
-      propertyPath: arrowPrefab
-      value: 
-      objectReference: {fileID: 2596283808603283408, guid: 9a61529450f6ee54ea21b6b7501ad519, type: 3}
-    - target: {fileID: 3339754931372471506, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
-      propertyPath: noArrowsText
       value: 
       objectReference: {fileID: 433639263}
     - target: {fileID: 4894666472519163335, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
@@ -1906,7 +1879,7 @@ Transform:
   - {fileID: 1871890090}
   - {fileID: 1340842867}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1753334594 stripped
 Transform:
@@ -2091,13 +2064,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmorCollectable
       objectReference: {fileID: 0}
-    - target: {fileID: 2224282638772476068, guid: 7113bfe8e99329048be9c9fe4734d17b, type: 3}
-      propertyPath: m_TagString
-      value: ArmorCollectible
-      objectReference: {fileID: 0}
     - target: {fileID: 7842499103013058659, guid: 7113bfe8e99329048be9c9fe4734d17b, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7842499103013058659, guid: 7113bfe8e99329048be9c9fe4734d17b, type: 3}
       propertyPath: m_LocalPosition.x

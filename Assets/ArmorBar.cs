@@ -11,8 +11,8 @@ public class ArmorBar : MonoBehaviour
     {
         if (playerArmor != null)
         {
-            playerArmor.OnArmorChanged += UpdateArmorBar; // Subscribe to the OnArmorChanged event
-            UpdateArmorBar(playerArmor.currentArmor > 0); // Call UpdateArmorBar initially
+            playerArmor.OnArmorChanged += UpdateArmorBar;
+            UpdateArmorBar(playerArmor.currentArmor > 0);
         }
         else
         {
@@ -23,18 +23,15 @@ public class ArmorBar : MonoBehaviour
     private void OnDestroy()
     {
         if (playerArmor != null)
-            playerArmor.OnArmorChanged -= UpdateArmorBar; // Unsubscribe from the OnArmorChanged event
+            playerArmor.OnArmorChanged -= UpdateArmorBar;
     }
 
     private void UpdateArmorBar(bool hasArmor)
     {
         if (hasArmor)
         {
-            // Enable the UI elements when armor is present
             totalArmorBar.gameObject.SetActive(true);
             currentArmorBar.gameObject.SetActive(true);
-
-            // Update fill amounts of the UI elements
             float maxArmor = playerArmor.maxArmor;
             float currentArmor = playerArmor.currentArmor;
             totalArmorBar.fillAmount = currentArmor / maxArmor;
@@ -42,7 +39,6 @@ public class ArmorBar : MonoBehaviour
         }
         else
         {
-            // Disable the UI elements when armor is destroyed
             totalArmorBar.gameObject.SetActive(false);
             currentArmorBar.gameObject.SetActive(false);
         }

@@ -11,6 +11,7 @@ TagManager:
   - Rune
   - ManaPotion
   - ArmorCollectible
+  - ArmorBar
   layers:
   - Default
   - TransparentFX

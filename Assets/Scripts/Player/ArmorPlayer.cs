@@ -35,18 +35,19 @@ public class Armor : MonoBehaviour
 
     public void RestoreArmor(float _value)
     {
-        if (broken || currentArmor < startingArmor) // Allow restoration even if armor is broken or not full
+        if (broken || currentArmor < startingArmor)
         {
             currentArmor = Mathf.Clamp(currentArmor + _value, 0, startingArmor);
             if (currentArmor == startingArmor)
             {
                 broken = false;
-                Debug.Log("Armor Repaired!");
                 EnableArmorBars();
-                
+                Debug.Log("Armor Repaired!");
+                ArmorBarManager.instance.EnableAllArmorBars();
+
             }
 
-            // Trigger the event when the armor status changes
+
             if (OnArmorChanged != null)
                 OnArmorChanged(currentArmor > 0);
         }
@@ -56,8 +57,9 @@ public class Armor : MonoBehaviour
     {
         if (other.CompareTag("ArmorCollectible"))
         {
-            RestoreArmor(startingArmor); // Restore armor to full when picking up collectible
-            Destroy(other.gameObject); // Destroy the collectible object
+            RestoreArmor(startingArmor);
+            EnableArmorBars();
+            Destroy(other.gameObject);
         }
     }
 
