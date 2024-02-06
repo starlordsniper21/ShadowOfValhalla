@@ -522,9 +522,10 @@ MonoBehaviour:
   deathSoundEnemy: {fileID: 8300000, guid: 9c7b31276eacc3949b50b23bb518c7d7, type: 3}
   hurtSoundEnemy: {fileID: 8300000, guid: f8ec0b6c3df770f4299cb5a0b50ed88c, type: 3}
   itemPrefabs:
-  - {fileID: 8729574814693928222, guid: 0280335fe1dbae446b7f890935d64eb0, type: 3}
-  - {fileID: 8214570648193453879, guid: 6d89e5727d8edbe4bb0a412f29b403b7, type: 3}
-  dropChance: 0.2
+  - {fileID: 3617463618170599933, guid: 199e94aafac1db5448f6f5739b511b42, type: 3}
+  - {fileID: 7489076904667282705, guid: a10212539124f2b4ab081c5af7f46640, type: 3}
+  - {fileID: 7081748098163181886, guid: b66ae7c22d278ae4baedf733f60e6b2d, type: 3}
+  dropChance: 0.5
 --- !u!114 &3059933219867864948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,7 +541,7 @@ MonoBehaviour:
   target: {fileID: 0}
   chaseRadius: 10
   attackRadius: 2
-  armorDamage: 2
+  armorDamage: 1
   healthDamage: 1
   moveSpeed: 2
   movePlayer: {fileID: 0}
