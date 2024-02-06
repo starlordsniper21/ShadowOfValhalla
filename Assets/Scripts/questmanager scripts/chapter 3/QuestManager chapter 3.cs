@@ -10,15 +10,24 @@ public class QuestManager3 : MonoBehaviour
     public int currentEnemiesKilled = 0;
     public int GeneralToKill = 1;
     public int currentGeneralKilled = 0;
+    public GameObject objectToHide; // New game object to disable or hide.
+    public GameObject objectToHide2; // New game object to disable or hide.
+    public GameObject objectToHide3; // New game object to disable or hide.
     public TextMeshProUGUI questProgressText; // Reference to TextMeshPro Text element.
 
-    private enum QuestState { ExploreDungeon, KeepExploringDungeon, ClearAreaOfEnemies, KeepExploringTheDungeon, KillTheGuards,GoTotheNextFloor, DefeatTheWarlockGeneral, AdvanceTothenextfloor}
+    private enum QuestState { ExploreDungeon, KeepExploringDungeon, ClearAreaOfEnemies, KeepExploringTheDungeon, KillTheGuards, GoTotheNextFloor, DefeatTheWarlockGeneral, AdvanceTothenextfloor }
     private QuestState questState = QuestState.ExploreDungeon;
 
     private void Start()
     {
         // Initialize your quest system here.
         UpdateQuestProgressText();
+
+        // Hide the third object initially
+        if (objectToHide3 != null)
+        {
+            objectToHide3.SetActive(false);
+        }
     }
 
     public void BatKilled()
@@ -91,7 +100,7 @@ public class QuestManager3 : MonoBehaviour
 
             if (currentGeneralKilled >= GeneralToKill)
             {
-                ChangeQuestState(QuestState.AdvanceTothenextfloor); ;
+                ChangeQuestState(QuestState.AdvanceTothenextfloor);
             }
 
             UpdateQuestProgressText();
@@ -100,8 +109,8 @@ public class QuestManager3 : MonoBehaviour
 
     public void advancetothenextfloor()
     {
-        if (questState ==QuestState.AdvanceTothenextfloor)
-        {  }
+        if (questState == QuestState.AdvanceTothenextfloor)
+        { }
         UpdateQuestProgressText();
     }
 
@@ -122,7 +131,7 @@ public class QuestManager3 : MonoBehaviour
                 questProgressText.text = "Keep Exploring The Dungeon";
                 break;
             case QuestState.KillTheGuards:
-                questProgressText.text = "Kill all The Guards:" +currentEnemiesKilled + "/" + EnemiesToKill;
+                questProgressText.text = "Kill all The Guards:" + currentEnemiesKilled + "/" + EnemiesToKill;
                 break;
             case QuestState.GoTotheNextFloor:
                 questProgressText.text = "Go To The Next Floor";
@@ -140,6 +149,24 @@ public class QuestManager3 : MonoBehaviour
     {
         questState = newState;
         UpdateQuestProgressText();
+
+        // Hide or disable the object when ClearAreaOfEnemies quest is completed
+        if (questState == QuestState.KeepExploringTheDungeon && objectToHide != null)
+        {
+            objectToHide.SetActive(false); // Alternatively, you can use objectToHide.SetActive(false) to disable the object
+        }
+
+        // Hide or disable the second object when KillTheGuards quest is completed
+        if (questState == QuestState.GoTotheNextFloor && objectToHide2 != null)
+        {
+            objectToHide2.SetActive(false);
+        }
+
+        // Show or enable the third object when DefeatTheWarlockGeneral quest is completed
+        if (questState == QuestState.AdvanceTothenextfloor && objectToHide3 != null)
+        {
+            objectToHide3.SetActive(true);
+        }
     }
 
     // Implement additional methods for loading the next level, handling checkpoints, etc.
