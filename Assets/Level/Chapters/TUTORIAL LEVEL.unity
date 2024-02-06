@@ -922,7 +922,7 @@ PrefabInstance:
     - target: {fileID: 8927163312156816264, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: mobileFireButton
       value: 
-      objectReference: {fileID: 1259975382}
+      objectReference: {fileID: 0}
     - target: {fileID: 8927163312156816264, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: notEnoughManaText
       value: 
@@ -59697,6 +59697,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3466701491355671098, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
+      propertyPath: itemPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466701491355671098, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
+      propertyPath: itemPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4084936415608067154, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
       propertyPath: m_Name
       value: Jester
@@ -68691,17 +68699,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1259975382 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6488915478695731620, guid: 9f8955c13943b1249a347af70497f773, type: 3}
-  m_PrefabInstance: {fileID: 1283306098}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1267906218
 GameObject:
   m_ObjectHideFlags: 0
@@ -68837,6 +68834,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1054897709899896788, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1099441867535536386, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -192
@@ -68853,6 +68854,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MobileAttackButtonClicked
       objectReference: {fileID: 0}
+    - target: {fileID: 1730006110017191535, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951712723308974155, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1992129983270886959, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_text
       value: TUTORIAL
@@ -68860,6 +68869,14 @@ PrefabInstance:
     - target: {fileID: 2238786193117383341, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_text
       value: FOLLOW THE TRAIL UNTIL YOU REACH THE END
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390433483769054961, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2404601852948944376, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2907249401951808419, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -77918,6 +77935,14 @@ PrefabInstance:
       objectReference: {fileID: 895632469}
     - target: {fileID: 3466701491355671098, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
       propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466701491355671098, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
+      propertyPath: itemPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466701491355671098, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
+      propertyPath: itemPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4084936415608067154, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
