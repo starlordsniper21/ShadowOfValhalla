@@ -83,6 +83,12 @@ public class PlayerFireball : MonoBehaviour
                 {
                     Debug.LogWarning("Fireball prefab is missing Rigidbody2D component.");
                 }
+
+                // Trigger FireBall animation
+                if (animator != null)
+                {
+                    animator.SetBool("FireBall", true);
+                }
             }
             else
             {
