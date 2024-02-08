@@ -1511,11 +1511,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -97.8
+      value: -127.6
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.1
+      value: 14.5
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1855,6 +1855,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1729078587}
     m_Modifications:
+    - target: {fileID: 533445238529760729, guid: bcd1f467e670bd44db360e1ff775a2d6, type: 3}
+      propertyPath: duration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5524424875366127714, guid: bcd1f467e670bd44db360e1ff775a2d6, type: 3}
       propertyPath: m_Name
       value: DeadEye

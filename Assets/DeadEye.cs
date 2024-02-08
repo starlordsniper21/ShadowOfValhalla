@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DeadEyePowerUp : MonoBehaviour
 {
@@ -7,12 +8,13 @@ public class DeadEyePowerUp : MonoBehaviour
     public Color deadEyeColor = Color.gray;
     private MovePlayer movePlayer;
     private Camera mainCamera;
+    private Coroutine powerUpCoroutine;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            movePlayer = other.GetComponent<MovePlayer>();
+            movePlayer = collision.GetComponent<MovePlayer>();
             mainCamera = Camera.main;
             ActivatePowerUp();
         }
@@ -20,15 +22,23 @@ public class DeadEyePowerUp : MonoBehaviour
 
     private void ActivatePowerUp()
     {
-        Destroy(gameObject);
         mainCamera.backgroundColor = deadEyeColor;
         Time.timeScale = timeScaleFactor;
-        Invoke("DeactivatePowerUp", duration);
+        powerUpCoroutine = StartCoroutine(DeactivateAfterDuration(duration));
+    }
+
+    private IEnumerator DeactivateAfterDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        DeactivatePowerUp();
     }
 
     private void DeactivatePowerUp()
     {
         mainCamera.backgroundColor = Color.black;
         Time.timeScale = 1f;
+        Destroy(gameObject);
+        if (powerUpCoroutine != null)
+            StopCoroutine(powerUpCoroutine);
     }
 }
