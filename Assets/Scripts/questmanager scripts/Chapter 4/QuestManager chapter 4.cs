@@ -12,10 +12,13 @@ public class QuestManager4 : MonoBehaviour
     public GameObject objectToShow4; // Object to show after the 4th quest is completed.
     public GameObject objectToShow5; // Object to show after the 5th quest is completed.
     public GameObject objectToShow6; // Object to show after the 6th quest is completed.
+    public GameObject objectToShow7; // Object to show after the 7th quest is completed.
+    public GameObject objectToShow8; // Object to show after the 8th quest is completed.
+    public GameObject objectToActivateAfterStaffTaken; // Object to activate when the "TakeTheStaff" quest is completed.
     public GameObject objectToDestroy; // Object to destroy when the "BringStaffToGorm" quest is completed.
     public TextMeshProUGUI questProgressText; // Reference to TextMeshPro Text element.
 
-    private enum QuestState { EnterVillage, SpeakWithElder, FindGorm, HelpGordFindStaff, BringStaffToGorm, GoToNorthEast, DefeatTheBandits, HelpGord }
+    private enum QuestState { EnterVillage, SpeakWithElder, FindGorm, HelpGordFindStaff, BringStaffToGorm, GoToNorthEast, DefeatTheBandits, HelpGord, TakeTheStaff, LeaveDanesti }
     private QuestState questState = QuestState.EnterVillage;
 
     private void Start()
@@ -40,6 +43,12 @@ public class QuestManager4 : MonoBehaviour
             objectToShow5.SetActive(false);
         if (objectToShow6 != null)
             objectToShow6.SetActive(false);
+        if (objectToShow7 != null)
+            objectToShow7.SetActive(false);
+        if (objectToShow8 != null)
+            objectToShow8.SetActive(false);
+        if (objectToActivateAfterStaffTaken != null)
+            objectToActivateAfterStaffTaken.SetActive(false); // Hide the new object initially
     }
 
     public void InitiateEnterVillageQuest()
@@ -111,8 +120,23 @@ public class QuestManager4 : MonoBehaviour
     {
         if (questState == QuestState.HelpGord)
         {
-            // Implement functionality for helping Gord
-            // For example, loading the next level or showing a completion message
+            ChangeQuestState(QuestState.TakeTheStaff);
+        }
+    }
+
+    public void TakeTheStaff()
+    {
+        if (questState == QuestState.TakeTheStaff)
+        {
+            ChangeQuestState(QuestState.LeaveDanesti);
+        }
+    }
+
+    public void LeaveDanesti()
+    {
+        if (questState == QuestState.LeaveDanesti)
+        {
+            // Implement functionality for leaving Danesti
             // You can add your logic here
         }
     }
@@ -144,6 +168,12 @@ public class QuestManager4 : MonoBehaviour
                 break;
             case QuestState.HelpGord:
                 questProgressText.text = "Help Gord";
+                break;
+            case QuestState.TakeTheStaff:
+                questProgressText.text = "Take The Staff";
+                break;
+            case QuestState.LeaveDanesti:
+                questProgressText.text = "Leave Danesti";
                 break;
         }
     }
@@ -178,6 +208,19 @@ public class QuestManager4 : MonoBehaviour
             case QuestState.DefeatTheBandits:
                 if (objectToShow6 != null)
                     objectToShow6.SetActive(true);
+                break;
+            case QuestState.HelpGord:
+                if (objectToShow7 != null)
+                    objectToShow7.SetActive(true);
+                break;
+            case QuestState.TakeTheStaff:
+                if (objectToShow8 != null)
+                    objectToShow8.SetActive(true);
+                if (objectToActivateAfterStaffTaken != null)
+                    objectToActivateAfterStaffTaken.SetActive(true); 
+                break;
+            case QuestState.LeaveDanesti:
+                // No object to show for leaving Danesti
                 break;
         }
     }
