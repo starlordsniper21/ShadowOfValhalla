@@ -1,21 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackArea : MonoBehaviour
 {
-    private int damage = 2;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Player"))
         {
-            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+            // Get the script component of the player object
+            PlayerAttack playerAttack = other.GetComponent<PlayerAttack>();
 
-            if (enemyHealth != null)
+            if (playerAttack != null)
             {
-                enemyHealth.TakeDamage(damage);
-                Debug.Log("Damaged enemy");
+                playerAttack.Attack();
+                Debug.Log("Player attack triggered");
             }
         }
     }

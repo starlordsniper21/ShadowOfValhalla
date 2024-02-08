@@ -322,6 +322,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   attackKey: 127
+  baseDamage: 1
+  damageModifier: 1
+  attackCooldown: 1
 --- !u!114 &3339754931372471506
 MonoBehaviour:
   m_ObjectHideFlags: 0
