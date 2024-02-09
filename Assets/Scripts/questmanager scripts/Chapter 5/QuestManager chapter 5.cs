@@ -26,6 +26,8 @@ public class QuestManager5 : MonoBehaviour
     public GameObject objectToShow11;
     public GameObject objectToDestroy1; // Object to destroy after FollowTheEastPathway
     public GameObject objectToDestroy2; // Object to destroy after FollowThePathway
+    public GameObject objectToShowAfterWarlock1; // Object to show after DEFEATEVILWARLOCK
+    public GameObject objectToShowAfterWarlock2; // Object to show after DEFEATEVILWARLOCK
     public TextMeshProUGUI questProgressText;
 
     private enum QuestState { TravelThroughTheForest, DefeatTheBats1, ContinueThroughTheForest, DefeatBats2, ExamineTheBody, FindTheTravelersCamp, TalkToTheCampLeader, FollowTheEastPathway, DefeatBats3, FollowThePathway, DefeatEvilWarlock, HeadNorth }
@@ -63,6 +65,10 @@ public class QuestManager5 : MonoBehaviour
             objectToShow10.SetActive(false);
         if (objectToShow11 != null)
             objectToShow11.SetActive(false);
+        if (objectToShowAfterWarlock1 != null)
+            objectToShowAfterWarlock1.SetActive(false);
+        if (objectToShowAfterWarlock2 != null)
+            objectToShowAfterWarlock2.SetActive(false);
     }
 
     public void InitiateTravelThroughTheForestQuest()
@@ -249,6 +255,15 @@ public class QuestManager5 : MonoBehaviour
         // Destroy objectToDestroy2 after FollowThePathway quest
         if (questState == QuestState.FollowThePathway && objectToDestroy2 != null)
             Destroy(objectToDestroy2);
+
+        // Activate objectsToShowAfterWarlock1 and objectToShowAfterWarlock2 after defeating the evil warlock
+        if (questState == QuestState.HeadNorth)
+        {
+            if (objectToShowAfterWarlock1 != null)
+                objectToShowAfterWarlock1.SetActive(true);
+            if (objectToShowAfterWarlock2 != null)
+                objectToShowAfterWarlock2.SetActive(true);
+        }
 
         switch (questState)
         {
