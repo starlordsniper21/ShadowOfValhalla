@@ -6,16 +6,17 @@ public class QuestManager4 : MonoBehaviour
 {
     public int BanditsToKill = 5;
     public int currentBanditsKilled = 0;
-    public GameObject objectToShow1; // Object to show after the 1st quest is completed.
-    public GameObject objectToShow2; // Object to show after the 2nd quest is completed.
-    public GameObject objectToShow3; // Object to show after the 3rd quest is completed.
-    public GameObject objectToShow4; // Object to show after the 4th quest is completed.
-    public GameObject objectToShow5; // Object to show after the 5th quest is completed.
-    public GameObject objectToShow6; // Object to show after the 6th quest is completed.
-    public GameObject objectToShow7; // Object to show after the 7th quest is completed.
-    public GameObject objectToShow8; // Object to show after the 8th quest is completed.
-    public GameObject objectToActivateAfterStaffTaken; // Object to activate when the "TakeTheStaff" quest is completed.
-    public GameObject objectToDestroy; // Object to destroy when the "BringStaffToGorm" quest is completed.
+    public GameObject objectToShow1; 
+    public GameObject objectToShow2; 
+    public GameObject objectToShow3; 
+    public GameObject objectToShow4; 
+    public GameObject objectToShow5; 
+    public GameObject objectToShow6; 
+    public GameObject objectToShow7; 
+    public GameObject objectToShow8;
+    public GameObject objectToShow9;
+    public GameObject objectToDestroy;
+    public GameObject objectToDestroy2;// Object to destroy when the "BringStaffToGorm" quest is completed.
     public TextMeshProUGUI questProgressText; // Reference to TextMeshPro Text element.
 
     private enum QuestState { EnterVillage, SpeakWithElder, FindGorm, HelpGordFindStaff, BringStaffToGorm, GoToNorthEast, DefeatTheBandits, HelpGord, TakeTheStaff, LeaveDanesti }
@@ -47,8 +48,10 @@ public class QuestManager4 : MonoBehaviour
             objectToShow7.SetActive(false);
         if (objectToShow8 != null)
             objectToShow8.SetActive(false);
-        if (objectToActivateAfterStaffTaken != null)
-            objectToActivateAfterStaffTaken.SetActive(false); // Hide the new object initially
+        if (objectToShow9 != null)
+            objectToShow9.SetActive(false);
+        
+
     }
 
     public void InitiateEnterVillageQuest()
@@ -112,6 +115,10 @@ public class QuestManager4 : MonoBehaviour
                 ChangeQuestState(QuestState.HelpGord);
             }
 
+            if (objectToDestroy2 != null)
+                Destroy(objectToDestroy2);
+            ChangeQuestState(QuestState.HelpGord);
+
             UpdateQuestProgressText();
         }
     }
@@ -152,13 +159,13 @@ public class QuestManager4 : MonoBehaviour
                 questProgressText.text = "Go to the north of town to speak with the town's Elder";
                 break;
             case QuestState.FindGorm:
-                questProgressText.text = "Find and Talk to Gorm in the southeast part of the village";
+                questProgressText.text = "Find and Talk to Gord in the southeast part of the village";
                 break;
             case QuestState.HelpGordFindStaff:
                 questProgressText.text = "Help Gord Find His Staff in the village";
                 break;
             case QuestState.BringStaffToGorm:
-                questProgressText.text = "Bring the Staff to Gorm";
+                questProgressText.text = "Bring the Staff to Gord";
                 break;
             case QuestState.GoToNorthEast:
                 questProgressText.text = "Go to the Northeast of the village";
@@ -216,11 +223,11 @@ public class QuestManager4 : MonoBehaviour
             case QuestState.TakeTheStaff:
                 if (objectToShow8 != null)
                     objectToShow8.SetActive(true);
-                if (objectToActivateAfterStaffTaken != null)
-                    objectToActivateAfterStaffTaken.SetActive(true); 
                 break;
+
             case QuestState.LeaveDanesti:
-                // No object to show for leaving Danesti
+                if(objectToShow9 != null)
+                    objectToShow9.SetActive(true);
                 break;
         }
     }
