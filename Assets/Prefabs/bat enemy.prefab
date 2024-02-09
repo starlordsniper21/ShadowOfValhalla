@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3474839388517765473}
   - component: {fileID: 3866800702208268061}
   - component: {fileID: 3153518947009170612}
-  - component: {fileID: 4113134710182639708}
+  - component: {fileID: 3665253740772825716}
   m_Layer: 9
   m_Name: bat enemy
   m_TagString: Enemy
@@ -30,9 +30,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425436744161512574}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.2, y: -14.62, z: 0}
-  m_LocalScale: {x: 10.315415, y: 16.047264, z: 1}
+  m_LocalScale: {x: 10.31542, y: 16.04727, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7516930823444513892}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: -303629744, guid: 443cf6eca1b19054d8d05d16ea256d18, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.509434, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -135,7 +135,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22, y: 0.08}
+  m_Size: {x: 0.12, y: 0.08}
   m_EdgeRadius: 0
 --- !u!114 &6203780701968884186
 MonoBehaviour:
@@ -153,6 +153,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathSoundEnemy: {fileID: 8300000, guid: 9c7b31276eacc3949b50b23bb518c7d7, type: 3}
   hurtSoundEnemy: {fileID: 8300000, guid: f8ec0b6c3df770f4299cb5a0b50ed88c, type: 3}
+  itemPrefabs: []
+  dropChance: 0.1
 --- !u!114 &3474839388517765473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,8 +170,10 @@ MonoBehaviour:
   target: {fileID: 0}
   chaseRadius: 8
   attackRadius: 1
-  damage: 1
+  armorDamage: 1
+  healthDamage: 1
   moveSpeed: 3
+  movePlayer: {fileID: 0}
 --- !u!114 &3866800702208268061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,15 +208,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &4113134710182639708
-BoxCollider2D:
+--- !u!50 &3665253740772825716
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425436744161512574}
-  m_Enabled: 0
-  m_Density: 1
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -220,35 +231,10 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.22, y: 0.08}
-    newSize: {x: 0.22, y: 0.08}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.22, y: 0.08}
-  m_EdgeRadius: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &4448940355490973772
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8506563020511343269
 Transform:
   m_ObjectHideFlags: 0
@@ -397,7 +383,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 78b202adb0162a640bc35cf867ff963a, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
