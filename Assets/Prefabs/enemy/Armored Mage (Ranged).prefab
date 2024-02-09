@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 3454713972621814536}
   - component: {fileID: 4596758946977388091}
   - component: {fileID: 6865346065214115850}
+  - component: {fileID: 1192425812975994954}
   - component: {fileID: 1084951087595715221}
   - component: {fileID: 7464824625935018171}
-  m_Layer: 0
+  - component: {fileID: 773286647491995547}
+  - component: {fileID: 3416410452468840459}
+  m_Layer: 9
   m_Name: Armored Mage (Ranged)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -28,7 +31,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419330410517978699}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.5, y: 6.9, z: 0}
   m_LocalScale: {x: 2.1019626, y: 2.0835352, z: 1}
   m_ConstrainProportionsScale: 0
@@ -78,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 46867b74d154fc043807db5ffcb70659, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,10 +105,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd4168ddf96fdc4aa6ac8dc40c789bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 15
   healthBar: {fileID: 0}
-  deathSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
-  hurtSoundEnemy: {fileID: 8300000, guid: 46eaa988d297af74a9aec5e9d6df5903, type: 3}
+  deathSoundEnemy: {fileID: 8300000, guid: 9c7b31276eacc3949b50b23bb518c7d7, type: 3}
+  hurtSoundEnemy: {fileID: 8300000, guid: f8ec0b6c3df770f4299cb5a0b50ed88c, type: 3}
+  itemPrefabs: []
+  dropChance: 0.2
 --- !u!61 &6865346065214115850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,8 +154,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9102651, y: 2.187207}
+  m_Size: {x: 1.12, y: 2.39}
   m_EdgeRadius: 0
+--- !u!114 &1192425812975994954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419330410517978699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f58214bab205de428c97f9bf0443663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 0
 --- !u!114 &1084951087595715221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,8 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  lineOfSite: 17.99
-  shootingRange: 12.1
+  lineOfSite: 9.9
+  shootingRange: 7.69
   fireRate: 1
   bullet: {fileID: 460424102582798303, guid: 19cf7d3fa1d23f64cb86f901818f8a67, type: 3}
   bulletParent: {fileID: 3978328115110183403}
@@ -190,6 +208,68 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &773286647491995547
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419330410517978699}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000014305115, y: -0.77}
+  m_Size: {x: 0.36, y: 2.62}
+  m_Direction: 0
+--- !u!50 &3416410452468840459
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419330410517978699}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &3954915863213109653
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1295817576320903297}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.052130222, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -691,7 +771,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2129002369
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1167571111, guid: 4baa2f11ce48da34ea51a72d8d6d7d3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Chapters/chapter 4.unity
     guid: 20f7d7e05fdb92a45a371b51dc4446a3
+  - enabled: 1
+    path: Assets/Level/Chapters/chapter 5.unity
+    guid: cc310d70a969d2f4c8d176440fd4b510
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7da03861c52efe645b48d1e88dbf6567, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 692cb9f4c2d29ab4fbba154c64165406, type: 2}
