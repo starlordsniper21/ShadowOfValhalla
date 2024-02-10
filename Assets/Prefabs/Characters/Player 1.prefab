@@ -68,7 +68,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2916138384536717379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.175, y: 0, z: 0}
+  m_LocalPosition: {x: -0.005, y: -0.033, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -121,7 +121,7 @@ Transform:
   - {fileID: 8870655480086894385}
   - {fileID: 4621170443046752756}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7573903623015899644
 SpriteRenderer:
@@ -337,11 +337,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d351f28bb7dae6f48af49402b23d8089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 2596283808603283408, guid: 9a61529450f6ee54ea21b6b7501ad519, type: 3}
+  arrowPrefab: {fileID: 0}
   firePoint: {fileID: 7603477561882322248}
   animator: {fileID: 0}
-  arrowSpeed: 5
-  cooldownTime: 0.5
+  arrowSpeed: 6
+  cooldownTime: 1
   maxArrows: 10
   arrowsText: {fileID: 0}
 --- !u!114 &6202010503906355493
@@ -400,8 +400,8 @@ MonoBehaviour:
   fireballPrefab: {fileID: 4670004644379819737, guid: 598c817b0870ae342af591fa95244e04, type: 3}
   firePoint: {fileID: 4621170443046752756}
   animator: {fileID: 0}
-  fireballSpeed: 10
-  cooldownTime: 0.5
+  fireballSpeed: 7
+  cooldownTime: 1
   notEnoughManaText: {fileID: 0}
   mobileFireButton: {fileID: 0}
 --- !u!1 &5829371847128373757
@@ -428,7 +428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5829371847128373757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.323, y: 0.148, z: 0}
+  m_LocalPosition: {x: 0.002, y: -0.005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -451,7 +451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5869034069925832822
 Transform:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833771660884943063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.002, y: 0.018, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -507,7 +507,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 600718349
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2c0558c5d81268648be47ebb0f69ff41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -536,7 +536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1992997531888816049
 Transform:
   m_ObjectHideFlags: 0

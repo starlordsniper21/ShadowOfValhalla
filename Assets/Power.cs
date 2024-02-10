@@ -22,23 +22,32 @@ public class FireballBullet : MonoBehaviour
         transform.right = playerDirection.normalized;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // Change to OnTriggerEnter2D
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
+        if (other.CompareTag("Enemy")) // Check if collided with an enemy
         {
-            enemyHealth.TakeDamage((int)damage);
-
-            Rigidbody2D enemyRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
-            if (enemyRigidbody != null)
+            EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
             {
-                enemyRigidbody.velocity = Vector2.zero;
-                enemyRigidbody.angularVelocity = 0f;
-                enemyRigidbody.gravityScale = 0f;
-            }
-        }
+                enemyHealth.TakeDamage((int)damage);
 
-        Destroy(gameObject);
+                Rigidbody2D enemyRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
+                if (enemyRigidbody != null)
+                {
+                    enemyRigidbody.velocity = Vector2.zero;
+                    enemyRigidbody.angularVelocity = 0f;
+                    enemyRigidbody.gravityScale = 0f;
+                }
+            }
+
+            Destroy(gameObject);
+        }
+        else if (!other.CompareTag("Player")) // Check if not collided with a player
+        {
+            // Optionally, you can apply damage to other types of objects here
+            // But for simplicity, we'll just destroy the bullet if it's not a player or an enemy
+            Destroy(gameObject);
+        }
     }
 }
-
