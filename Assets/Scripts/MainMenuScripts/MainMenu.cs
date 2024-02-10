@@ -40,6 +40,26 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync("CHATPER 3 CUTSCENE");
     }
 
+    public void PlayCutscene4()
+    {
+        SceneManager.LoadSceneAsync("CHATPER 4 CUTSCENE");
+    }
+
+    public void PlayCutscene5()
+    {
+        SceneManager.LoadSceneAsync("CHATPER 5 CUTSCENE");
+    }
+
+    public void PlayCutscene6()
+    {
+        SceneManager.LoadSceneAsync("CHATPER 6 CUTSCENE");
+    }
+
+    public void PlayCutscene7()
+    {
+        SceneManager.LoadSceneAsync("CHATPER 7 CUTSCENE");
+    }
+
     public void PlayChapter1()
     {
         SceneManager.LoadSceneAsync("CHAPTER 1");

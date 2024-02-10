@@ -340,8 +340,8 @@ MonoBehaviour:
   arrowPrefab: {fileID: 0}
   firePoint: {fileID: 7603477561882322248}
   animator: {fileID: 0}
-  arrowSpeed: 6
-  cooldownTime: 1
+  arrowSpeed: 10
+  cooldownTime: 0.6
   maxArrows: 10
   arrowsText: {fileID: 0}
 --- !u!114 &6202010503906355493
@@ -400,7 +400,7 @@ MonoBehaviour:
   fireballPrefab: {fileID: 4670004644379819737, guid: 598c817b0870ae342af591fa95244e04, type: 3}
   firePoint: {fileID: 4621170443046752756}
   animator: {fileID: 0}
-  fireballSpeed: 7
+  fireballSpeed: 15
   cooldownTime: 1
   notEnoughManaText: {fileID: 0}
   mobileFireButton: {fileID: 0}
