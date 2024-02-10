@@ -9,4 +9,10 @@ public class SkipScene : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("CHATPER 1 CUTSCENE");
     }
+
+    public void SkipButton2()
+    {
+        SceneManager.LoadSceneAsync("CHATPER 4 CUTSCENE");
+    }
+
 }

@@ -20459,7 +20459,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420033}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayIntroductionCutscene
+        m_MethodName: FirstCutscence
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

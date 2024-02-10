@@ -151,7 +151,7 @@ RectTransform:
   m_GameObject: {fileID: 62315098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -47.344402}
-  m_LocalScale: {x: 10.743079, y: 6.673914, z: 7.969043}
+  m_LocalScale: {x: 12.063537, y: 4.4770365, z: 4.548101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0077667, y: 0.0023575}
-  m_SizeDelta: {x: 148.93, y: 107.88}
+  m_AnchoredPosition: {x: -4, y: 43}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &62315100
 Animator:
@@ -345,7 +345,7 @@ RectTransform:
   m_GameObject: {fileID: 117129487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.89395, y: 0.89395, z: 0.89395}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -400,8 +400,8 @@ MonoBehaviour:
   m_text: This hidden gem was a haven for a tribe of hardy and resilient Vikings
     who had embraced their new home with open arms
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -420,13 +420,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -511,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -256}
+  m_AnchoredPosition: {x: -53, y: -318}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &161115293
@@ -559,8 +559,8 @@ MonoBehaviour:
     journey towards the neighboring village of Gresit, where he had heard whispers
     that Canute's next target lay.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -579,13 +579,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -662,7 +662,7 @@ RectTransform:
   m_GameObject: {fileID: 237955698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -47.344402}
-  m_LocalScale: {x: 10.743079, y: 6.673914, z: 7.969043}
+  m_LocalScale: {x: 12.063537, y: 4.4770365, z: 4.548101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -670,8 +670,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0077667, y: 0.0023575}
-  m_SizeDelta: {x: 148.93, y: 107.88}
+  m_AnchoredPosition: {x: -4, y: 43}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &237955700
 Animator:
@@ -760,7 +760,7 @@ RectTransform:
   m_GameObject: {fileID: 257222872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -47.344402}
-  m_LocalScale: {x: 10.743079, y: 6.673914, z: 7.969043}
+  m_LocalScale: {x: 12.063537, y: 4.4770365, z: 4.548101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -768,8 +768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0077667, y: 0.0023575}
-  m_SizeDelta: {x: 148.93, y: 107.88}
+  m_AnchoredPosition: {x: -4, y: 43}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &257222874
 Animator:
@@ -866,7 +866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -256}
+  m_AnchoredPosition: {x: -53, y: -304}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &296249705
@@ -914,8 +914,8 @@ MonoBehaviour:
     unleashing chaos, death, and destruction. Homes were reduced to ashes, and the
     village's treasures were plundered
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -934,13 +934,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1153,7 +1153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -260}
+  m_AnchoredPosition: {x: -53, y: -322}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &510232863
@@ -1201,8 +1201,8 @@ MonoBehaviour:
     who lived in the village with his loving family. Fjord had found true happiness
     within the tight-knit community of Wallachia.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1221,13 +1221,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1312,7 +1312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -256}
+  m_AnchoredPosition: {x: -53, y: -309}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &510833390
@@ -1360,8 +1360,8 @@ MonoBehaviour:
     crumbled as he found his beloved, pregnant wife and child lifeless beside each
     other.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1380,13 +1380,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1471,7 +1471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -256}
+  m_AnchoredPosition: {x: -53, y: -304}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &511289343
@@ -1519,8 +1519,8 @@ MonoBehaviour:
     the remaining villagers returned, hearts heavy with grief, to witness the horrors
     that had befallen their once-peaceful haven.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1539,13 +1539,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1757,7 +1757,7 @@ RectTransform:
   m_GameObject: {fileID: 799746672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.87806773, y: 0.87806773, z: 0.87806773}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -1791,8 +1791,8 @@ MonoBehaviour:
   m_text: Deep within the picturesque English countryside, nestled among the rolling
     hills, there existed a quaint village known as Wallachia
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1811,13 +1811,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1923,7 +1923,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -256}
+  m_AnchoredPosition: {x: -53, y: -304}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &837757163
@@ -1970,8 +1970,8 @@ MonoBehaviour:
   m_text: In their merciless rampage, Canute's army spared no one, not even women
     and children, leaving behind only a scene of utter devastation.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1990,13 +1990,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2073,7 +2073,7 @@ RectTransform:
   m_GameObject: {fileID: 901007729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -47.344402}
-  m_LocalScale: {x: 10.743079, y: 6.673914, z: 7.969043}
+  m_LocalScale: {x: 12.063537, y: 4.4770365, z: 4.548101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -2081,8 +2081,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0077667, y: 0.0023575}
-  m_SizeDelta: {x: 148.93, y: 107.88}
+  m_AnchoredPosition: {x: -4, y: 43}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &901007731
 Animator:
@@ -2171,7 +2171,7 @@ RectTransform:
   m_GameObject: {fileID: 1022284381}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -47.344402}
-  m_LocalScale: {x: 10.743079, y: 6.673914, z: 7.969043}
+  m_LocalScale: {x: 12.063537, y: 4.4770365, z: 4.548101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -2179,8 +2179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0077667, y: 0.0023575}
-  m_SizeDelta: {x: 148.93, y: 107.88}
+  m_AnchoredPosition: {x: -4, y: 43}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1022284383
 Animator:
@@ -2277,7 +2277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -256}
+  m_AnchoredPosition: {x: -53, y: -318}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1194892645
@@ -2325,8 +2325,8 @@ MonoBehaviour:
     vowed to exact vengeance upon Canute for the heinous atrocities committed against
     his fallen family and the shattered remains of his village
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2345,13 +2345,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2496,7 +2496,7 @@ RectTransform:
   m_GameObject: {fileID: 1435628358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -47.344402}
-  m_LocalScale: {x: 10.743079, y: 6.673914, z: 7.969043}
+  m_LocalScale: {x: 12.063537, y: 4.4770365, z: 4.548101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -2504,8 +2504,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0077667, y: 0.0023575}
-  m_SizeDelta: {x: 148.93, y: 107.88}
+  m_AnchoredPosition: {x: -4, y: 43}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1435628360
 Animator:
@@ -2594,7 +2594,7 @@ RectTransform:
   m_GameObject: {fileID: 1461748208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.87627, y: 0.87627, z: 0.87627}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -2602,7 +2602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -260}
+  m_AnchoredPosition: {x: -53, y: -308}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1461748210
@@ -2651,8 +2651,8 @@ MonoBehaviour:
     know that their absence would leave Wallachia vulnerable to the cruel hand of
     fate.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2671,13 +2671,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2762,7 +2762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -256}
+  m_AnchoredPosition: {x: -53, y: -318}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1562050355
@@ -2811,8 +2811,8 @@ MonoBehaviour:
     his fellow Vikings, revealing that it was indeed Canute's ruthless army that
     had perpetrated this heinous act.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2831,13 +2831,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2922,7 +2922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -256}
+  m_AnchoredPosition: {x: -53, y: -309}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1749468318
@@ -2969,8 +2969,8 @@ MonoBehaviour:
   m_text: There, he would stand as a beacon of retribution and justice, determined
     to protect innocent lives from the cruelty that had befallen his own.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2989,13 +2989,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3072,7 +3072,7 @@ RectTransform:
   m_GameObject: {fileID: 1760033870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -47.344402}
-  m_LocalScale: {x: 10.743079, y: 6.673914, z: 7.969043}
+  m_LocalScale: {x: 12.063537, y: 4.4770365, z: 4.548101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -3080,8 +3080,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0077667, y: 0.0023575}
-  m_SizeDelta: {x: 148.93, y: 107.88}
+  m_AnchoredPosition: {x: -4, y: 43}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1760033872
 Animator:
@@ -3170,7 +3170,7 @@ RectTransform:
   m_GameObject: {fileID: 1771988231}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -47.344402}
-  m_LocalScale: {x: 10.743079, y: 6.673914, z: 7.969043}
+  m_LocalScale: {x: 12.063537, y: 4.4770365, z: 4.548101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -3178,8 +3178,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0077667, y: 0.0023575}
-  m_SizeDelta: {x: 148.93, y: 107.88}
+  m_AnchoredPosition: {x: -4, y: 43}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1771988233
 Animator:
@@ -3268,7 +3268,7 @@ RectTransform:
   m_GameObject: {fileID: 1785200799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -47.344402}
-  m_LocalScale: {x: 10.743079, y: 6.673914, z: 7.969043}
+  m_LocalScale: {x: 12.063537, y: 4.4770365, z: 4.548101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -3276,8 +3276,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0077667, y: 0.0023575}
-  m_SizeDelta: {x: 148.93, y: 107.88}
+  m_AnchoredPosition: {x: -4, y: 43}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1785200801
 Animator:
@@ -3366,7 +3366,7 @@ RectTransform:
   m_GameObject: {fileID: 1800952991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -47.344402}
-  m_LocalScale: {x: 16.535765, y: 7.969043, z: 7.969043}
+  m_LocalScale: {x: 12.063537, y: 4.4770365, z: 4.548101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002222233}
@@ -3374,7 +3374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -4, y: 43}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1800952994
@@ -3852,7 +3852,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -260}
+  m_AnchoredPosition: {x: -53, y: -307}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2032398510
@@ -3901,8 +3901,8 @@ MonoBehaviour:
     On the distant horizon, a dark shadow emerged. It was the menacing army of Canute,
     a fearsome warlord known for his brutality.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
-  m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3921,13 +3921,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

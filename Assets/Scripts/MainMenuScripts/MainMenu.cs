@@ -12,6 +12,19 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Introduction");
     }
+
+    public void TutorialLevel()
+    {
+        SceneManager.LoadSceneAsync("TUTORIAL LEVEL");
+    }
+
+    public void FirstCutscence()
+    {
+        SceneManager.LoadSceneAsync("FirstCutscene");
+    }
+
+
+
     public void PlayCutscene1()
     {
         SceneManager.LoadSceneAsync("CHATPER 1 CUTSCENE");
