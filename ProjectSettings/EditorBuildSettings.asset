@@ -9,58 +9,58 @@ EditorBuildSettings:
     path: Assets/Menu/Main Menu.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/FirstCutscene.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/FirstCutscene.unity
     guid: 64bfe45dfca0d4d4c97cb8ec5b58a03d
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/Tutorial Cutscene.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/Tutorial Cutscene.unity
     guid: 458460f664d1a1442a7d9ed53df9a132
   - enabled: 1
     path: Assets/Level/Chapters/TUTORIAL LEVEL.unity
     guid: 76a238fe3ef6f574f8bdd44b9df371dc
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/Introduction.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/Introduction.unity
     guid: 622ededc5f45ddb40976d3965adba5f2
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/Chatper 1 Cutscene.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/Chatper 1 Cutscene.unity
     guid: f52d1b8612c1e52408e92badfffa6785
   - enabled: 1
     path: Assets/Level/Chapters/chapter 1.unity
     guid: b654bf35d022bde4fa6b9172e3d90932
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/Chatper 2 Cutscene.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/Chatper 2 Cutscene.unity
     guid: d3adb7aa1610baa4994b9b948bab1d55
   - enabled: 1
     path: Assets/Level/Chapters/chapter 2.unity
     guid: 81b43a097343a7541ba3c9b4a5ff9b27
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/Chatper 3 Cutscene.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/Chatper 3 Cutscene.unity
     guid: 5fe57c63cf3a2dc4b997c16923eaeb07
   - enabled: 1
     path: Assets/Level/Chapters/chapter 3.unity
     guid: 125902b3cbe69c449b8d8d79254cbb2f
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/to be continued scene.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/to be continued scene.unity
     guid: 161d37baaccaaa04c8018e8cd064a565
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/Chatper 4 Cutscene.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/Chatper 4 Cutscene.unity
     guid: d02b78dd517910f44ae6b4c2d1e2c730
   - enabled: 1
     path: Assets/Level/Chapters/chapter 4.unity
     guid: 20f7d7e05fdb92a45a371b51dc4446a3
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/Chatper 5 Cutscene.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/Chatper 5 Cutscene.unity
     guid: c20f8b0090935434fad3c60b65d75a0c
   - enabled: 1
     path: Assets/Level/Chapters/chapter 5.unity
     guid: cc310d70a969d2f4c8d176440fd4b510
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/Chatper 6 Cutscene.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/Chatper 6 Cutscene.unity
     guid: ff5652bbfb1a9dd4abd18e9d277c8146
   - enabled: 1
     path: Assets/Level/Chapters/chapter 6.unity
     guid: 40e81c1dcf383854da5b1df787a1a847
   - enabled: 1
-    path: Assets/Level/Cutscenes  & cinematics/Chatper 7 Cutscene.unity
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/Chatper 7 Cutscene.unity
     guid: 083f259e1b13b0d40b0495d1648ec0aa
   - enabled: 1
     path: Assets/Level/Chapters/chapter 7.unity
