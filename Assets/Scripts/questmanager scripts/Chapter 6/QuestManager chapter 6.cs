@@ -19,14 +19,15 @@ public class QuestManager6 : MonoBehaviour
     public GameObject objectToShow8;
     public GameObject objectToShow9;
     public GameObject objectToShow10;
-    public GameObject objectToShow11;
-    public GameObject objectToDestroy1;
+    public GameObject objectToDestroy;
     public GameObject objectToDestroy2;
+    public GameObject objectToDestroy3;
+    public GameObject objectToDestroy4;
+    public GameObject objectToDestroy5;
 
-    
+
     public TextMeshProUGUI questProgressText;
 
-    
     private enum QuestState
     {
         FindAnotherWayInsideTheFortress,
@@ -64,7 +65,6 @@ public class QuestManager6 : MonoBehaviour
         if (objectToShow8 != null) objectToShow8.SetActive(false);
         if (objectToShow9 != null) objectToShow9.SetActive(false);
         if (objectToShow10 != null) objectToShow10.SetActive(false);
-        if (objectToShow11 != null) objectToShow11.SetActive(false);
     }
 
     public void InitiateFindAnotherWayInsideTheFortressQuest()
@@ -102,6 +102,7 @@ public class QuestManager6 : MonoBehaviour
     {
         if (questState == QuestState.FindAtros)
         {
+
             ChangeQuestState(QuestState.ExamineTheCells);
         }
     }
@@ -165,7 +166,7 @@ public class QuestManager6 : MonoBehaviour
     {
         if (questState == QuestState.GetOutOfTheDungeonAgain)
         {
-            
+
         }
     }
 
@@ -211,11 +212,31 @@ public class QuestManager6 : MonoBehaviour
 
     void ChangeQuestState(QuestState newState)
     {
+        // Check if the new state is "FindAtros", if so, destroy the objectToDestroy
+        if (newState == QuestState.FindAtros)
+        {
+            Destroy(objectToDestroy);
+        }
+        if (newState == QuestState.ExamineTheCells)
+        {
+            Destroy(objectToDestroy2);
+        }
+
+        if (newState == QuestState.TalkToAtros)
+        {
+            Destroy(objectToDestroy3);
+        }
+        questState = newState;
+        UpdateQuestProgressText();
+
+        if (newState == QuestState.GetOutOfTheDungeonAgain)
+        {
+            Destroy(objectToDestroy5);
+        }
         questState = newState;
         UpdateQuestProgressText();
 
         // Deactivate firstquest if it's not needed anymore
-       
         // Activate objects based on current quest state
         switch (questState)
         {
@@ -265,4 +286,5 @@ public class QuestManager6 : MonoBehaviour
                 break;
         }
     }
+
 }
