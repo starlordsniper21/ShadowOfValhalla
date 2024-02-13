@@ -65,6 +65,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Chapters/chapter 7.unity
     guid: 516a29c9419ae984f8cf1e37f1876ffa
+  - enabled: 1
+    path: Assets/Scripts/LeaderBoard/LeaderBoardPanel.unity
+    guid: ce5361f6cacdd1d4abfb1a9b14c02dfa
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7da03861c52efe645b48d1e88dbf6567, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 692cb9f4c2d29ab4fbba154c64165406, type: 2}
