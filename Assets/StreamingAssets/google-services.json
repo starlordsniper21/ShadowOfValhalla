@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "966430284862",
+    "firebase_url": "https://shadowofvallhala-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "shadowofvallhala",
+    "storage_bucket": "shadowofvallhala.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966430284862:android:88060d1e8b87516ce8056f",
+        "android_client_info": {
+          "package_name": "com.teamCaps10.ShadowOfVallhala"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNOs26DQ8F7diXunql7UDM_WgbsZPDB64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

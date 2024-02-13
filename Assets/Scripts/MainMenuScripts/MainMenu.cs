@@ -98,4 +98,10 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void leaderboardTest()
+    {
+        SceneManager.LoadSceneAsync("LeaderBoardPanel");
+    }
+
 }
