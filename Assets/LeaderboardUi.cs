@@ -11,19 +11,17 @@ public class LeaderboardUI : MonoBehaviour
     public List<TextMeshProUGUI> timesTextList;
     public TMP_InputField nameInputField;
     public Button submitButton;
-    public Timer timer;
-
+    private Timer timer; // Reference to your Timer script
     public DataSaver dataSaver;
 
     DatabaseReference reference;
-
     bool canSubmit = true;
 
     private void Start()
     {
         reference = FirebaseDatabase.DefaultInstance.RootReference;
-
         FetchLeaderboardData();
+        timer = FindObjectOfType<Timer>(); // Dynamically find the Timer object
     }
 
     void FetchLeaderboardData()
@@ -56,35 +54,39 @@ public class LeaderboardUI : MonoBehaviour
 
     public void SubmitTime()
     {
-
         if (!canSubmit)
         {
             Debug.LogWarning("You can only submit data once every 5 minutes.");
             return;
         }
 
-        int currentTimeSeconds = Mathf.FloorToInt(Time.time);
-        int minutes = currentTimeSeconds / 60;
-        int seconds = currentTimeSeconds % 60;
-        string formattedTime = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-        string playerName = nameInputField.text;
-        if (string.IsNullOrEmpty(playerName))
+        // Ensure Timer is not null and running
+        if (timer != null && timer.isTimerRunning)
         {
-            Debug.LogWarning("Please enter your name.");
-            return;
+            string formattedTime = FormatTime(timer.elapsedTime);
+            string playerName = nameInputField.text;
+
+            if (string.IsNullOrEmpty(playerName))
+            {
+                Debug.LogWarning("Please enter your name.");
+                return;
+            }
+
+            dataSaver.dts.names.Add(playerName);
+            dataSaver.dts.time.Add(formattedTime);
+
+            // Save the data
+            dataSaver.SaveDataFn();
+
+            // Fetch leaderboard data after submitting time
+            FetchLeaderboardData();
+
+            StartCoroutine(SubmitCooldown());
         }
-
-        dataSaver.dts.names.Add(playerName);
-        dataSaver.dts.time.Add(formattedTime);
-
-        // Save the data
-        dataSaver.SaveDataFn();
-
-        // Fetch leaderboard data after submitting time
-        FetchLeaderboardData();
-
-        StartCoroutine(SubmitCooldown());
+        else
+        {
+            Debug.LogWarning("Timer is not running.");
+        }
     }
 
     IEnumerator SubmitCooldown()
@@ -97,8 +99,6 @@ public class LeaderboardUI : MonoBehaviour
         canSubmit = true; // Set flag to true to allow submissions again
     }
 
-    
-
 
     private string FormatTime(float timeInSeconds)
     {
@@ -106,7 +106,4 @@ public class LeaderboardUI : MonoBehaviour
         int seconds = Mathf.FloorToInt(timeInSeconds % 60);
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
-
-
-
 }
