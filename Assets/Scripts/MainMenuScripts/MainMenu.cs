@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     // This function will be called when the "Chapter 1" button is clicked.
+    public Timer timer;
 
 
     public void PlayIntroductionCutscene()
     {
         SceneManager.LoadSceneAsync("Introduction");
+
     }
 
     public void TutorialLevel()
@@ -20,8 +22,17 @@ public class MainMenu : MonoBehaviour
 
     public void FirstCutscence()
     {
+
+        if (timer != null)
+        {
+            timer.StartTimer();
+            Debug.Log("Timer Activated");
+        }
+
+        // Load the scene
         SceneManager.LoadSceneAsync("FirstCutscene");
     }
+
 
 
 

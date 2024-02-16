@@ -11,8 +11,6 @@ public class LeaderboardUI : MonoBehaviour
     public List<TextMeshProUGUI> timesTextList;
     public TMP_InputField nameInputField;
     public Button submitButton;
-
-    public TextMeshProUGUI timerText;
     public Timer timer;
 
     public DataSaver dataSaver;
@@ -26,8 +24,6 @@ public class LeaderboardUI : MonoBehaviour
         reference = FirebaseDatabase.DefaultInstance.RootReference;
 
         FetchLeaderboardData();
-
-        timer.OnTimerTick += UpdateTimerText;
     }
 
     void FetchLeaderboardData()
@@ -101,11 +97,7 @@ public class LeaderboardUI : MonoBehaviour
         canSubmit = true; // Set flag to true to allow submissions again
     }
 
-    private void UpdateTimerText(float time)
-    {
-        string formattedTime = FormatTime(time);
-        timerText.text = formattedTime;
-    }
+    
 
 
     private string FormatTime(float timeInSeconds)

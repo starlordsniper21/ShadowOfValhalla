@@ -1747,9 +1747,9 @@ GameObject:
   m_Component:
   - component: {fileID: 900423070}
   - component: {fileID: 900423072}
-  - component: {fileID: 900423071}
+  - component: {fileID: 900423073}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Timers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1775,7 +1775,15 @@ RectTransform:
   m_AnchoredPosition: {x: 408, y: 44}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0.5}
---- !u!114 &900423071
+--- !u!222 &900423072
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900423069}
+  m_CullTransparentMesh: 1
+--- !u!114 &900423073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1795,7 +1803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:00
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1864,14 +1872,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &900423072
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900423069}
-  m_CullTransparentMesh: 1
 --- !u!1 &922615223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,6 +2209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138062044}
   - component: {fileID: 1138062043}
+  - component: {fileID: 1138062045}
   m_Layer: 0
   m_Name: Time
   m_TagString: Untagged
@@ -2243,6 +2244,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1138062045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138062042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 600a3cae7b62ab04a8089c8d5186a9e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 1138062043}
+  timerText: {fileID: 900423073}
 --- !u!1 &1165288037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3386,7 +3401,7 @@ MonoBehaviour:
   dts:
     userName: 
     names: []
-    times: 
+    time: []
   userId: 
 --- !u!4 &1635445137
 Transform:
@@ -3591,7 +3606,6 @@ MonoBehaviour:
   - {fileID: 939702738}
   nameInputField: {fileID: 410224136}
   submitButton: {fileID: 22482356}
-  timerText: {fileID: 900423071}
   timer: {fileID: 1138062043}
   dataSaver: {fileID: 1635445136}
 --- !u!4 &1695609932
