@@ -12,11 +12,16 @@ public class Health : MonoBehaviour
     [SerializeField] private float invulnerabilityDuration = 2.0f;
     private float invulnerabilityTimer = 0.0f;
 
+    private Renderer renderer;
+    private Collider2D collider;
+
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         gameOverManager = FindObjectOfType<GameOverManager>();
+        renderer = GetComponent<Renderer>();
+        collider = GetComponent<Collider2D>();
     }
 
     private void Update()
@@ -45,6 +50,9 @@ public class Health : MonoBehaviour
                 {
                     dead = true;
                     SoundManager.instance.PlaySound(deathSoundPlayer);
+                    // Hide the player object
+                    renderer.enabled = false;
+                    collider.enabled = false;
                     gameOverManager.gameOver();
                     Debug.Log("dead");
                 }
