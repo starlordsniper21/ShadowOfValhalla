@@ -45,7 +45,9 @@ public class Timer : MonoBehaviour
     // Method to stop the timer
     public void StopTimer()
     {
+        Debug.Log("Paused Timer");
         isTimerRunning = false;
+        Time.timeScale = 0;
     }
 
     // Method to reset the timer
