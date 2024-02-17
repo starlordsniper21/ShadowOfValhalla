@@ -394,6 +394,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41809370}
   m_CullTransparentMesh: 1
+--- !u!1 &75405270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75405272}
+  - component: {fileID: 75405271}
+  m_Layer: 0
+  m_Name: TImeUi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &75405271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75405270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 600a3cae7b62ab04a8089c8d5186a9e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  timerText: {fileID: 900423073}
+--- !u!4 &75405272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75405270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -137.14757, y: -74.95628, z: -1.3734728}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &197358100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4465,7 +4511,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2088910601}
   - component: {fileID: 2088910600}
-  - component: {fileID: 2088910602}
   m_Layer: 0
   m_Name: LeaderboardManagement
   m_TagString: Untagged
@@ -4485,7 +4530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2334b2edfb41ba54e8bf64830e7df6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 2088910602}
+  timer: {fileID: 0}
+  timerUI: {fileID: 75405271}
 --- !u!4 &2088910601
 Transform:
   m_ObjectHideFlags: 0
@@ -4501,20 +4547,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2088910602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088910599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de34b918d9230044196469a431d8b5cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  elapsedTime: 0
-  isTimerRunning: 0
 --- !u!1 &2112171925
 GameObject:
   m_ObjectHideFlags: 0

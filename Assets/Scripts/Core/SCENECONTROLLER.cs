@@ -29,7 +29,7 @@ public class SceneController : MonoBehaviour
             if (SceneController.instance.timer != null)
             {
                 Time.timeScale = 0;
-                SceneController.instance.timer.StopTimer();
+                SceneController.instance.timer.PauseTimer();
                 Debug.Log("Timer paused");
             }
         }
@@ -42,7 +42,7 @@ public class SceneController : MonoBehaviour
 
         if (sceneName == "LeaderBoardPanel" && timer != null)
         {
-            timer.StopTimer();
+            timer.PauseTimer();
             Debug.Log("Timer paused");
         }
     }

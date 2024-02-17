@@ -3,47 +3,52 @@ using TMPro;
 
 public class TimerUI : MonoBehaviour
 {
-    public Timer timer; // Reference to the Timer script
-    public TextMeshProUGUI timerText;
+    private Timer timer; // Reference to the Timer script
+    public TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component
 
     private void Start()
     {
-        // Subscribe to the timer tick event to update the UI text
-        if (timer != null)
+        // Find the Timer script component in the scene
+        timer = FindObjectOfType<Timer>();
+
+        if (timer == null)
         {
-            timer.OnTimerTick += UpdateTimeUI;
+            Debug.LogError("Timer script not found in the scene.");
         }
         else
         {
-            Debug.LogWarning("Timer reference is not set in TimerUI!");
+            // Subscribe to the timer events
+            timer.OnTimerTick += UpdateTimerUI;
+
+            // If the timer is already running, update the UI immediately
+            if (timer.isTimerRunning)
+            {
+                UpdateTimerUI(timer.elapsedTime);
+            }
         }
+    }
+
+    private void UpdateTimerUI(float newValue)
+    {
+        // Update the text of the TextMeshPro UI element with the current timer value
+        timerText.text = "Timer: " + FormatTime(newValue);
+    }
+
+    private string FormatTime(float timeInSeconds)
+    {
+        // Format the timer value into minutes and seconds
+        int minutes = Mathf.FloorToInt(timeInSeconds / 60);
+        int seconds = Mathf.FloorToInt(timeInSeconds % 60);
+
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     private void OnDestroy()
     {
-        // Unsubscribe from the timer tick event to prevent memory leaks
+        // Unsubscribe from the timer events
         if (timer != null)
         {
-            timer.OnTimerTick -= UpdateTimeUI;
+            timer.OnTimerTick -= UpdateTimerUI;
         }
-    }
-
-    private void UpdateTimeUI(float time)
-    {
-        // Calculate hours, minutes, seconds, and milliseconds
-        int hours = Mathf.FloorToInt(time / 3600);
-        int minutes = Mathf.FloorToInt((time % 3600) / 60);
-        int seconds = Mathf.FloorToInt(time % 60);
-        int milliseconds = Mathf.FloorToInt((time * 1000) % 1000);
-
-        // Format the time string in stopwatch format (HH:MM:SS:MS)
-        string formattedTime = string.Format("{0:00}:{1:00}:{2:00}:{3:000}",
-            hours, // Hours
-            minutes, // Minutes
-            seconds, // Seconds
-            milliseconds); // Milliseconds
-
-        // Update the TextMeshPro text element with the formatted time
-        timerText.text = "Elapsed Time: " + formattedTime;
     }
 }

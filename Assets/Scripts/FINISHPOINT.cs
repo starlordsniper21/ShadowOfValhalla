@@ -16,7 +16,7 @@ public class FinishPoint : MonoBehaviour
             {
                 if (SceneController.instance.timer != null)
                 {
-                    SceneController.instance.timer.StopTimer();
+                    SceneController.instance.timer.PauseTimer();
                     Debug.Log("Timer paused");
                 }
             }
