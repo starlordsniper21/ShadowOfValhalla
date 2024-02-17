@@ -28,6 +28,7 @@ public class SceneController : MonoBehaviour
         {
             if (SceneController.instance.timer != null)
             {
+                Time.timeScale = 0;
                 SceneController.instance.timer.StopTimer();
                 Debug.Log("Timer paused");
             }

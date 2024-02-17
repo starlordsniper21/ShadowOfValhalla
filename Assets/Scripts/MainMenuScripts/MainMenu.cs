@@ -22,14 +22,12 @@ public class MainMenu : MonoBehaviour
 
     public void FirstCutscence()
     {
-
         if (timer != null)
         {
             timer.StartTimer();
             Debug.Log("Timer Activated");
         }
 
-        // Load the scene
         SceneManager.LoadSceneAsync("FirstCutscene");
     }
 
