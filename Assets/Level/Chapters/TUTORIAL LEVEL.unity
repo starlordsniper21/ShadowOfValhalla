@@ -907,6 +907,10 @@ PrefabInstance:
       propertyPath: movementJoystick
       value: 
       objectReference: {fileID: 776846021}
+    - target: {fileID: 2916138384536717379, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3339754931372471506, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: arrowsText
       value: 
@@ -918,6 +922,10 @@ PrefabInstance:
     - target: {fileID: 4894666472519163335, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829371847128373757, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8927163312156816264, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: mobileFireButton

@@ -806,7 +806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2115991995394184778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -909,7 +909,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5607367751858059444}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1493139306240921052, guid: ba885971a3885204385bc961fe24e86a, type: 3}
+        m_TargetAssemblyTypeName: HealthPotionManager, Assembly-CSharp
+        m_MethodName: UseHealthPotion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1095470341005878035
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &681993054684724731
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1811,7 +1823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7512302988026142137
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1914,7 +1926,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4789870712436231531}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5136085388999544017, guid: be92c7e3f70fed643af9eae118ba61e7, type: 3}
+        m_TargetAssemblyTypeName: ManaPotionManager, Assembly-CSharp
+        m_MethodName: UseManaPotion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1993801435802589138
 GameObject:
   m_ObjectHideFlags: 0
@@ -6522,7 +6546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3793274128248967093
 RectTransform:
   m_ObjectHideFlags: 0
