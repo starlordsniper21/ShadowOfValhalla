@@ -37,7 +37,7 @@ public class TimeManager : MonoBehaviour
     {
         if (timer != null)
         {
-            timer.StopTimer();
+            timer.PauseTimer();
         }
     }
 

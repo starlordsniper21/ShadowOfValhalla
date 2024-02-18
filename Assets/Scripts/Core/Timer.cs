@@ -10,6 +10,10 @@ public class Timer : MonoBehaviour
     public delegate void TimerTick(float time);
     public event TimerTick OnTimerTick;
 
+    // Event delegate for timer pause
+    public delegate void TimerPause(bool isPaused);
+    public event TimerPause OnTimerPause;
+
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
@@ -40,14 +44,14 @@ public class Timer : MonoBehaviour
     public void StartTimer()
     {
         isTimerRunning = true;
+        OnTimerPause?.Invoke(false); // Notify subscribers that the timer is not paused
     }
 
-    // Method to stop the timer
-    public void StopTimer()
+    // Method to pause the timer
+    public void PauseTimer()
     {
-        Debug.Log("Paused Timer");
         isTimerRunning = false;
-        Time.timeScale = 0;
+        OnTimerPause?.Invoke(true); // Notify subscribers that the timer is paused
     }
 
     // Method to reset the timer
@@ -56,3 +60,4 @@ public class Timer : MonoBehaviour
         elapsedTime = 0f;
     }
 }
+

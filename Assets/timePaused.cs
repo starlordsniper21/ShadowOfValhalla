@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class timePaused : MonoBehaviour
 {
     // Reference to your Timer component
-    public Timer timer; // Make sure to assign this in the Inspector
+    public TimerUI timerUI;
 
     private void Start()
     {
@@ -22,19 +22,25 @@ public class timePaused : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        // Check if the timer reference is not null before using it
-        if (timer != null)
+        // Check if the timerUI reference is not null before using it
+        if (timerUI != null)
         {
+            // Call the UpdateTimerUI method on the timerUI instance
+            
+
             // Reset the timer
-            timer.ResetTimer();
         }
         else
         {
-            Debug.LogWarning("Timer reference is null.");
+            Debug.LogWarning("TimerUI reference is null.");
         }
 
         // Load the main menu scene
         SceneManager.LoadSceneAsync("Main Menu");
     }
+
+
+
+
 }
 
