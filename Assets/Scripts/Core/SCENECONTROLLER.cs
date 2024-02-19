@@ -24,15 +24,6 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
 
-        if (SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1).name == "LeaderBoardPanel")
-        {
-            if (SceneController.instance.timer != null)
-            {
-                Time.timeScale = 0;
-                SceneController.instance.timer.PauseTimer();
-                Debug.Log("Timer paused");
-            }
-        }
     }
 
     public void LoadScene(string sceneName)
@@ -40,11 +31,6 @@ public class SceneController : MonoBehaviour
 
         SceneManager.LoadScene(sceneName);
 
-        if (sceneName == "LeaderBoardPanel" && timer != null)
-        {
-            timer.PauseTimer();
-            Debug.Log("Timer paused");
-        }
     }
 
 }

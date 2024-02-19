@@ -11,15 +11,6 @@ public class FinishPoint : MonoBehaviour
         {
             UnlockNewLevel();
             SceneController.instance.NextLevel();
-
-            if (SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1).name == "LeaderBoardPanel")
-            {
-                if (SceneController.instance.timer != null)
-                {
-                    SceneController.instance.timer.PauseTimer();
-                    Debug.Log("Timer paused");
-                }
-            }
         }
     }
 

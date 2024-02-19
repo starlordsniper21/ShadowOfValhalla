@@ -91,12 +91,10 @@ public class LeaderboardUI : MonoBehaviour
 
     IEnumerator SubmitCooldown()
     {
-        canSubmit = false; // Set flag to false to prevent further submissions
+        canSubmit = false;
+        yield return new WaitForSeconds(300f);
 
-        // Wait for 5 minutes
-        yield return new WaitForSeconds(300f); // 300 seconds = 5 minutes
-
-        canSubmit = true; // Set flag to true to allow submissions again
+        canSubmit = true;
     }
 
 

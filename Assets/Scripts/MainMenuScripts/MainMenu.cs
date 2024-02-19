@@ -108,7 +108,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void leaderboardTest()
+    public void LeaderboardTest()
     {
         SceneManager.LoadSceneAsync("LeaderBoardPanel");
     }
