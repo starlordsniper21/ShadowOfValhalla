@@ -23,6 +23,7 @@ public class QuestManager7 : MonoBehaviour
     public GameObject objectToShow10;
     public GameObject objectToDestroy;
     public GameObject objectToDestroy2;
+    public GameObject objectToDestroy22;
     public GameObject objectToDestroy3;
     public GameObject objectToDestroy4;
     public GameObject objectToDestroy5;
@@ -180,7 +181,7 @@ public class QuestManager7 : MonoBehaviour
                 questProgressText.text = "Defeat the Twin General" + northgeneralskilled + "/" + northgeneralstokill;
                 break;
             case QuestState.ConfrontCanute:
-                questProgressText.text = "Confront Canute";
+                questProgressText.text = "Confront Canute on The next Floor";
                 break;
             
         }
@@ -189,15 +190,35 @@ public class QuestManager7 : MonoBehaviour
     void ChangeQuestState(QuestState newState)
     {
         // Check if the new state is "FindCanute", if so, destroy the objectToDestroy
-        if (newState == QuestState.FindCanute)
+        if (newState == QuestState.GoToEastSide)
         {
             Destroy(objectToDestroy);
         }
         questState = newState;
         UpdateQuestProgressText();
 
-        // Deactivate firstquest if it's not needed anymore
-        // Activate objects based on current quest state
+        if (newState == QuestState.GoToWestSide)
+        {
+            Destroy(objectToDestroy2);
+            Destroy(objectToDestroy22);
+        }
+
+        if (newState == QuestState.GoToNorthSide)
+        {
+            Destroy(objectToDestroy3);
+            Destroy(objectToDestroy4);
+        }
+        if (newState == QuestState.ConfrontCanute)
+        {
+            Destroy(objectToDestroy5);
+        }
+
+
+
+
+
+
+
         switch (questState)
         {
             case QuestState.FindCanute:
