@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Database;
 using System;
-
+using System.Collections.Generic;
+using System.Collections;
 
 [Serializable]
 public class dataToSave
@@ -19,14 +18,12 @@ public class dataToSave
     }
 }
 
-
-
 public class DataSaver : MonoBehaviour
 {
-
     public dataToSave dts;
     public string userId;
     DatabaseReference dbref;
+    public Action onDataLoaded; // Callback function to be invoked after data is loaded
 
     private void Awake()
     {
@@ -41,30 +38,28 @@ public class DataSaver : MonoBehaviour
 
     public void LoadDataFn()
     {
-        StartCoroutine(LoadDataEnum());
+        StartCoroutine(LoadDataCoroutine());
     }
 
-    IEnumerator LoadDataEnum()
+    private IEnumerator LoadDataCoroutine()
     {
         var serverData = dbref.Child("users").Child(userId).GetValueAsync();
-        yield return new WaitUntil(predicate:  () => serverData.IsCompleted);
-
-        print("process completed");
+        yield return new WaitUntil(() => serverData.IsCompleted);
 
         DataSnapshot snapshot = serverData.Result;
         string jsonData = snapshot.GetRawJsonValue();
 
-        if(jsonData != null)
+        if (jsonData != null)
         {
-            print("server data not found");
             dts = JsonUtility.FromJson<dataToSave>(jsonData);
+            onDataLoaded?.Invoke();
         }
         else
         {
-            print("no data found");
+            Debug.LogWarning("Failed to load data from Firebase.");
         }
-
     }
+
 
 
 }
