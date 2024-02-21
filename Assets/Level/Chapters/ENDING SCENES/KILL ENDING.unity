@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeTime: 8.5
-  sceneName: chapter 7
+  sceneName: LeaderBoardPanel
 --- !u!1 &1514676988
 GameObject:
   m_ObjectHideFlags: 0

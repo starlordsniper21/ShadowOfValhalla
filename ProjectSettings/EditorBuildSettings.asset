@@ -75,6 +75,15 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/chapter 7 Final boss.unity
     guid: 0a859baedf26827489635564a1cef377
   - enabled: 1
+    path: Assets/Level/Chapters/ENDING SCENES/KILL ENDING.unity
+    guid: c59502b7d0c34b14387cf4f409cfcda0
+  - enabled: 1
+    path: Assets/Level/Chapters/ENDING SCENES/SPARE ENDING.unity
+    guid: 7a28892a8d29202428acb407e34cd515
+  - enabled: 1
+    path: Assets/Level/Chapters/ENDING SCENES/TALK ENDING.unity
+    guid: aace6e15ef3ab604db7f8aace5014006
+  - enabled: 1
     path: Assets/Scripts/LeaderBoard/LeaderBoardPanel.unity
     guid: ce5361f6cacdd1d4abfb1a9b14c02dfa
   m_configObjects:
