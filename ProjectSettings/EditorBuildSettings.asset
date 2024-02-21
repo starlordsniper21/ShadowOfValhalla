@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/chapter 1.unity
     guid: b654bf35d022bde4fa6b9172e3d90932
   - enabled: 1
+    path: Assets/Level/Chapters/chapter 1 boss.unity
+    guid: d854a3deae9664346a3b9d0629215ff8
+  - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Chatper 2 Cutscene.unity
     guid: d3adb7aa1610baa4994b9b948bab1d55
   - enabled: 1
@@ -68,6 +71,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Chapters/chapter 7.unity
     guid: 99eae4df45fbfa14b8acf7a328321095
+  - enabled: 1
+    path: Assets/Level/Chapters/chapter 7 Final boss.unity
+    guid: 0a859baedf26827489635564a1cef377
   - enabled: 1
     path: Assets/Scripts/LeaderBoard/LeaderBoardPanel.unity
     guid: ce5361f6cacdd1d4abfb1a9b14c02dfa

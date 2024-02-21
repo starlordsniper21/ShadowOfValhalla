@@ -20,6 +20,7 @@ public class QuestManager7boss : MonoBehaviour
         ConfrontCanute,
         DefeatCanute, 
         FinishCanute,
+        gameover,
     }
 
     private QuestState questState = QuestState.ConfrontCanute;
@@ -64,8 +65,16 @@ public class QuestManager7boss : MonoBehaviour
 
     public void FinishCanute()
     {
-
+        if (questState == QuestState.FinishCanute)
+        {
+            ChangeQuestState(QuestState.gameover);
+        }
     }
+
+    public void gameover()
+    {
+
+    }    
 
 
     void UpdateQuestProgressText()
