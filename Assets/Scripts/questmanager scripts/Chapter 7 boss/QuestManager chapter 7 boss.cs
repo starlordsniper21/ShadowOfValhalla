@@ -6,21 +6,30 @@ public class QuestManager7boss : MonoBehaviour
 {
     public int CANUTEKilled = 0;
     public int CANUTEToKill = 1;
+    public int CANUTEKilled2 = 0;
+    public int CanuteToKill2 = 1;
     public GameObject firstquest;
     public GameObject objectToShow1;
     public GameObject objectToShow2;
+    public GameObject objectToShow3;
+    public GameObject objectToShow4;
+    public GameObject objectToShow5;
+
     public GameObject objectToDestroy;
     public GameObject objectToDestroy2;
-    public GameObject objectToShow3;
+
 
     public TextMeshProUGUI questProgressText;
 
     private enum QuestState
     {
         ConfrontCanute,
-        DefeatCanute, 
+        DefeatCanute,
+        ApproachCanute,
+        DefeatCanuteGodForm,
+        ApproachCanuteAgain,
         FinishCanute,
-        gameover,
+        GameOver,
     }
 
     private QuestState questState = QuestState.ConfrontCanute;
@@ -38,6 +47,8 @@ public class QuestManager7boss : MonoBehaviour
         if (objectToShow1 != null) objectToShow1.SetActive(false);
         if (objectToShow2 != null) objectToShow2.SetActive(false);
         if (objectToShow3 != null) objectToShow3.SetActive(false);
+        if (objectToShow4 != null) objectToShow4.SetActive(false);
+        if (objectToShow5 != null) objectToShow5.SetActive(false);
     }
 
     public void InitiateConfrontCanuteQuest()
@@ -56,26 +67,39 @@ public class QuestManager7boss : MonoBehaviour
 
             if (CANUTEKilled >= CANUTEToKill)
             {
-                ChangeQuestState(QuestState.FinishCanute);
+                ChangeQuestState(QuestState.ApproachCanute);
             }
 
             UpdateQuestProgressText();
         }
     }
 
-    public void FinishCanute()
+    public void ApproachCanute()
     {
-        if (questState == QuestState.FinishCanute)
+        if (questState == QuestState.ApproachCanute)
         {
-            ChangeQuestState(QuestState.gameover);
+            ChangeQuestState(QuestState.DefeatCanuteGodForm);
         }
     }
 
-    public void gameover()
+    public void DefeatCanuteGodForm()
     {
+        if (questState == QuestState.DefeatCanuteGodForm)
+        {
+            CANUTEKilled2++;
 
-    }    
+            if (CANUTEKilled2 >= CanuteToKill2)
+            {
+                ChangeQuestState(QuestState.FinishCanute);
+            }
+            UpdateQuestProgressText();
+        }
+    }
 
+    public void FinishCanute()
+    {
+        // Add actions to perform when Canute is defeated
+    }
 
     void UpdateQuestProgressText()
     {
@@ -85,41 +109,56 @@ public class QuestManager7boss : MonoBehaviour
                 questProgressText.text = "Confront Canute ";
                 break;
             case QuestState.DefeatCanute:
-                questProgressText.text = "DEFEAT CANUTE!" +CANUTEKilled + "/" + CANUTEToKill;
+                questProgressText.text = "DEFEAT CANUTE!";
+                break;
+            case QuestState.ApproachCanute:
+                questProgressText.text = "Approach Canute";
+                break;
+            case QuestState.DefeatCanuteGodForm:
+                questProgressText.text = "DEFEAT CANUTE GOD FORM!";
                 break;
             case QuestState.FinishCanute:
-                questProgressText.text = " FINISH OFF CANUTE";
+                questProgressText.text = "Finish off Canute";
                 break;
         }
     }
 
     void ChangeQuestState(QuestState newState)
     {
-        // Check if the new state is "FindCanute", if so, destroy the objectToDestroy
+        // Check if the new state is "ApproachCanute", if so, destroy the objectToDestroy
         questState = newState;
         UpdateQuestProgressText();
 
+        if (newState == QuestState.ApproachCanute)
         {
-        }
-        if (newState == QuestState.ConfrontCanute)
-        {
+            // Add actions to perform when approaching Canute
         }
 
         switch (questState)
         {
             case QuestState.ConfrontCanute:
-                if (objectToShow1!= null)
+                if (objectToShow1 != null)
                     objectToShow1.SetActive(true);
                 break;
             case QuestState.DefeatCanute:
-                if(objectToShow2!= null)
+                if (objectToShow2 != null)
                     objectToShow2.SetActive(true);
                 break;
-
-            case QuestState.FinishCanute:
+            case QuestState.ApproachCanute:
                 if (objectToShow3 != null)
                     objectToShow3.SetActive(true);
                 break;
+            case QuestState.DefeatCanuteGodForm:
+                if (objectToShow4 != null)
+                    objectToShow4.SetActive(true);
+                break;
+                case QuestState.FinishCanute:
+                if (objectToShow5 != null)
+                    objectToShow5.SetActive(true);
+                break;
+
+
+
         }
     }
 }

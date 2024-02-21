@@ -16,6 +16,7 @@ public class EnemyController7boss: MonoBehaviour
     private void OnDestroy()
     {
         questManager7boss.DefeatCanute();
+        questManager7boss.DefeatCanuteGodForm();
 
 
     }

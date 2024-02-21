@@ -14,7 +14,7 @@ public class QuestTrigger7_2boss : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // trigger keep exploring dungeon
-            questManager7boss.FinishCanute();
+            questManager7boss.ApproachCanute();
 
             // Disable the trigger so it doesn't initiate the quest repeatedly.
             gameObject.SetActive(false);
