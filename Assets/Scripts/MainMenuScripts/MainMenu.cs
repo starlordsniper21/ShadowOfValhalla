@@ -36,37 +36,37 @@ public class MainMenu : MonoBehaviour
 
     public void PlayCutscene1()
     {
-        SceneManager.LoadSceneAsync("CHATPER 1 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 1 CUTSCENE");
     }
 
     public void PlayCutscene2()
     {
-        SceneManager.LoadSceneAsync("CHATPER 2 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 2 CUTSCENE");
     }
 
     public void PlayCutscene3()
     {
-        SceneManager.LoadSceneAsync("CHATPER 3 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 3 CUTSCENE");
     }
 
     public void PlayCutscene4()
     {
-        SceneManager.LoadSceneAsync("CHATPER 4 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 4 CUTSCENE");
     }
 
     public void PlayCutscene5()
     {
-        SceneManager.LoadSceneAsync("CHATPER 5 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 5 CUTSCENE");
     }
 
     public void PlayCutscene6()
     {
-        SceneManager.LoadSceneAsync("CHATPER 6 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 6 CUTSCENE");
     }
 
     public void PlayCutscene7()
     {
-        SceneManager.LoadSceneAsync("CHATPER 7 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 7 CUTSCENE");
     }
 
     public void PlayChapter1()
@@ -96,6 +96,15 @@ public class MainMenu : MonoBehaviour
     public void PlayChapter5()
     {
         SceneManager.LoadSceneAsync("CHAPTER 5");
+    }
+    public void PlayChapter6()
+    {
+        SceneManager.LoadSceneAsync("CHAPTER 6");
+    }
+
+    public void PlayChapter7()
+    {
+        SceneManager.LoadSceneAsync("CHAPTER 7");
     }
 
     public void PlayTutorial()
