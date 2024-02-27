@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     // This function will be called when the "Chapter 1" button is clicked.
-    public Timer timer;
+    public TimeManager timeManager;
 
 
     public void PlayIntroductionCutscene()
@@ -20,14 +20,24 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync("TUTORIAL LEVEL");
     }
 
-    public void FirstCutscence()
+    public void FirstCutscene()
     {
-        if (timer != null)
+        // Find the TimeManager object in the scene
+        TimeManager timeManager = FindObjectOfType<TimeManager>();
+
+        // Check if the TimeManager is not null before starting the timer
+        if (timeManager != null)
         {
-            timer.StartTimer();
+            // Access the StartTimer method from the TimeManager
+            timeManager.StartTimer();
             Debug.Log("Timer Activated");
         }
+        else
+        {
+            Debug.LogWarning("TimeManager not found in the scene!");
+        }
 
+        // Load the FirstCutscene scene
         SceneManager.LoadSceneAsync("FirstCutscene");
     }
 

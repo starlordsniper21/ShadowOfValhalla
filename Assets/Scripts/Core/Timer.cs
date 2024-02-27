@@ -57,6 +57,7 @@ public class Timer : MonoBehaviour
     // Method to reset the timer
     public void ResetTimer()
     {
+        isTimerRunning = false;
         elapsedTime = 0f;
     }
 }

@@ -11875,7 +11875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6616f3646d231e544a81ff72bd3b20ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 1040270850}
+  timeManager: {fileID: 1803085609}
 --- !u!222 &519420034
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22551,17 +22551,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037065683}
   m_CullTransparentMesh: 1
---- !u!114 &1040270850 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9034519315869018225, guid: 45793b21fd5c4a04d8c78973a0e51575, type: 3}
-  m_PrefabInstance: {fileID: 3175008793055036907}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de34b918d9230044196469a431d8b5cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1041114701
 GameObject:
   m_ObjectHideFlags: 0
@@ -25904,11 +25893,11 @@ RectTransform:
   m_Father: {fileID: 1856831981}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -565.1518, y: -249}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -662, y: -221.64044}
   m_SizeDelta: {x: 293.6964, y: 45.2809}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1177696919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39955,6 +39944,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802973143}
   m_CullTransparentMesh: 1
+--- !u!114 &1803085609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8652488581726530230, guid: 45793b21fd5c4a04d8c78973a0e51575, type: 3}
+  m_PrefabInstance: {fileID: 3175008793055036907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8f5430400012b4b875a6026a1667fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1809582552
 GameObject:
   m_ObjectHideFlags: 0
@@ -48519,7 +48519,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420033}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: FirstCutscence
+        m_MethodName: FirstCutscene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
