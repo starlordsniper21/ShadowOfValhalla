@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     // This function will be called when the "Chapter 1" button is clicked.
-    public Timer timer;
+    public TimeManager timeManager;
 
 
     public void PlayIntroductionCutscene()
@@ -20,14 +20,24 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync("TUTORIAL LEVEL");
     }
 
-    public void FirstCutscence()
+    public void FirstCutscene()
     {
-        if (timer != null)
+        // Find the TimeManager object in the scene
+        TimeManager timeManager = FindObjectOfType<TimeManager>();
+
+        // Check if the TimeManager is not null before starting the timer
+        if (timeManager != null)
         {
-            timer.StartTimer();
+            // Access the StartTimer method from the TimeManager
+            timeManager.StartTimer();
             Debug.Log("Timer Activated");
         }
+        else
+        {
+            Debug.LogWarning("TimeManager not found in the scene!");
+        }
 
+        // Load the FirstCutscene scene
         SceneManager.LoadSceneAsync("FirstCutscene");
     }
 
@@ -36,37 +46,37 @@ public class MainMenu : MonoBehaviour
 
     public void PlayCutscene1()
     {
-        SceneManager.LoadSceneAsync("CHATPER 1 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 1 CUTSCENE");
     }
 
     public void PlayCutscene2()
     {
-        SceneManager.LoadSceneAsync("CHATPER 2 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 2 CUTSCENE");
     }
 
     public void PlayCutscene3()
     {
-        SceneManager.LoadSceneAsync("CHATPER 3 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 3 CUTSCENE");
     }
 
     public void PlayCutscene4()
     {
-        SceneManager.LoadSceneAsync("CHATPER 4 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 4 CUTSCENE");
     }
 
     public void PlayCutscene5()
     {
-        SceneManager.LoadSceneAsync("CHATPER 5 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 5 CUTSCENE");
     }
 
     public void PlayCutscene6()
     {
-        SceneManager.LoadSceneAsync("CHATPER 6 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 6 CUTSCENE");
     }
 
     public void PlayCutscene7()
     {
-        SceneManager.LoadSceneAsync("CHATPER 7 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 7 CUTSCENE");
     }
 
     public void PlayChapter1()
@@ -96,6 +106,15 @@ public class MainMenu : MonoBehaviour
     public void PlayChapter5()
     {
         SceneManager.LoadSceneAsync("CHAPTER 5");
+    }
+    public void PlayChapter6()
+    {
+        SceneManager.LoadSceneAsync("CHAPTER 6");
+    }
+
+    public void PlayChapter7()
+    {
+        SceneManager.LoadSceneAsync("CHAPTER 7");
     }
 
     public void PlayTutorial()

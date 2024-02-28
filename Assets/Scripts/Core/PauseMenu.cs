@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+
+    
     
     public void Pause()
     {
@@ -17,6 +19,17 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
+
+        TimeManager timeManager = FindObjectOfType<TimeManager>();
+        if (timeManager != null)
+        {
+            timeManager.ResetTimer();
+        }
+        else
+        {
+            Debug.LogWarning("TimeManager not found!");
+        }
+
     }
 
     public void Resume()

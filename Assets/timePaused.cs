@@ -20,23 +20,18 @@ public class timePaused : MonoBehaviour
 
     public void resetTimer()
     {
-        Time.timeScale = 1f;
+        SceneManager.LoadScene("Main Menu");
+        Time.timeScale = 1;
 
-        // Check if the timerUI reference is not null before using it
-        if (timerUI != null)
+        TimeManager timeManager = FindObjectOfType<TimeManager>();
+        if (timeManager != null)
         {
-            // Call the UpdateTimerUI method on the timerUI instance
-            
-
-            // Reset the timer
+            timeManager.ResetTimer();
         }
         else
         {
-            Debug.LogWarning("TimerUI reference is null.");
+            Debug.LogWarning("TimeManager not found!");
         }
-
-        // Load the main menu scene
-        SceneManager.LoadSceneAsync("Main Menu");
     }
 
 

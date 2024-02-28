@@ -3968,7 +3968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeTime: 245
-  sceneName: Chatper 1 Cutscene
+  sceneName: Chapter 1 Cutscene
 --- !u!114 &2018426150
 MonoBehaviour:
   m_ObjectHideFlags: 0

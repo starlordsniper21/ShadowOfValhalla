@@ -3,12 +3,11 @@ using TMPro;
 
 public class TimerUI : MonoBehaviour
 {
-    private Timer timer; // Reference to the Timer script
-    public TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component
+    private Timer timer;
+    public TextMeshProUGUI timerText;
 
     private void Start()
     {
-        // Find the Timer script component in the scene
         timer = FindObjectOfType<Timer>();
 
         if (timer == null)
@@ -17,10 +16,7 @@ public class TimerUI : MonoBehaviour
         }
         else
         {
-            // Subscribe to the timer events
             timer.OnTimerTick += UpdateTimerUI;
-
-            // If the timer is already running, update the UI immediately
             if (timer.isTimerRunning)
             {
                 UpdateTimerUI(timer.elapsedTime);
@@ -30,8 +26,7 @@ public class TimerUI : MonoBehaviour
 
     private void UpdateTimerUI(float newValue)
     {
-        // Update the text of the TextMeshPro UI element with the current timer value
-        timerText.text = "Timer: " + FormatTime(newValue);
+        timerText.text = "Time: " + FormatTime(newValue);
     }
 
     private string FormatTime(float timeInSeconds)
@@ -45,7 +40,6 @@ public class TimerUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Unsubscribe from the timer events
         if (timer != null)
         {
             timer.OnTimerTick -= UpdateTimerUI;

@@ -7,12 +7,12 @@ public class SkipScene : MonoBehaviour
 {
     public void SkipButton()
     {
-        SceneManager.LoadSceneAsync("CHATPER 1 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 1 CUTSCENE");
     }
 
     public void SkipButton2()
     {
-        SceneManager.LoadSceneAsync("CHATPER 4 CUTSCENE");
+        SceneManager.LoadSceneAsync("CHAPTER 4 CUTSCENE");
     }
 
 }
