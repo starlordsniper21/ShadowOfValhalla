@@ -7,7 +7,7 @@ public class EndingChoose : MonoBehaviour
 {
     public void PlayKillCutscene()
     {
-        SceneManager.LoadSceneAsync("KILL ENDING");
+        SceneManager.LoadSceneAsync("KILL CANUTE 1");
 
     }
 
