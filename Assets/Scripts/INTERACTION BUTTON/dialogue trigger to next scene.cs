@@ -13,9 +13,9 @@ public class DialogueTriggertonextscene : MonoBehaviour
     public Text characterNameTextA;
     public Text characterNameTextB;
     public Button nextButton;
-    public Canvas backgroundCanvas;
+    public Image fadeImage; // Reference to the black image for fading.
     public string nextSceneName; // Name of the next scene to load.
-    public CanvasGroup fadeOutCanvas;
+    public float fadeDuration = 1.5f; // Duration of the fade effect.
 
     private int currentDialogueIndex = 0;
     private bool dialogueActive = false;
@@ -23,9 +23,7 @@ public class DialogueTriggertonextscene : MonoBehaviour
     private void Start()
     {
         dialogueBox.SetActive(false);
-        fadeOutCanvas.alpha = 0f; // Set initial alpha value to 0 (fully transparent).
-        fadeOutCanvas.interactable = false;
-        fadeOutCanvas.blocksRaycasts = false;
+        fadeImage.enabled = false; // Hide the fade image at the start.
         nextButton.onClick.AddListener(ShowNextDialogue);
     }
 
@@ -43,14 +41,12 @@ public class DialogueTriggertonextscene : MonoBehaviour
         if (dialogueActive)
         {
             dialogueBox.SetActive(true);
-            backgroundCanvas.enabled = false;
             ShowNextDialogue();
-            Time.timeScale = 0;
         }
         else
         {
             ZeroText();
-            StartCoroutine(FadeOutScene()); // Corrected method name.
+            StartCoroutine(FadeToBlackAndLoadScene()); // Start the fade-out effect and load the scene.
         }
     }
 
@@ -72,18 +68,29 @@ public class DialogueTriggertonextscene : MonoBehaviour
         else
         {
             ZeroText();
-            StartCoroutine(FadeOutScene());
+            StartCoroutine(FadeToBlackAndLoadScene()); // Start the fade-out effect and load the scene.
         }
     }
 
-    private IEnumerator FadeOutScene()
+    private IEnumerator FadeToBlackAndLoadScene()
     {
-        // Fade out the current scene.
-        while (fadeOutCanvas.alpha < 1f)
+        fadeImage.enabled = true; // Show the fade image.
+
+        float elapsedTime = 0f;
+        Color startColor = fadeImage.color;
+        Color targetColor = new Color(0f, 0f, 0f, 1f); // Fully opaque black.
+
+        while (elapsedTime < fadeDuration)
         {
-            fadeOutCanvas.alpha += Time.deltaTime;
+            fadeImage.color = Color.Lerp(startColor, targetColor, elapsedTime / fadeDuration);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        fadeImage.color = targetColor; // Ensure the image is fully black.
+
+        // Wait for a short duration before loading the next scene (you can adjust this duration as needed).
+        yield return new WaitForSeconds(0.5f);
 
         // Load the next scene using the specified scene name.
         SceneManager.LoadScene(nextSceneName);
