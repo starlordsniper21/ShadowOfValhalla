@@ -75,19 +75,28 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/chapter 7 Final boss.unity
     guid: 0a859baedf26827489635564a1cef377
   - enabled: 1
-    path: Assets/Level/Chapters/Chapter 7 finale scenes/KILL CANUTE 1.unity
+    path: Assets/Level/Chapters/Chapter 7 finale scenes/KILL CANUTE/KILL CANUTE 1.unity
     guid: 5f39ebefcdf28504986b57afa5b3499d
   - enabled: 1
-    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/ENDING
-      SCENES/KILL ENDING.unity
+    path: Assets/Level/Chapters/Chapter 7 finale scenes/KILL CANUTE/KILL ENDING.unity
     guid: c59502b7d0c34b14387cf4f409cfcda0
   - enabled: 1
-    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/ENDING
-      SCENES/SPARE ENDING.unity
+    path: Assets/Level/Chapters/Chapter 7 finale scenes/SPARE CANUTE/SPARE CANUTE
+      SCENE 1.unity
+    guid: b732cf81266084942b27fd3c05dc4991
+  - enabled: 1
+    path: Assets/Level/Chapters/Chapter 7 finale scenes/SPARE CANUTE/SPARE CANUTE
+      SCENE 2.unity
+    guid: d7f998fa7b6d08f409ee3ca46add3dd8
+  - enabled: 1
+    path: Assets/Level/Chapters/Chapter 7 finale scenes/SPARE CANUTE/SPARE CANUTE
+      SCENE 3.unity
+    guid: bdc49c59e0aaee14284448346bd7a9de
+  - enabled: 1
+    path: Assets/Level/Chapters/Chapter 7 finale scenes/SPARE CANUTE/SPARE ENDING.unity
     guid: 7a28892a8d29202428acb407e34cd515
   - enabled: 1
-    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/ENDING
-      SCENES/TALK ENDING.unity
+    path: Assets/Level/Chapters/Chapter 7 finale scenes/TALK TO CANUTE/TALK ENDING.unity
     guid: aace6e15ef3ab604db7f8aace5014006
   - enabled: 1
     path: Assets/Scripts/LeaderBoard/LeaderBoardPanel.unity
