@@ -13,7 +13,7 @@ public class EndingChoose : MonoBehaviour
 
     public void PlaySpareCutscene()
     {
-        SceneManager.LoadSceneAsync("SPARE ENDING");
+        SceneManager.LoadSceneAsync("SPARE CANUTE SCENE 1");
 
     }
 
