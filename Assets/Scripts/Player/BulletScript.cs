@@ -7,6 +7,7 @@ public class BulletScript : MonoBehaviour
     GameObject target;
     public float speed;
     public int damage = 2;
+    public int armorDamage = 1; // Amount of armor damage inflicted
     Rigidbody2D bulletRB;
 
     void Start()
@@ -23,11 +24,29 @@ public class BulletScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Health playerHealth = other.GetComponent<Health>();
+            Armor playerArmor = other.GetComponent<Armor>(); // Get the player's armor component
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(damage);
+                if (playerArmor != null)
+                {
+                    // Reduce armor first
+                    playerArmor.TakeDamage(armorDamage);
+
+                    // If armor is completely depleted, apply remaining damage to health
+                    if (playerArmor.currentArmor <= 0)
+                    {
+                        playerHealth.TakeDamage(damage);
+                    }
+                }
+                else
+                {
+                    // Player doesn't have armor, apply damage directly to health
+                    playerHealth.TakeDamage(damage);
+                }
             }
             Destroy(gameObject);
         }
     }
+
 }
+
