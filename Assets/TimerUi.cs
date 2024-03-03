@@ -26,12 +26,12 @@ public class TimerUI : MonoBehaviour
 
     private void UpdateTimerUI(float newValue)
     {
-        timerText.text = "Time: " + FormatTime(newValue);
+        timerText.text =  FormatTime(newValue);
     }
 
     private string FormatTime(float timeInSeconds)
     {
-        // Format the timer value into minutes and seconds
+        
         int minutes = Mathf.FloorToInt(timeInSeconds / 60);
         int seconds = Mathf.FloorToInt(timeInSeconds % 60);
 

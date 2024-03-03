@@ -4,15 +4,11 @@ using System.Collections;
 
 public class SceneController : MonoBehaviour
 {
-   
     public static SceneController instance;
-
-
     public Timer timer;
 
     private void Awake()
     {
-        
         if (instance == null)
         {
             instance = this;
@@ -23,16 +19,13 @@ public class SceneController : MonoBehaviour
             Destroy(gameObject);
         }
 
-      
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-    
         if (scene.buildIndex != 0)
         {
-            // Start the timer
             if (timer != null)
             {
                 timer.StartTimer();
@@ -50,8 +43,8 @@ public class SceneController : MonoBehaviour
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadSceneAsync(nextSceneIndex);
-            PlayerPrefs.SetInt("LastSceneIndex", nextSceneIndex); 
-            PlayerPrefs.SetFloat("TimerValue", timer.GetTime()); 
+            PlayerPrefs.SetInt("LastSceneIndex", nextSceneIndex);
+            PlayerPrefs.SetFloat("TimerValue", timer.GetTime());
         }
         else
         {
@@ -59,22 +52,20 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
         PlayerPrefs.SetString("LastScene", sceneName);
     }
 
-    
     public void LoadLastScene()
     {
-        if (PlayerPrefs.HasKey("LastSceneIndex")) 
+        if (PlayerPrefs.HasKey("LastSceneIndex"))
         {
             int lastSceneIndex = PlayerPrefs.GetInt("LastSceneIndex");
             float timerValue = PlayerPrefs.GetFloat("TimerValue");
-            SceneManager.LoadScene(lastSceneIndex); 
-            StartCoroutine(LoadTimer(timerValue)); 
+            SceneManager.LoadScene(lastSceneIndex);
+            StartCoroutine(LoadTimer(timerValue));
         }
         else
         {
@@ -82,10 +73,14 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    
     IEnumerator LoadTimer(float value)
     {
         yield return new WaitForEndOfFrame();
-        timer.SetTime(value); 
+        timer.SetTime(value);
+    }
+
+    public void LoadFirstCutscene()
+    {
+        LoadScene("FirstCutscene");
     }
 }
