@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
-
-    public Timer timer; // Reference to the Timer script
+    public Timer timer;
 
     private void Awake()
     {
@@ -20,6 +18,23 @@ public class SceneController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.buildIndex != 0)
+        {
+            if (timer != null)
+            {
+                timer.StartTimer();
+            }
+            else
+            {
+                Debug.LogWarning("Timer reference not set in SceneController.");
+            }
+        }
     }
 
     public void NextLevel()
@@ -28,7 +43,8 @@ public class SceneController : MonoBehaviour
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadSceneAsync(nextSceneIndex);
-            PlayerPrefs.SetInt("LastSceneIndex", nextSceneIndex); // Save scene index instead of name
+            PlayerPrefs.SetInt("LastSceneIndex", nextSceneIndex);
+            PlayerPrefs.SetFloat("TimerValue", timer.GetTime());
         }
         else
         {
@@ -44,14 +60,27 @@ public class SceneController : MonoBehaviour
 
     public void LoadLastScene()
     {
-        if (PlayerPrefs.HasKey("LastSceneIndex")) // Check if scene index is saved
+        if (PlayerPrefs.HasKey("LastSceneIndex"))
         {
             int lastSceneIndex = PlayerPrefs.GetInt("LastSceneIndex");
-            SceneManager.LoadScene(lastSceneIndex); // Load scene by index
+            float timerValue = PlayerPrefs.GetFloat("TimerValue");
+            SceneManager.LoadScene(lastSceneIndex);
+            StartCoroutine(LoadTimer(timerValue));
         }
         else
         {
             Debug.LogWarning("No last scene found.");
         }
+    }
+
+    IEnumerator LoadTimer(float value)
+    {
+        yield return new WaitForEndOfFrame();
+        timer.SetTime(value);
+    }
+
+    public void LoadFirstCutscene()
+    {
+        LoadScene("FirstCutscene");
     }
 }
