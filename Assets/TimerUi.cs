@@ -31,11 +31,11 @@ public class TimerUI : MonoBehaviour
 
     private string FormatTime(float timeInSeconds)
     {
-        
-        int minutes = Mathf.FloorToInt(timeInSeconds / 60);
+        int hours = Mathf.FloorToInt(timeInSeconds / 3600);
+        int minutes = Mathf.FloorToInt((timeInSeconds % 3600) / 60);
         int seconds = Mathf.FloorToInt(timeInSeconds % 60);
 
-        return string.Format("{0:00}:{1:00}", minutes, seconds);
+        return string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
     }
 
     private void OnDestroy()
