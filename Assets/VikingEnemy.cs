@@ -3,13 +3,13 @@ using System.Collections;
 
 public class VikingEnemy : MonoBehaviour
 {
-    public float detectionRadius = 5f; // Radius to detect the player
-    public float preparationRadius = 4f; // Radius for preparation before attack
+    public float detectionRadius = 5f; 
+    public float preparationRadius = 4f; 
     public float attackRadius = 2f;
     public float prepareTime = 5f;
     public float attackInterval = 5f;
     public float movementSpeed = 2f;
-    public float disableRadius = 8f; // Radius to disable the attack area
+    public float disableRadius = 8f; 
     public Animator animator;
     public GameObject vikingAttackArea;
     private Transform player;
@@ -19,7 +19,7 @@ public class VikingEnemy : MonoBehaviour
     private float attackTimer = 0f;
     bool isVikingAttackAreaActive = false;
     float timeElapsedAfterPreparation = 0f;
-    private bool facingRight = true; // Track the direction the Viking is facing
+    private bool facingRight = true;
 
     private void Start()
     {
@@ -42,7 +42,8 @@ public class VikingEnemy : MonoBehaviour
                 Vector2 direction = (player.position - transform.position).normalized;
                 transform.Translate(direction * movementSpeed * Time.deltaTime);
 
-                // Flip the Viking if needed
+               // Flipping Logic nung enemy
+
                 if (direction.x > 0 && !facingRight)
                 {
                     Flip();
@@ -52,12 +53,12 @@ public class VikingEnemy : MonoBehaviour
                     Flip();
                 }
 
-                // Trigger running animation
+                // run animation 
                 animator.SetBool("IsRunning", true);
             }
             if (distanceToPlayer <= preparationRadius && !preparing)
             {
-                // Start preparing for attack
+                // prepare attack animation
                 animator.SetTrigger("VikingR");
                 preparing = true;
                 prepareTimer = 0f;
@@ -72,22 +73,22 @@ public class VikingEnemy : MonoBehaviour
                     preparing = false;
                     Debug.Log("Preparation for attack complete.");
 
-                    // Enable the attack area collider
-                    vikingAttackArea.SetActive(true);
-                    isVikingAttackAreaActive = true;
-                    Attack();
-                    StartCoroutine(DisableAttackAreaAfterDelay(2f));
+                    // Trigger attack animation
+                    animator.SetTrigger("Attack");
                 }
             }
-
-            if (!preparing && isVikingAttackAreaActive && !vikingAttackArea.activeSelf)
+            // ito pinalitan ko boss ginawa ko is mag aactivate lang ang attack area if playing ang attack animation
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("vikingAttack") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
             {
-                // If the attack area is active but hasn't hit the player yet, start the delay
-                if (distanceToPlayer <= disableRadius)
-                {
-                    StartCoroutine(DisableAttackAreaAfterDelay(1f));
-                    vikingAttackArea.SetActive(false);
-                }
+               
+                vikingAttackArea.SetActive(true);
+                isVikingAttackAreaActive = true;
+            }
+            else
+            {
+                // tas eto ididisable niya attack area after ng attck animation
+                vikingAttackArea.SetActive(false);
+                isVikingAttackAreaActive = false;
             }
 
             if (distanceToPlayer <= attackRadius)
@@ -100,35 +101,20 @@ public class VikingEnemy : MonoBehaviour
             playerInRange = false;
             prepareTimer = 0f;
             attackTimer = 0f;
-            preparing = false; // Reset preparing flag when player is out of range
+            preparing = false; 
 
-            // Disable the attack area collider when player is out of range
+          
             vikingAttackArea.SetActive(false);
             isVikingAttackAreaActive = false;
 
-            // Stop running animation when player is out of range
+            
             animator.SetBool("IsRunning", false);
         }
     }
 
-    IEnumerator DisableAttackAreaAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        vikingAttackArea.SetActive(false);
-        isVikingAttackAreaActive = false;
-    }
-
-    private void Attack()
-    {
-        // Play attack animation
-        animator.SetTrigger("VikingA");
-        Debug.Log("Enemy attacks the player.");
-        attackTimer = 0f;
-    }
-
     private void Flip()
     {
-        // Flip the Viking's scale to change direction
+        
         facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
@@ -137,19 +123,19 @@ public class VikingEnemy : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        // Draw detection radius
+        
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
 
-        // Draw preparation radius
+       
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, preparationRadius);
 
-        // Draw attack radius
+      
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
 
-        // Draw disable radius
+       
         Gizmos.color = Color.gray;
         Gizmos.DrawWireSphere(transform.position, disableRadius);
     }

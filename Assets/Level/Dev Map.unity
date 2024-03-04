@@ -2224,7 +2224,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1629399818118898035, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
       propertyPath: prepareTime
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629399818118898035, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
+      propertyPath: movementSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629399818118898035, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
+      propertyPath: attackInterval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629399818118898035, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
+      propertyPath: detectionRadius
+      value: 12.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629399818118898035, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
+      propertyPath: attackAnimationDuration
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3087529437462414089, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
       propertyPath: itemPrefabs.Array.size
