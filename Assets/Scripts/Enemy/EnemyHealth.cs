@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 100; // Maximum health of the enemy
-    private int currentHealth;  // Current health of the enemy
+    public int maxHealth = 100;
+    private int currentHealth;  
     [SerializeField] FloatingHealthBar healthBar;
     private Animator anim;
     [SerializeField] private AudioClip deathSoundEnemy;
@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth; // Initialize current health to maximum health
+        currentHealth = maxHealth; 
         healthBar.UpdateHealthBar(currentHealth, maxHealth);
     }
 
@@ -26,10 +26,10 @@ public class EnemyHealth : MonoBehaviour
         healthBar = GetComponentInChildren<FloatingHealthBar>();
     }
 
-    // Function to take damage
+    
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage; // Reduce current health by the damage amount
+        currentHealth -= damage; 
         healthBar.UpdateHealthBar(currentHealth, maxHealth);
 
         if (currentHealth > 0)
@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
         // Check if the enemy has been defeated
         if (currentHealth <= 0)
         {
-            Die(); // Call the function to handle the enemy's death
+            Die(); //death sound 
             SoundManager.instance.PlaySound(deathSoundEnemy);
         }
     }
@@ -51,7 +51,7 @@ public class EnemyHealth : MonoBehaviour
         return (float)currentHealth / maxHealth;
     }
 
-    // Function to handle the enemy's death
+  // enemy dead
     void Die()
     {
         if (Random.value <= dropChance)
