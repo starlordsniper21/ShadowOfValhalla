@@ -7,7 +7,8 @@ public class TimerBox : MonoBehaviour
     public int damageAmount = 50;
     public Color explosionColor = Color.red;
     public Animator animator;
-    public AudioSource explosionSound;
+    public AudioClip explosionSoundClip; // Sound clip for explosion
+    public AudioClip preExplosionSoundClip; // Sound clip before explosion
 
     private bool triggered = false;
 
@@ -30,46 +31,58 @@ public class TimerBox : MonoBehaviour
             triggered = true;
             animator.SetBool("Idle", false);
             animator.SetBool("Explode", true);
-            if (explosionSound != null)
+
+            // Play pre-explosion sound
+            if (preExplosionSoundClip != null)
             {
-                explosionSound.Play();
+                AudioSource.PlayClipAtPoint(preExplosionSoundClip, transform.position);
             }
 
-            // Damage objects in the explosion radius
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-            foreach (Collider2D collider in colliders)
+            // Delay for pre-explosion sound
+            float delay = 1f; // 2 seconds delay for pre-explosion sound
+            Invoke("Explode", delay);
+        }
+    }
+
+    void Explode()
+    {
+        // Play explosion sound
+        if (explosionSoundClip != null)
+        {
+            AudioSource.PlayClipAtPoint(explosionSoundClip, transform.position);
+        }
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("Player"))
             {
-                if (collider.CompareTag("Player"))
+                Armor armorComponent = collider.GetComponent<Armor>();
+                if (armorComponent != null && armorComponent.currentArmor > 0)
                 {
-                    // Damage the player
-                    Armor armorComponent = collider.GetComponent<Armor>();
-                    if (armorComponent != null && armorComponent.currentArmor > 0)
-                    {
-                        armorComponent.TakeDamage(damageAmount);
-                        Debug.Log("Armor Damage: " + damageAmount);
-                    }
-                    else
-                    {
-                        Health healthComponent = collider.GetComponent<Health>();
-                        if (healthComponent != null)
-                        {
-                            healthComponent.TakeDamage(damageAmount);
-                            Debug.Log("Health Damage: " + damageAmount);
-                        }
-                    }
+                    armorComponent.TakeDamage(damageAmount);
+                    Debug.Log("Armor Damage: " + damageAmount);
                 }
-                else if (collider.CompareTag("Enemy"))
+                else
                 {
-                    // Damage the enemy
-                    EnemyHealth enemyHealth = collider.GetComponent<EnemyHealth>();
-                    if (enemyHealth != null)
+                    Health healthComponent = collider.GetComponent<Health>();
+                    if (healthComponent != null)
                     {
-                        enemyHealth.TakeDamage(damageAmount);
-                        Debug.Log("Enemy Damage: " + damageAmount);
+                        healthComponent.TakeDamage(damageAmount);
+                        Debug.Log("Health Damage: " + damageAmount);
                     }
                 }
             }
-            Destroy(gameObject, 1f); // Delay destruction by 1 second to allow animation to finish
+            else if (collider.CompareTag("Enemy"))
+            {
+                EnemyHealth enemyHealth = collider.GetComponent<EnemyHealth>();
+                if (enemyHealth != null)
+                {
+                    enemyHealth.TakeDamage(damageAmount);
+                    Debug.Log("Enemy Damage: " + damageAmount);
+                }
+            }
         }
+        Destroy(gameObject, 1f);
     }
 }

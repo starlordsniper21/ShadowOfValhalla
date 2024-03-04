@@ -147,6 +147,7 @@ MonoBehaviour:
   timeScaleFactor: 0.5
   duration: 5
   deadEyeColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  activateSound: {fileID: 8300000, guid: 9dd5256dd74336748ad08a9e09ff4325, type: 3}
 --- !u!95 &4387490568376777558
 Animator:
   serializedVersion: 5

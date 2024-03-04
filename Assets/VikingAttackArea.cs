@@ -2,34 +2,35 @@ using UnityEngine;
 
 public class VikingAttackArea : MonoBehaviour
 {
-    public float attackDamage = 10f; // Amount of damage the enemy's attack deals
-    public float knockbackThrust = 10f; // Amount of thrust for knockback
-    public Rigidbody2D playerRigidbody; // Reference to the Rigidbody2D of the player
+    public float attackDamage = 10f;
+    public Rigidbody2D playerRigidbody;
+    public MovePlayer movePlayer;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    [SerializeField] private float armorDamage;
+    [SerializeField] private float healthDamage;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player") && movePlayer != null)
         {
-            // Damage the player
-            Armor armorComponent = other.GetComponent<Armor>();
+            movePlayer.KBCounter = movePlayer.KBTotalTime;
+            if (collision.transform.position.x <= transform.position.x)
+                movePlayer.KnockFromRight = true;
+            else
+                movePlayer.KnockFromRight = false;
+            Armor armorComponent = collision.GetComponent<Armor>();
             if (armorComponent != null && armorComponent.currentArmor > 0)
             {
-                armorComponent.TakeDamage(attackDamage);
-                Debug.Log("Armor Damage: " + attackDamage);
+                armorComponent.TakeDamage(armorDamage);
+                Debug.Log("Armor Damage: " + armorDamage);
             }
             else
             {
-                Health healthComponent = other.GetComponent<Health>();
+                Health healthComponent = collision.GetComponent<Health>();
                 if (healthComponent != null)
                 {
-                    healthComponent.TakeDamage(attackDamage);
-                    Debug.Log("Health Damage: " + attackDamage);
-                    if (playerRigidbody != null)
-                    {
-                        Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
-                        playerRigidbody.velocity = Vector2.zero;
-                        playerRigidbody.AddForce(knockbackDirection * knockbackThrust, ForceMode2D.Impulse);
-                    }
+                    healthComponent.TakeDamage(healthDamage);
+                    Debug.Log("Health Damage: " + healthDamage);
                 }
             }
             gameObject.SetActive(false);

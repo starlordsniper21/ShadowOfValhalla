@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -199,9 +199,10 @@ MonoBehaviour:
   maxHealth: 5
   healthBar: {fileID: 1856043888679131040}
   deathSoundEnemy: {fileID: 8300000, guid: 9c7b31276eacc3949b50b23bb518c7d7, type: 3}
-  hurtSoundEnemy: {fileID: 8300000, guid: 74923a871e11dd243acddcdef8998bb6, type: 3}
-  itemPrefabs: []
-  dropChance: 0.2
+  hurtSoundEnemy: {fileID: 8300000, guid: f8ec0b6c3df770f4299cb5a0b50ed88c, type: 3}
+  itemPrefabs:
+  - {fileID: 6990602504756650007, guid: d00d4a81109c4434fa0f3280b014a1e5, type: 3}
+  dropChance: 1
 --- !u!114 &1629399818118898035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,8 +521,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 2
-  knockbackThrust: 10
   playerRigidbody: {fileID: 0}
+  movePlayer: {fileID: 0}
+  armorDamage: 1
+  healthDamage: 1
 --- !u!1 &6634935177555488229
 GameObject:
   m_ObjectHideFlags: 0

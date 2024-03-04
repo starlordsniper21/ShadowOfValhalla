@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1033407532857444131
 MonoBehaviour:
@@ -51,7 +51,8 @@ MonoBehaviour:
   damageAmount: 50
   explosionColor: {r: 1, g: 0, b: 0, a: 1}
   animator: {fileID: 2864342427025292860}
-  explosionSound: {fileID: 0}
+  explosionSoundClip: {fileID: 8300000, guid: 191f085bafd05214388e884c927fe72e, type: 3}
+  preExplosionSoundClip: {fileID: 8300000, guid: 191f085bafd05214388e884c927fe72e, type: 3}
 --- !u!95 &2864342427025292860
 Animator:
   serializedVersion: 5

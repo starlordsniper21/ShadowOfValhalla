@@ -2125,6 +2125,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armored Mage (Ranged)
       objectReference: {fileID: 0}
+    - target: {fileID: 4596758946977388091, guid: d99f98f8865262f4c8245bdb159f562d, type: 3}
+      propertyPath: dropChance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596758946977388091, guid: d99f98f8865262f4c8245bdb159f562d, type: 3}
+      propertyPath: itemPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596758946977388091, guid: d99f98f8865262f4c8245bdb159f562d, type: 3}
+      propertyPath: itemPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6990602504756650007, guid: d00d4a81109c4434fa0f3280b014a1e5, type: 3}
     - target: {fileID: 4868506100663296254, guid: d99f98f8865262f4c8245bdb159f562d, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2210,18 +2222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vikingenemy
       objectReference: {fileID: 0}
-    - target: {fileID: 3087529437462414089, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
-      propertyPath: dropChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087529437462414089, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
-      propertyPath: itemPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087529437462414089, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
-      propertyPath: itemPrefabs.Array.data[0]
+    - target: {fileID: 4302398611132611389, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
+      propertyPath: movePlayer
       value: 
-      objectReference: {fileID: 6990602504756650007, guid: d00d4a81109c4434fa0f3280b014a1e5, type: 3}
+      objectReference: {fileID: 675146952}
     - target: {fileID: 4302398611132611389, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
       propertyPath: playerRigidbody
       value: 
@@ -2283,10 +2287,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1729078587}
     m_Modifications:
-    - target: {fileID: 533445238529760729, guid: bcd1f467e670bd44db360e1ff775a2d6, type: 3}
-      propertyPath: duration
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5524424875366127714, guid: bcd1f467e670bd44db360e1ff775a2d6, type: 3}
       propertyPath: m_Name
       value: DeadEye
@@ -2297,11 +2297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9217855969080664504, guid: bcd1f467e670bd44db360e1ff775a2d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -921.7
+      value: -937.21
       objectReference: {fileID: 0}
     - target: {fileID: 9217855969080664504, guid: bcd1f467e670bd44db360e1ff775a2d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -381
+      value: -368.39
       objectReference: {fileID: 0}
     - target: {fileID: 9217855969080664504, guid: bcd1f467e670bd44db360e1ff775a2d6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2358,11 +2358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8707497777799424466, guid: 69da112c4f6b4564fac39e17c6b9fcd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -915.4
+      value: -930.37
       objectReference: {fileID: 0}
     - target: {fileID: 8707497777799424466, guid: 69da112c4f6b4564fac39e17c6b9fcd4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -381.8
+      value: -368.82
       objectReference: {fileID: 0}
     - target: {fileID: 8707497777799424466, guid: 69da112c4f6b4564fac39e17c6b9fcd4, type: 3}
       propertyPath: m_LocalPosition.z
