@@ -2222,6 +2222,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vikingenemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1629399818118898035, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
+      propertyPath: prepareTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3087529437462414089, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
+      propertyPath: itemPrefabs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4302398611132611389, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
       propertyPath: movePlayer
       value: 

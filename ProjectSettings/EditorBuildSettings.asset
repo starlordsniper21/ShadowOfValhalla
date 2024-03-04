@@ -18,9 +18,6 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/TUTORIAL LEVEL.unity
     guid: 76a238fe3ef6f574f8bdd44b9df371dc
   - enabled: 1
-    path: Assets/Scripts/LeaderBoard/LeaderBoardPanel.unity
-    guid: ce5361f6cacdd1d4abfb1a9b14c02dfa
-  - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Introduction.unity
     guid: 622ededc5f45ddb40976d3965adba5f2
   - enabled: 1
@@ -101,6 +98,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Chapters/Chapter 7 finale scenes/TALK TO CANUTE/TALK ENDING.unity
     guid: aace6e15ef3ab604db7f8aace5014006
+  - enabled: 1
+    path: Assets/Scripts/LeaderBoard/LeaderBoardPanel.unity
+    guid: ce5361f6cacdd1d4abfb1a9b14c02dfa
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7da03861c52efe645b48d1e88dbf6567, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 692cb9f4c2d29ab4fbba154c64165406, type: 2}

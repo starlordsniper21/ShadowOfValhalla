@@ -31,6 +31,9 @@ public class VikingEnemy : MonoBehaviour
     private void Update()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+        animator.SetBool("VikingI", true);
+
         if (distanceToPlayer <= detectionRadius)
         {
             playerInRange = true;
