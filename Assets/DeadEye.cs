@@ -6,6 +6,7 @@ public class DeadEyePowerUp : MonoBehaviour
     public float timeScaleFactor = 0.5f;
     public float duration = 5f;
     public Color deadEyeColor = Color.gray;
+    public AudioClip activateSound; // Sound when power-up is activated
     private MovePlayer movePlayer;
     private Camera mainCamera;
     private Coroutine powerUpCoroutine;
@@ -24,6 +25,10 @@ public class DeadEyePowerUp : MonoBehaviour
     {
         mainCamera.backgroundColor = deadEyeColor;
         Time.timeScale = timeScaleFactor;
+        if (activateSound != null)
+        {
+            AudioSource.PlayClipAtPoint(activateSound, transform.position);
+        }
         powerUpCoroutine = StartCoroutine(DeactivateAfterDuration(duration));
     }
 

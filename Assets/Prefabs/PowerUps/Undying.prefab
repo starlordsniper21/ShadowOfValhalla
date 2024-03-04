@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invulnerabilityDuration: 10
+  activateSound: {fileID: 8300000, guid: f44875340863ee343b8279c1962e4a28, type: 3}
 --- !u!61 &3664636349694824098
 BoxCollider2D:
   m_ObjectHideFlags: 0
