@@ -5,7 +5,7 @@ public class RandomSpawner : MonoBehaviour
 {
     public GameObject ItemPrefab;
     public float radius = 1;
-    public float spawnInterval = 120f;
+    public int spawnInterval = 15;
 
     void Start()
     {

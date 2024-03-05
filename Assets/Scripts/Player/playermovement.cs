@@ -43,7 +43,8 @@ public class MovePlayer : MonoBehaviour
 
         animator.SetBool("movementright", horizontalInput > 0);
         animator.SetBool("movementleft", horizontalInput < 0);
-        animator.SetBool("movementupanddown", verticalInput > 0);
+        animator.SetBool("movementup", verticalInput > 0);
+        animator.SetBool("movementdown", verticalInput < 0);
 
         animator.SetFloat("Horizontal", movementJoystick.joystickVec.x);
         animator.SetFloat("Vertical", movementJoystick.joystickVec.y);
