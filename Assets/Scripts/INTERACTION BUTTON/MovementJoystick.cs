@@ -23,7 +23,7 @@ public class MovementJoystick : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
+  
     void Start()
     {
         joystickOriginalPos = joystickBG.transform.position;
