@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
-    public GameObject ItemPrefab;
+    public GameObject[] ItemPrefab;
     public float radius = 1;
     public int spawnInterval = 15;
+    
 
     void Start()
     {
@@ -23,9 +24,17 @@ public class RandomSpawner : MonoBehaviour
 
     void SpawnObjectAtRandom()
     {
+        if (ItemPrefab.Length == 0)
+        {
+            Debug.LogWarning("ItemPrefab array is empty. Please assign GameObjects to it in the inspector.");
+            return;
+        }
+
+        GameObject randomItem = ItemPrefab[Random.Range(0, ItemPrefab.Length)];
         Vector3 randomPos = Random.insideUnitCircle.normalized * radius;
-        Instantiate(ItemPrefab, transform.position + randomPos, Quaternion.identity);
+        Instantiate(randomItem, transform.position + randomPos, Quaternion.identity);
     }
+
 
     private void OnDrawGizmos()
     {
