@@ -121,7 +121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.2, y: 3.3}
+  m_AnchoredPosition: {x: 1.31, y: -4.56}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9159307456032324721
@@ -405,7 +405,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.03, y: 0.2}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!114 &6654218237410370497
@@ -421,8 +421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  playerRigidbody: {fileID: 0}
-  movePlayer: {fileID: 0}
+  playerRigidbody: {fileID: 6756295960920032840, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+  movePlayer: {fileID: 377528061752780384, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
   armorDamage: 1
   healthDamage: 1
 --- !u!1 &4084936415608067154
@@ -456,15 +456,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4084936415608067154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.91, y: 1.19, z: 0}
-  m_LocalScale: {x: 1.3094, y: 1.3094, z: 1.3094}
+  m_LocalPosition: {x: 7.0517, y: 0.3318, z: 0}
+  m_LocalScale: {x: 0.9661202, y: 0.96605176, z: 1.3094}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7757532060744431903}
   - {fileID: 8956659463105045885}
   - {fileID: 3105586348281580394}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2077093738385321370
 SpriteRenderer:
@@ -507,12 +507,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: b2d7624a688e5744f9e56869880869c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 897e4d09ebac4f14593c0fdd89cea547, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5, y: 5}
+  m_Size: {x: 3.12, y: 2.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -577,12 +577,12 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: -1.32}
+  m_Offset: {x: -0.28, y: -0.27}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
-    newSize: {x: 5, y: 5}
+    oldSize: {x: 3.12, y: 2.15}
+    newSize: {x: 3.12, y: 2.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -621,13 +621,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5834d1d7140e7274ba19f321e0033e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 12.3
-  preparationRadius: 2.9
-  attackRadius: 3.35
+  detectionRadius: 7.3
+  preparationRadius: 1.42
+  attackRadius: 1.93
   prepareTime: 1
-  attackInterval: 1
+  attackInterval: 2
   movementSpeed: 3
-  disableRadius: 8
+  disableRadius: 7.93
   animator: {fileID: 0}
   vikingAttackArea: {fileID: 2615837346125143368}
 --- !u!95 &2428639857251292976
@@ -683,7 +683,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12, y: -1.26}
+  m_Offset: {x: -0.22, y: -0.3}
   m_Size: {x: 1, y: 1.35}
   m_Direction: 0
 --- !u!1 &6750353878194352979
@@ -760,7 +760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.7268226}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4073043759812085314
