@@ -24,8 +24,16 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Chapter 1 Cutscene.unity
     guid: f52d1b8612c1e52408e92badfffa6785
   - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      1/Chapter 1 Village of Gresit.unity
+    guid: fc39a7a3789f2c6468e01e0f13ca5897
+  - enabled: 1
     path: Assets/Level/Chapters/chapter 1.unity
     guid: b654bf35d022bde4fa6b9172e3d90932
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      1/Chapter 1 boss Cutscene.unity
+    guid: 2fde74b1ba45d054e9c01a7084aed17e
   - enabled: 1
     path: Assets/Level/Chapters/chapter 1 boss.unity
     guid: d854a3deae9664346a3b9d0629215ff8
@@ -33,11 +41,19 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Chapter 2 Cutscene.unity
     guid: d3adb7aa1610baa4994b9b948bab1d55
   - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      2/Chapter 2 AKUMAJO CASTLE.unity
+    guid: 43178941d8c949e43ab1cb49d350faf7
+  - enabled: 1
     path: Assets/Level/Chapters/chapter 2.unity
     guid: 81b43a097343a7541ba3c9b4a5ff9b27
   - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Chapter 3 Cutscene.unity
     guid: 5fe57c63cf3a2dc4b997c16923eaeb07
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      3/chapter 3 Dungeon.unity
+    guid: ddec42b8c14ba594cb5b8d9b5c43994a
   - enabled: 1
     path: Assets/Level/Chapters/chapter 3.unity
     guid: 125902b3cbe69c449b8d8d79254cbb2f
@@ -48,17 +64,29 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Chapter 4 Cutscene.unity
     guid: d02b78dd517910f44ae6b4c2d1e2c730
   - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      4/Chapter 4 intro vilalge.unity
+    guid: 6ca7ecc187fc49c4dbcb241b868a73ec
+  - enabled: 1
     path: Assets/Level/Chapters/chapter 4.unity
     guid: 20f7d7e05fdb92a45a371b51dc4446a3
   - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Chapter 5 Cutscene.unity
     guid: c20f8b0090935434fad3c60b65d75a0c
   - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      5/Chapter 5.unity
+    guid: e2e6744f19f97fa478bdb93a0e8faa29
+  - enabled: 1
     path: Assets/Level/Chapters/chapter 5.unity
     guid: cc310d70a969d2f4c8d176440fd4b510
   - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Chapter 6 Cutscene.unity
     guid: ff5652bbfb1a9dd4abd18e9d277c8146
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      6/Chapter 6 Abandoned Fortress.unity
+    guid: 709f6c34226f5974aa60eaadb009fb7c
   - enabled: 1
     path: Assets/Level/Chapters/chapter 6.unity
     guid: 40e81c1dcf383854da5b1df787a1a847
@@ -68,6 +96,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Chapter 7 Cutscene.unity
     guid: 083f259e1b13b0d40b0495d1648ec0aa
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      7/chapter 7 Canute's Fortress.unity
+    guid: f30c11b78f1902540b20bac953755f03
   - enabled: 1
     path: Assets/Level/Chapters/chapter 7.unity
     guid: 99eae4df45fbfa14b8acf7a328321095

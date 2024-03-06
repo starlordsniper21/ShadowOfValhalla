@@ -907,7 +907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeTime: 8.5
-  sceneName: chapter 1
+  sceneName: Chapter 1 Village of Gresit
 --- !u!1 &2117547349
 GameObject:
   m_ObjectHideFlags: 0

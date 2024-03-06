@@ -25,6 +25,8 @@ public class PlayerAttack : MonoBehaviour
 
     private float damageMultiplier = 1f;
 
+    private int attackIndex = 0;
+
     void Start()
     {
         attackArea = transform.GetChild(0).gameObject;
@@ -83,9 +85,12 @@ public class PlayerAttack : MonoBehaviour
                 Debug.LogWarning("SoundManager is not properly initialized.");
             }
 
+            // attack animation logic natin boss
+            attackIndex = (attackIndex + 1) % 3; 
+            string attackTrigger = "attack" + (attackIndex + 1).ToString(); 
+            animator.SetTrigger(attackTrigger); 
 
             Attack();
-            animator.SetTrigger("attack");
             movePlayer.enabled = false;
 
             Rigidbody2D rb = GetComponent<Rigidbody2D>();

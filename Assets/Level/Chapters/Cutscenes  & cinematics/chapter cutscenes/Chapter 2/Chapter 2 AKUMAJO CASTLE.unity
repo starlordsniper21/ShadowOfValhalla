@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeTime: 12
-  sceneName: chapter 1 boss
+  sceneName: Chapter 2
 --- !u!114 &549810485
 MonoBehaviour:
   m_ObjectHideFlags: 0
