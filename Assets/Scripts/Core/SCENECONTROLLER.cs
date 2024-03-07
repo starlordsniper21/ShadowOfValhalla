@@ -6,7 +6,7 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
     public Timer timer;
-    private bool destroyOnLoad = true; // Flag to determine whether to destroy the instance on scene load
+    private bool destroyOnLoad = true;
 
     private void Awake()
     {
@@ -24,7 +24,6 @@ public class SceneController : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Add a method to set destroyOnLoad flag
     public void SetDestroyOnLoad(bool destroy)
     {
         destroyOnLoad = destroy;
@@ -66,13 +65,15 @@ public class SceneController : MonoBehaviour
         PlayerPrefs.SetString("LastScene", sceneName);
     }
 
-    public void LoadLastScene()
+    public void LoadLastSceneWithTimer()
     {
         if (PlayerPrefs.HasKey("LastSceneIndex"))
         {
             int lastSceneIndex = PlayerPrefs.GetInt("LastSceneIndex");
-            float timerValue = PlayerPrefs.GetFloat("TimerValue");
+            float timerValue = PlayerPrefs.GetFloat("TimerValue", 0); // Load the timer value, defaulting to 0 if not found
+
             SceneManager.LoadScene(lastSceneIndex);
+
             StartCoroutine(LoadTimer(timerValue));
         }
         else

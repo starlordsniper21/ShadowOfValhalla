@@ -62,22 +62,16 @@ public class ContinueButton : MonoBehaviour
 
     public void OnContinueButtonClick()
     {
-        // Set destroyOnLoad flag to false before loading last scene
         sceneController.SetDestroyOnLoad(false);
         timeManager.SetDestroyOnLoad(false);
 
-        // Load last scene
-        sceneController.LoadLastScene();
+        sceneController.LoadLastSceneWithTimer();
     }
 
     public void OnNewGameButtonClick()
     {
-        // Set destroyOnLoad flag to false before loading new game scene
         sceneController.SetDestroyOnLoad(false);
         timeManager.SetDestroyOnLoad(false);
-
-        // Load new game scene
-        sceneController.LoadScene("NewGameScene");
     }
 
     public void OnStartCutsceneButtonClick()

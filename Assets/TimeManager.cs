@@ -4,7 +4,7 @@ public class TimeManager : MonoBehaviour
 {
     private static TimeManager instance;
     public Timer timer;
-    private bool destroyOnLoad = true; // Flag to determine whether to destroy the instance on scene load
+    private bool destroyOnLoad = true;  
 
     private void Awake()
     {
@@ -20,7 +20,6 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    // Add a method to set destroyOnLoad flag
     public void SetDestroyOnLoad(bool destroy)
     {
         destroyOnLoad = destroy;

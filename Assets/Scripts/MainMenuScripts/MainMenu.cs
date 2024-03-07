@@ -5,28 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Add a flag to determine whether to destroy the SceneController and TimeManager instances on scene load
+   
     private bool destroyManagersOnLoad = true;
 
-    // Other methods remain unchanged...
 
+    // pag sakaling hinahanp mo yung script dito boss nilipat ko sa SCENECONTROLLER script
     public void PlayIntroductionCutscene()
     {
-        // Set destroyOnLoad flag to true before loading introduction cutscene
+        
         SetDestroyManagersOnLoad(true);
         SceneManager.LoadSceneAsync("Introduction");
     }
 
     public void TutorialLevel()
     {
-        // Set destroyOnLoad flag to true before loading tutorial level
+       
         SetDestroyManagersOnLoad(true);
         SceneManager.LoadSceneAsync("TUTORIAL LEVEL");
     }
 
     public void PlayCutscene1()
     {
-        // Set destroyOnLoad flag to true before loading cutscene 1
+       
         SetDestroyManagersOnLoad(true);
         SceneManager.LoadSceneAsync("CHAPTER 1 CUTSCENE");
     }
@@ -126,7 +126,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync("LeaderBoardPanel");
     }
 
-    // Add a method to set destroyManagersOnLoad flag
+
     private void SetDestroyManagersOnLoad(bool destroy)
     {
         SceneController sceneController = FindObjectOfType<SceneController>();
