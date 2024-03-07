@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7464824625935018171}
   - component: {fileID: 773286647491995547}
   - component: {fileID: 3416410452468840459}
+  - component: {fileID: 800724577372919864}
   m_Layer: 9
   m_Name: Armored Mage (Ranged)
   m_TagString: Enemy
@@ -39,7 +40,7 @@ Transform:
   - {fileID: 6729633143599406330}
   - {fileID: 1295817576320903297}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3454713972621814536
 SpriteRenderer:
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 46867b74d154fc043807db5ffcb70659, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be1ddc242de48f4488795bbcb364769e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,8 +110,9 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathSoundEnemy: {fileID: 8300000, guid: 9c7b31276eacc3949b50b23bb518c7d7, type: 3}
   hurtSoundEnemy: {fileID: 8300000, guid: f8ec0b6c3df770f4299cb5a0b50ed88c, type: 3}
-  itemPrefabs: []
-  dropChance: 0.2
+  itemPrefabs:
+  - {fileID: 6990602504756650007, guid: d00d4a81109c4434fa0f3280b014a1e5, type: 3}
+  dropChance: 1
 --- !u!61 &6865346065214115850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +149,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
+    oldSize: {x: 1.54, y: 2.31}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -181,9 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7278f96732ae91409b7da5f0240aec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  lineOfSite: 9.9
-  shootingRange: 7.69
+  speed: 0.5
+  lineOfSight: 15.2
+  shootingRange: 9.5
   fireRate: 1
   bullet: {fileID: 460424102582798303, guid: 19cf7d3fa1d23f64cb86f901818f8a67, type: 3}
   bulletParent: {fileID: 3978328115110183403}
@@ -270,6 +272,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &800724577372919864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419330410517978699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f4d95b1f083db418e647899a2e877e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 2
 --- !u!1 &3954915863213109653
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.891731, y: -5.6293964}
+  m_AnchoredPosition: {x: 25.891731, y: -4.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4174565929044549547
