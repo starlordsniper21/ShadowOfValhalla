@@ -357,7 +357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3105586348281580394
 Transform:
   m_ObjectHideFlags: 0
@@ -624,8 +624,8 @@ MonoBehaviour:
   detectionRadius: 7.3
   preparationRadius: 1.42
   attackRadius: 1.93
-  prepareTime: 1
-  attackInterval: 2
+  prepareTime: 1.5
+  attackInterval: 1.5
   movementSpeed: 3
   disableRadius: 7.93
   animator: {fileID: 0}
