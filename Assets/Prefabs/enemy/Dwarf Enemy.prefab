@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  playerRigidbody: {fileID: 0}
-  movePlayer: {fileID: 0}
+  playerRigidbody: {fileID: 6756295960920032840, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
+  movePlayer: {fileID: 377528061752780384, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
   armorDamage: 1
   healthDamage: 1
 --- !u!1 &3353691677549456154
@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 5022603653984718570}
   - component: {fileID: 3375425145295807087}
   - component: {fileID: 4373194192163874223}
+  - component: {fileID: 5637689447528996211}
   m_Layer: 9
   m_Name: Dwarf Enemy
   m_TagString: Enemy
@@ -519,7 +520,7 @@ Transform:
   - {fileID: 1845729802276686724}
   - {fileID: 2906206638435557639}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7261207503623451338
 SpriteRenderer:
@@ -657,7 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd4168ddf96fdc4aa6ac8dc40c789bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   healthBar: {fileID: 7020235957008705995}
   deathSoundEnemy: {fileID: 8300000, guid: 9c7b31276eacc3949b50b23bb518c7d7, type: 3}
   hurtSoundEnemy: {fileID: 8300000, guid: 4e4822d2249669f40b3d7709d4f1e657, type: 3}
@@ -676,11 +677,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRadius: 7.3
-  preparationRadius: 1.42
+  preparationRadius: 1.73
   attackRadius: 1.93
   prepareTime: 1
-  attackInterval: 2
-  movementSpeed: 5
+  attackInterval: 1
+  movementSpeed: 3
   disableRadius: 8
   animator: {fileID: 0}
   DwarfAttackArea: {fileID: 2426431278379740000}
@@ -705,6 +706,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &5637689447528996211
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8299135926110588652}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.39}
+  m_Size: {x: 1.08, y: 2.34}
+  m_Direction: 0
 --- !u!1 &9161143647448214524
 GameObject:
   m_ObjectHideFlags: 0

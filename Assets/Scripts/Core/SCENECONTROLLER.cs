@@ -6,20 +6,28 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
     public Timer timer;
+    private bool destroyOnLoad = true; // Flag to determine whether to destroy the instance on scene load
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            if (destroyOnLoad)
+                DontDestroyOnLoad(gameObject);
         }
-        else if (instance != null && instance != this)
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // Add a method to set destroyOnLoad flag
+    public void SetDestroyOnLoad(bool destroy)
+    {
+        destroyOnLoad = destroy;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

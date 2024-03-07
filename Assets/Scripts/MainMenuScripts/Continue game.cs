@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class ContinueButton : MonoBehaviour
 {
+    public SceneController sceneController;
+    public TimeManager timeManager;
+
     private Button continueButton;
     private Button newGameButton;
     private GameObject panel;
@@ -10,11 +13,10 @@ public class ContinueButton : MonoBehaviour
 
     private void Start()
     {
-        // Halos sumabog na utak ko sa paggawa nito boss michael hahahahaha
         continueButton = GetComponent<Button>();
         if (continueButton == null)
         {
-            Debug.LogError("continue button noscript");
+            Debug.LogError("continue button not found");
             return;
         }
 
@@ -23,7 +25,7 @@ public class ContinueButton : MonoBehaviour
         newGameButton = transform.parent.Find("NewGameButton")?.GetComponent<Button>();
         if (newGameButton == null)
         {
-            Debug.LogError("NewGameButtonnotfound");
+            Debug.LogError("NewGameButton not found");
             return;
         }
 
@@ -32,14 +34,14 @@ public class ContinueButton : MonoBehaviour
         panel = transform.parent.Find("NewGamePanel")?.gameObject;
         if (panel == null)
         {
-            Debug.LogError("no Newgamepanel");
+            Debug.LogError("NewGamePanel not found");
             return;
         }
 
         startCutsceneButton = panel.transform.Find("YES")?.GetComponent<Button>();
         if (startCutsceneButton == null)
         {
-            Debug.LogError("Noyesbutton");
+            Debug.LogError("No yes button");
             return;
         }
 
@@ -49,7 +51,6 @@ public class ContinueButton : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("LastSceneIndex"))
         {
-
             continueButton.gameObject.SetActive(false);
             Debug.LogWarning("No scene saved.");
         }
@@ -61,18 +62,27 @@ public class ContinueButton : MonoBehaviour
 
     public void OnContinueButtonClick()
     {
-        SceneController.instance.LoadLastScene();
+        // Set destroyOnLoad flag to false before loading last scene
+        sceneController.SetDestroyOnLoad(false);
+        timeManager.SetDestroyOnLoad(false);
+
+        // Load last scene
+        sceneController.LoadLastScene();
     }
 
     public void OnNewGameButtonClick()
     {
-        
-        panel.SetActive(true);
+        // Set destroyOnLoad flag to false before loading new game scene
+        sceneController.SetDestroyOnLoad(false);
+        timeManager.SetDestroyOnLoad(false);
+
+        // Load new game scene
+        sceneController.LoadScene("NewGameScene");
     }
 
     public void OnStartCutsceneButtonClick()
     {
-        SceneController.instance.LoadFirstCutscene();
+        sceneController.LoadFirstCutscene();
 
         PlayerPrefs.DeleteAll();
 
