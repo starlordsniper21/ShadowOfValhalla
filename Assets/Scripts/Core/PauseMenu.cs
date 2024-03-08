@@ -31,10 +31,17 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
-        // Save the current scene index and the timer value at the start of the scene
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        PlayerPrefs.SetInt("LastSceneIndex", currentSceneIndex);
-        PlayerPrefs.SetFloat("StartTimeValue", startTimeValue);
+        // Check if the SceneController and TimeManager objects are present
+        SceneController sceneController = FindObjectOfType<SceneController>();
+        TimeManager timeManager = FindObjectOfType<TimeManager>();
+
+        if (sceneController != null && timeManager != null)
+        {
+            // Save the current scene index and the timer value at the start of the scene
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt("LastSceneIndex", currentSceneIndex);
+            PlayerPrefs.SetFloat("StartTimeValue", startTimeValue);
+        }
 
         // Load the main menu scene
         SceneManager.LoadScene("Main Menu");
