@@ -1016,7 +1016,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: addc168b4311d2a4eb88341248b67b32, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 04bb0aef20bbe4f49b94b65b616a2603, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c06c054d4b814ce4b957a27013838416, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2590,7 +2590,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309738472}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: ef0594c569f87e340a4e4b9b3db46136, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: cd169efcafca21f4c93a5176969853a7, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 2018426147}
@@ -2604,14 +2604,12 @@ VideoPlayer:
   m_TimeUpdateMode: 1
   m_PlaybackSpeed: 0.91
   m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 01
-  m_ControlledAudioTrackCount: 1
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -3967,7 +3965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84dc34c958bd154a859aa5dddd7d1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeTime: 245
+  changeTime: 165
   sceneName: Chapter 1 Cutscene
 --- !u!114 &2018426150
 MonoBehaviour:

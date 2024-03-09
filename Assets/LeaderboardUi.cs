@@ -11,7 +11,7 @@ public class LeaderboardUI : MonoBehaviour
     public List<TextMeshProUGUI> timesTextList;
     public TMP_InputField nameInputField;
     public Button submitButton;
-    private Timer timer; // Reference to your Timer script
+    private Timer timer; 
     public DataSaver dataSaver;
 
     DatabaseReference reference;
@@ -21,7 +21,7 @@ public class LeaderboardUI : MonoBehaviour
     {
         reference = FirebaseDatabase.DefaultInstance.RootReference;
         FetchLeaderboardData();
-        timer = FindObjectOfType<Timer>(); // Dynamically find the Timer object
+        timer = FindObjectOfType<Timer>();
     }
 
     void FetchLeaderboardData()
@@ -60,7 +60,7 @@ public class LeaderboardUI : MonoBehaviour
             return;
         }
 
-        // Ensure Timer is not null and running
+    
         if (timer != null && timer.isTimerRunning)
         {
             string formattedTime = FormatTime(timer.elapsedTime);
@@ -75,10 +75,9 @@ public class LeaderboardUI : MonoBehaviour
             dataSaver.dts.names.Add(playerName);
             dataSaver.dts.time.Add(formattedTime);
 
-            // Save the data
+          
             dataSaver.SaveDataFn();
 
-            // Fetch leaderboard data after submitting time
             FetchLeaderboardData();
 
             StartCoroutine(SubmitCooldown());

@@ -70,7 +70,7 @@ public class SceneController : MonoBehaviour
         if (PlayerPrefs.HasKey("LastSceneIndex"))
         {
             int lastSceneIndex = PlayerPrefs.GetInt("LastSceneIndex");
-            float timerValue = PlayerPrefs.GetFloat("TimerValue", 0); // Load the timer value, defaulting to 0 if not found
+            float timerValue = PlayerPrefs.GetFloat("TimerValue", 0); 
 
             SceneManager.LoadScene(lastSceneIndex);
 
@@ -93,3 +93,5 @@ public class SceneController : MonoBehaviour
         LoadScene("FirstCutscene");
     }
 }
+
+//bosssss im dyingg !!! hahahahaha

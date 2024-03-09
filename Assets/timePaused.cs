@@ -13,7 +13,7 @@ public class timePaused : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "LeaderBoardPanel")
         {
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; // goods na binalik ko na bossing
         }
     }
     public void resetTimer()

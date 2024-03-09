@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     private Timer timer;
-    private float startTimeValue; // Store the timer value at the start of the scene
+    private float startTimeValue; 
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
 
-        // Pause the timer if it exists
+
         if (timer != null)
         {
             timer.PauseTimer();
@@ -31,19 +31,19 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
-        // Check if the SceneController and TimeManager objects are present
+        
         SceneController sceneController = FindObjectOfType<SceneController>();
         TimeManager timeManager = FindObjectOfType<TimeManager>();
 
         if (sceneController != null && timeManager != null)
         {
-            // Save the current scene index and the timer value at the start of the scene
+            
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             PlayerPrefs.SetInt("LastSceneIndex", currentSceneIndex);
             PlayerPrefs.SetFloat("StartTimeValue", startTimeValue);
         }
 
-        // Load the main menu scene
+       
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
     }
@@ -53,7 +53,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
 
-        // Resume the timer if it exists
+       
         if (timer != null)
         {
             timer.StartTimer();
@@ -66,7 +66,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    // Method to set the start time value at the beginning of each scene
     public void SetStartTimeValue(float value)
     {
         startTimeValue = value;
