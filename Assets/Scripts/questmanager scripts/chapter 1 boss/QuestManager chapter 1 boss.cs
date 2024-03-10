@@ -12,6 +12,7 @@ public class QuestManager1boss : MonoBehaviour
     public GameObject objectToDestroy;
     public GameObject objectToDestroy2;
     public GameObject objectToShow3;
+    public GameObject objectToShow4;
 
     public TextMeshProUGUI questProgressText;
 
@@ -37,6 +38,7 @@ public class QuestManager1boss : MonoBehaviour
         if (objectToShow1 != null) objectToShow1.SetActive(false);
         if (objectToShow2 != null) objectToShow2.SetActive(false);
         if (objectToShow3 != null) objectToShow3.SetActive(false);
+        if (objectToShow4 != null) objectToShow4.SetActive(false);
     }
 
     public void InitiateConfrontCanuteQuest()
@@ -110,6 +112,8 @@ public class QuestManager1boss : MonoBehaviour
             case QuestState.EnterCastle:
                 if (objectToShow3 != null)
                     objectToShow3.SetActive(true);
+                if (objectToShow4 != null)
+                    objectToShow4.SetActive(true);
                 break;
         }
     }

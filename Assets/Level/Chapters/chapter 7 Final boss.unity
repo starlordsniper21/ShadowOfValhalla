@@ -53112,11 +53112,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -82.9
+      value: -591
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.3
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -56854,6 +56854,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MobileAttackButtonClicked
       objectReference: {fileID: 0}
+    - target: {fileID: 1909954715793086004, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1473
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909954715793086004, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -393
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172429944011708299, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2013
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172429944011708299, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -639
+      objectReference: {fileID: 0}
     - target: {fileID: 2907249401951808419, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -56870,6 +56886,10 @@ PrefabInstance:
       propertyPath: playerArmor
       value: 
       objectReference: {fileID: 60683484}
+    - target: {fileID: 5662758931730808266, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: orthographic size
+      value: 14.92
+      objectReference: {fileID: 0}
     - target: {fileID: 5951090650316035920, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -56962,6 +56982,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 60683481}
+    - target: {fileID: 8273290141109526866, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minPosition.x
+      value: -599.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273290141109526866, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minPosition.y
+      value: -44
+      objectReference: {fileID: 0}
     - target: {fileID: 8537211796542277664, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: playerMana
       value: 
@@ -56970,6 +56998,18 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 60683481}
+    - target: {fileID: 8702785962669225187, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: maxPosition.y
+      value: -23.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702785962669225187, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minPosition.x
+      value: -595
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702785962669225187, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minPosition.y
+      value: -43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -58764,7 +58804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  lineOfSite: 44.8
+  lineOfSight: 0
   shootingRange: 15.3
   fireRate: 1.01
   bullet: {fileID: 460424102582798303, guid: 19cf7d3fa1d23f64cb86f901818f8a67, type: 3}
@@ -59500,7 +59540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  lineOfSite: 44.8
+  lineOfSight: 0
   shootingRange: 15.3
   fireRate: 1.01
   bullet: {fileID: 460424102582798303, guid: 19cf7d3fa1d23f64cb86f901818f8a67, type: 3}
