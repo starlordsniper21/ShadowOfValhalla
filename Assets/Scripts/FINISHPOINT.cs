@@ -14,19 +14,31 @@ public class FinishPoint : MonoBehaviour
 
             if (sceneController != null && timeManager != null)
             {
-              
+             
                 sceneController.NextLevel();
             }
             else
             {
-            
-                SceneManager.LoadScene("Main Menu");
+                Debug.LogWarning("SceneController or TimeManager not found. Data will not be saved.");
             }
+            LoadNextScene();
+        }
+    }
+    private void LoadNextScene()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.LogWarning("No next scene available.");
         }
     }
 
     void UnlockNewLevel()
     {
-       
+
     }
 }

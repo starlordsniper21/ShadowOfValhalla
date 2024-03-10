@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,7 +5,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     private Timer timer;
-    private float startTimeValue; 
+    private float startTimeValue;
 
     private void Start()
     {
@@ -22,7 +21,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
 
-
         if (timer != null)
         {
             timer.PauseTimer();
@@ -31,19 +29,17 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
-        
         SceneController sceneController = FindObjectOfType<SceneController>();
-        TimeManager timeManager = FindObjectOfType<TimeManager>();
 
-        if (sceneController != null && timeManager != null)
+        if (sceneController != null && timer != null)
         {
-            
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            float timerValue = timer.GetTime(); 
+
             PlayerPrefs.SetInt("LastSceneIndex", currentSceneIndex);
-            PlayerPrefs.SetFloat("StartTimeValue", startTimeValue);
+            PlayerPrefs.SetFloat("TimerValue", timerValue); 
         }
 
-       
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
     }
@@ -53,7 +49,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
 
-       
         if (timer != null)
         {
             timer.StartTimer();
