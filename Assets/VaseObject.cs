@@ -4,6 +4,18 @@ public class BreakableObject : MonoBehaviour
 {
     public int health = 3; // Health of the vase
     public GameObject[] dropItems; // Array of items to drop when the vase breaks
+    public AudioClip breakSound;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.clip = breakSound;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,13 +37,9 @@ public class BreakableObject : MonoBehaviour
 
     private void Break()
     {
-        // Randomly select one item from dropItems
+        audioSource.Play();
         GameObject itemToDrop = dropItems[Random.Range(0, dropItems.Length)];
-
-        // Drop the selected item
         Instantiate(itemToDrop, transform.position, Quaternion.identity);
-
-        // Destroy the vase
         Destroy(gameObject);
     }
 }

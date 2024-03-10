@@ -29,8 +29,9 @@ public class BossWizard : MonoBehaviour
         {
             if (distanceFromPlayer > shootingRange)
             {
+                // Moving towards the player
                 animator.SetBool("BossWizardRunning", true);
-                animator.SetBool("BossWizardAttacking", false);
+                animator.SetBool("BossWizardIdle", false);
 
                 // Move towards the player
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
@@ -48,31 +49,19 @@ public class BossWizard : MonoBehaviour
             else if (distanceFromPlayer <= shootingRange && nextFireTime < Time.time)
             {
                 animator.SetBool("BossWizardRunning", false);
-                animator.SetBool("BossWizardAttacking", true);
+                animator.SetBool("BossWizardIdle", false);
+                animator.SetTrigger("BossWizardAttacking");
 
                 // Instantiate and fire bullets
                 Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
                 nextFireTime = Time.time + fireRate;
             }
-            else
-            {
-                animator.SetBool("BossWizardRunning", false);
-                animator.SetBool("BossWizardAttacking", false);
-            }
         }
         else
         {
+            // Player out of range, going back to idle
             animator.SetBool("BossWizardRunning", false);
-            animator.SetBool("BossWizardAttacking", false);
-        }
-
-        if (distanceFromPlayer > lineOfSight)
-        {
             animator.SetBool("BossWizardIdle", true);
-        }
-        else
-        {
-            animator.SetBool("BossWizardIdle", false);
         }
     }
 

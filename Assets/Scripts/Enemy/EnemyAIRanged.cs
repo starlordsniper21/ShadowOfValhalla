@@ -27,8 +27,9 @@ public class EnemyAIRanged : MonoBehaviour
         {
             if (distanceFromPlayer > shootingRange)
             {
+                // Moving towards the player
                 animator.SetBool("BossRunning", true);
-                animator.SetBool("BossAttacking", false);
+                animator.SetBool("BossIdle", false);
 
                 // Move towards the player
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
@@ -45,32 +46,21 @@ public class EnemyAIRanged : MonoBehaviour
             }
             else if (distanceFromPlayer <= shootingRange && nextFireTime < Time.time)
             {
+                // Firing at the player
                 animator.SetBool("BossRunning", false);
-                animator.SetBool("BossAttacking", true);
+                animator.SetBool("BossIdle", false);
+                animator.SetTrigger("BossAttacking");
 
                 // Instantiate and fire bullets
                 Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
                 nextFireTime = Time.time + fireRate;
             }
-            else
-            {
-                animator.SetBool("BossRunning", false);
-                animator.SetBool("BossAttacking", false);
-            }
         }
         else
         {
+            // Player out of range, going back to idle
             animator.SetBool("BossRunning", false);
-            animator.SetBool("BossAttacking", false);
-        }
-
-        if (distanceFromPlayer > lineOfSight)
-        {
             animator.SetBool("BossIdle", true);
-        }
-        else
-        {
-            animator.SetBool("BossIdle", false);
         }
     }
 
