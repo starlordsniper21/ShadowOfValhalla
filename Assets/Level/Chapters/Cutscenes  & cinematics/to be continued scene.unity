@@ -203,9 +203,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Determined to uncover the truth, Fjord departed from the imposing walls
-    of Akumajo Castle, embarking on a journey that would lead him back to the place
-    where it all began - Danesti.
+  m_text: Determined to uncover the truth, Fjord departed from the Village of Gresit,
+    embarking on a journey that would lead him back to the place where it all began
+    - Danesti.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -341,9 +341,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Following Fjord's confrontation with Canute, he found himself engulfed
-    in a swirling tempest of doubt, especially concerning his father's mysterious
-    past
+  m_text: Following Fjord's confrontation with Canute, and the feast in the village,
+    he found himself engulfed in a swirling tempest of doubt, especially concerning
+    his father's mysterious past
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeTime: 23
-  sceneName: Chatper 4 Cutscene
+  sceneName: Chapter 4 Cutscene
 --- !u!114 &549810485
 MonoBehaviour:
   m_ObjectHideFlags: 0

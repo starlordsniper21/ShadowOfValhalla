@@ -29,17 +29,19 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
+       // BOSS PAG NAGALAW KO TO SABIHIN MO SA AKIN WAHHAHAHA
+        TimeManager timeManager = FindObjectOfType<TimeManager>();
         SceneController sceneController = FindObjectOfType<SceneController>();
 
-        if (sceneController != null && timer != null)
+        if (timeManager != null && sceneController != null)
         {
+          
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             float timerValue = timer.GetTime(); 
 
             PlayerPrefs.SetInt("LastSceneIndex", currentSceneIndex);
             PlayerPrefs.SetFloat("TimerValue", timerValue); 
         }
-
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
     }

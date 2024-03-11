@@ -59,8 +59,20 @@ EditorBuildSettings:
       3/chapter 3 Dungeon.unity
     guid: ddec42b8c14ba594cb5b8d9b5c43994a
   - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      3/chapter 3 cutscene intro.unity
+    guid: 00cc91b4ecc28e449826ce734050a58c
+  - enabled: 1
     path: Assets/Level/Chapters/chapter 3.unity
     guid: 125902b3cbe69c449b8d8d79254cbb2f
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      3/chapter 3 cutscene ending.unity
+    guid: 6a9b01b754204274090aaeeba34ae18c
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      3/chapter 3 cutscene ending 2.unity
+    guid: e7da5f05cf3135f46bc15b572f921e35
   - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/to be continued scene.unity
     guid: 161d37baaccaaa04c8018e8cd064a565
