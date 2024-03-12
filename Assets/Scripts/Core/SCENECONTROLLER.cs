@@ -29,26 +29,71 @@ public class SceneController : MonoBehaviour
         destroyOnLoad = destroy;
     }
 
+
+    // dito ko na nilagay yung pag save and load sa ARMOR,HEALTH and mana ng player boss
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.buildIndex != 0)
         {
+            
             SceneController sceneController = FindObjectOfType<SceneController>();
             TimeManager timeManager = FindObjectOfType<TimeManager>();
+            Health playerHealth = FindObjectOfType<Health>();
+            ManaSystem playerMana = FindObjectOfType<ManaSystem>();
+            Armor playerArmor = FindObjectOfType<Armor>();
 
-            if (sceneController != null && timeManager != null)
+            if (sceneController != null && timeManager != null && playerHealth != null)
             {
-
+               
                 if (PlayerPrefs.HasKey("PlayerHealth"))
                 {
-                    float playerHealth = PlayerPrefs.GetFloat("PlayerHealth");
-                    FindObjectOfType<Health>().currentHealth = playerHealth;
+                    float savedHealth = PlayerPrefs.GetFloat("PlayerHealth");
+                    playerHealth.currentHealth = savedHealth;
                 }
             }
             else
             {
+                
+                if (playerHealth != null)
+                {
+                    playerHealth.currentHealth = playerHealth.startingHealth;
+                }
+            }
 
-                FindObjectOfType<Health>().currentHealth = FindObjectOfType<Health>().startingHealth;
+            if (sceneController != null && timeManager != null && playerMana != null)
+            {
+                
+                if (PlayerPrefs.HasKey("PlayerMana"))
+                {
+                    int savedMana = PlayerPrefs.GetInt("PlayerMana");
+                    playerMana.currentMana = savedMana;
+                }
+            }
+            else
+            {
+                
+                if (playerMana != null)
+                {
+                    playerMana.currentMana = playerMana.maxMana;
+                }
+            }
+
+            if (sceneController != null && timeManager != null && playerArmor != null)
+            {
+               
+                if (PlayerPrefs.HasKey("PlayerArmor"))
+                {
+                    float savedArmor = PlayerPrefs.GetFloat("PlayerArmor");
+                    playerArmor.currentArmor = savedArmor;
+                }
+            }
+            else
+            {
+               
+                if (playerArmor != null)
+                {
+                    playerArmor.currentArmor = playerArmor.startingArmor;
+                }
             }
 
             if (timer != null)
@@ -69,7 +114,13 @@ public class SceneController : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(nextSceneIndex);
             PlayerPrefs.SetInt("LastSceneIndex", nextSceneIndex);
+            PlayerPrefs.SetFloat("TimerValue", timer.GetTime());
             PlayerPrefs.SetFloat("PlayerHealth", FindObjectOfType<Health>().currentHealth);
+            if (FindObjectOfType<SceneController>() != null && FindObjectOfType<TimeManager>() != null)
+            {
+                PlayerPrefs.SetInt("PlayerMana", FindObjectOfType<ManaSystem>().currentMana);
+                PlayerPrefs.SetFloat("PlayerArmor", FindObjectOfType<Armor>().currentArmor);
+            }
         }
         else
         {
@@ -110,6 +161,7 @@ public class SceneController : MonoBehaviour
     {
         LoadScene("FirstCutscene");
     }
+
 }
 
 //bosssss im dyingg !!! hahahahaha

@@ -1,11 +1,11 @@
-using System;
 using UnityEngine;
-using System.Collections;
+using System;
 
 public class Armor : MonoBehaviour
 {
-    [SerializeField] private float startingArmor;
-    public float currentArmor { get; private set; }
+    //player armor prefab DONEE BOSS!!!
+    [SerializeField] public float startingArmor; // wag alisin
+    public float currentArmor { get; set; } // wag alisin
     public float maxArmor { get { return startingArmor; } }
     private bool broken;
     private bool invulnerable = false;
@@ -28,7 +28,6 @@ public class Armor : MonoBehaviour
             {
                 broken = true;
                 Debug.Log("Armor Broken!");
-                ArmorBarManager.instance.DisableAllArmorBars();
             }
 
             if (OnArmorChanged != null)
@@ -38,7 +37,7 @@ public class Armor : MonoBehaviour
         }
     }
 
-    IEnumerator StartInvulnerabilityCooldown()
+    private System.Collections.IEnumerator StartInvulnerabilityCooldown()
     {
         invulnerable = true;
         invulnerabilityEndTime = Time.time + invulnerabilityDuration;
@@ -54,9 +53,7 @@ public class Armor : MonoBehaviour
             if (currentArmor == startingArmor)
             {
                 broken = false;
-                EnableArmorBars();
                 Debug.Log("Armor Repaired!");
-                ArmorBarManager.instance.EnableAllArmorBars();
             }
 
             if (OnArmorChanged != null)
@@ -69,17 +66,7 @@ public class Armor : MonoBehaviour
         if (other.CompareTag("ArmorCollectible"))
         {
             RestoreArmor(startingArmor);
-            EnableArmorBars();
             Destroy(other.gameObject);
-        }
-    }
-
-    private void EnableArmorBars()
-    {
-        ArmorBar[] armorBars = FindObjectsOfType<ArmorBar>();
-        foreach (ArmorBar armorBar in armorBars)
-        {
-            armorBar.gameObject.SetActive(true);
         }
     }
 }

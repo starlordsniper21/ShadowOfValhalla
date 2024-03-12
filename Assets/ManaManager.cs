@@ -19,7 +19,8 @@ public class ManaManager : MonoBehaviour
 
     private void UpdateManaBar()
     {
-        totalManaBar.fillAmount = (float)playerMana.maxMana / 20;
-        currentManaBar.fillAmount = (float)playerMana.currentMana / 20;
+     
+        totalManaBar.fillAmount = (float)playerMana.maxMana / playerMana.maxMana;
+        currentManaBar.fillAmount = (float)playerMana.currentMana / playerMana.maxMana;
     }
 }

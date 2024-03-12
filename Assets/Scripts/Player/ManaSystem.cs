@@ -2,12 +2,17 @@ using UnityEngine;
 
 public class ManaSystem : MonoBehaviour
 {
-    public int maxMana = 10;
+    public int maxMana = 20;
     public int currentMana;
 
     void Start()
     {
-        currentMana = maxMana;
+        
+    }
+
+    public void SetDefaultMana()
+    {
+        currentMana = maxMana; 
     }
 
     public bool CanCastSpell()
@@ -26,5 +31,11 @@ public class ManaSystem : MonoBehaviour
     public void RestoreMana(int amount)
     {
         currentMana = Mathf.Min(currentMana + amount, maxMana);
+    }
+
+    
+    public void SaveMana()
+    {
+        PlayerPrefs.SetInt("PlayerMana", currentMana);
     }
 }
