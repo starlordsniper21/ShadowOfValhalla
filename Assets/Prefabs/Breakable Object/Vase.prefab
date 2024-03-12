@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8637234164276696646}
   - component: {fileID: 1557424466738252441}
   - component: {fileID: 2611590159118176353}
+  - component: {fileID: 8603009734796484269}
   m_Layer: 0
   m_Name: Vase
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1557424466738252441
 SpriteRenderer:
@@ -130,3 +131,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &8603009734796484269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2346241811175284064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6483b2f7bff204fbda4f23ae54eb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakSound: {fileID: 8300000, guid: 9e1d5b002cfa5324996f5dd774a26acb, type: 3}
+  itemPrefabs:
+  - {fileID: 0}

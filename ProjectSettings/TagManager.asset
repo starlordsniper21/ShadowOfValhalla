@@ -12,6 +12,7 @@ TagManager:
   - ManaPotion
   - ArmorCollectible
   - ArmorBar
+  - AttackArea
   layers:
   - Default
   - TransparentFX
