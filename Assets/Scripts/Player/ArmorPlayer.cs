@@ -1,5 +1,7 @@
 using UnityEngine;
 using System;
+using System.Collections;
+
 
 public class Armor : MonoBehaviour
 {
@@ -28,6 +30,7 @@ public class Armor : MonoBehaviour
             {
                 broken = true;
                 Debug.Log("Armor Broken!");
+                ArmorBarManager.instance.DisableAllArmorBars();
             }
 
             if (OnArmorChanged != null)
@@ -37,7 +40,7 @@ public class Armor : MonoBehaviour
         }
     }
 
-    private System.Collections.IEnumerator StartInvulnerabilityCooldown()
+    private IEnumerator StartInvulnerabilityCooldown()
     {
         invulnerable = true;
         invulnerabilityEndTime = Time.time + invulnerabilityDuration;
@@ -66,7 +69,20 @@ public class Armor : MonoBehaviour
         if (other.CompareTag("ArmorCollectible"))
         {
             RestoreArmor(startingArmor);
+            EnableArmorBars();
             Destroy(other.gameObject);
         }
     }
+
+    private void EnableArmorBars()
+    {
+        ArmorBar[] armorBars = FindObjectsOfType<ArmorBar>();
+        foreach (ArmorBar armorBar in armorBars)
+        {
+            armorBar.gameObject.SetActive(true);
+        }
+    }
+
+
+
 }

@@ -29,19 +29,21 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
-       // BOSS PAG NAGALAW KO TO SABIHIN MO SA AKIN WAHHAHAHA
         TimeManager timeManager = FindObjectOfType<TimeManager>();
         SceneController sceneController = FindObjectOfType<SceneController>();
 
+        // Check if both TimeManager and SceneController are present
         if (timeManager != null && sceneController != null)
         {
-          
+            // Save the timer value and last played scene index
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            float timerValue = timer.GetTime(); 
+            float timerValue = timer.GetTime();
 
             PlayerPrefs.SetInt("LastSceneIndex", currentSceneIndex);
-            PlayerPrefs.SetFloat("TimerValue", timerValue); 
+            PlayerPrefs.SetFloat("TimerValue", timerValue);
         }
+
+        // Load the Main Menu scene
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
     }

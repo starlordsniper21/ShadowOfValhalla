@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -10,11 +8,11 @@ public class PlayerBow : MonoBehaviour
     public Animator animator;
     [SerializeField] private float arrowSpeed = 10f;
     [SerializeField] private float cooldownTime = 0.5f;
-    [SerializeField] private int maxArrows = 10;
-    private Vector2 playerDirection = Vector2.right;
+    public int maxArrows = 10; // Make maxArrows public
     private int remainingArrows;
     private float cooldownTimer = 0f;
     private int collectedArrows = 0;
+    private Vector2 playerDirection = Vector2.right;
 
     public TextMeshProUGUI arrowsText; // Reference to the TextMeshPro Text element
 
@@ -36,7 +34,7 @@ public class PlayerBow : MonoBehaviour
         }
 
         // Update the TextMeshPro text with the remaining arrows
-        arrowsText.text =  remainingArrows.ToString();
+        arrowsText.text = remainingArrows.ToString();
 
         // For testing purposes, simulate arrow collection by pressing a key
         if (Input.GetKeyDown(KeyCode.C))
@@ -65,23 +63,11 @@ public class PlayerBow : MonoBehaviour
 
             if (rb != null)
             {
-                rb.velocity = playerDirection * arrowSpeed;
-
-                if (playerDirection == Vector2.left)
-                {
-                    arrow.transform.rotation = Quaternion.Euler(0, 0, 180);
-                }
+                rb.velocity = firePoint.right * arrowSpeed;
             }
             else
             {
                 Debug.LogWarning("Arrow prefab is missing Rigidbody2D component.");
-            }
-
-            // Pass the player's direction to the arrow
-            Arrow arrowScript = arrow.GetComponent<Arrow>();
-            if (arrowScript != null)
-            {
-                arrowScript.Setup(playerDirection);
             }
         }
         else
@@ -105,5 +91,27 @@ public class PlayerBow : MonoBehaviour
             collectedArrows = maxArrows;
         }
         remainingArrows += amount;
+    }
+
+    public int GetRemainingArrows()
+    {
+        return remainingArrows;
+    }
+
+    public void SetRemainingArrows(int amount)
+    {
+        remainingArrows = amount;
+    }
+
+    // Additional methods...
+
+    public int GetMaxArrows()
+    {
+        return maxArrows;
+    }
+
+    public void SetMaxArrows(int value)
+    {
+        maxArrows = value;
     }
 }

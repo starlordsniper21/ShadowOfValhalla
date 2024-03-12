@@ -3,11 +3,12 @@ using UnityEngine;
 public class ManaSystem : MonoBehaviour
 {
     public int maxMana = 20;
+    public int startingMana = 20; 
     public int currentMana;
 
     void Start()
     {
-        
+        SetDefaultMana(); 
     }
 
     public void SetDefaultMana()
@@ -33,7 +34,6 @@ public class ManaSystem : MonoBehaviour
         currentMana = Mathf.Min(currentMana + amount, maxMana);
     }
 
-    
     public void SaveMana()
     {
         PlayerPrefs.SetInt("PlayerMana", currentMana);

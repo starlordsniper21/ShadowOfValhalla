@@ -29,22 +29,19 @@ public class SceneController : MonoBehaviour
         destroyOnLoad = destroy;
     }
 
-
-    // dito ko na nilagay yung pag save and load sa ARMOR,HEALTH and mana ng player boss
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.buildIndex != 0)
         {
-            
             SceneController sceneController = FindObjectOfType<SceneController>();
             TimeManager timeManager = FindObjectOfType<TimeManager>();
             Health playerHealth = FindObjectOfType<Health>();
             ManaSystem playerMana = FindObjectOfType<ManaSystem>();
             Armor playerArmor = FindObjectOfType<Armor>();
+            PlayerBow playerBow = FindObjectOfType<PlayerBow>(); // Added PlayerBow
 
             if (sceneController != null && timeManager != null && playerHealth != null)
             {
-               
                 if (PlayerPrefs.HasKey("PlayerHealth"))
                 {
                     float savedHealth = PlayerPrefs.GetFloat("PlayerHealth");
@@ -53,7 +50,6 @@ public class SceneController : MonoBehaviour
             }
             else
             {
-                
                 if (playerHealth != null)
                 {
                     playerHealth.currentHealth = playerHealth.startingHealth;
@@ -62,7 +58,6 @@ public class SceneController : MonoBehaviour
 
             if (sceneController != null && timeManager != null && playerMana != null)
             {
-                
                 if (PlayerPrefs.HasKey("PlayerMana"))
                 {
                     int savedMana = PlayerPrefs.GetInt("PlayerMana");
@@ -71,16 +66,14 @@ public class SceneController : MonoBehaviour
             }
             else
             {
-                
                 if (playerMana != null)
                 {
-                    playerMana.currentMana = playerMana.maxMana;
+                    playerMana.currentMana = playerMana.startingMana;
                 }
             }
 
             if (sceneController != null && timeManager != null && playerArmor != null)
             {
-               
                 if (PlayerPrefs.HasKey("PlayerArmor"))
                 {
                     float savedArmor = PlayerPrefs.GetFloat("PlayerArmor");
@@ -89,10 +82,18 @@ public class SceneController : MonoBehaviour
             }
             else
             {
-               
                 if (playerArmor != null)
                 {
                     playerArmor.currentArmor = playerArmor.startingArmor;
+                }
+            }
+
+            if (sceneController != null && timeManager != null && playerBow != null) // Check for PlayerBow
+            {
+                if (PlayerPrefs.HasKey("RemainingArrows")) // Load remaining arrows if available
+                {
+                    int savedArrows = PlayerPrefs.GetInt("RemainingArrows");
+                    playerBow.SetRemainingArrows(savedArrows);
                 }
             }
 
@@ -114,7 +115,16 @@ public class SceneController : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(nextSceneIndex);
             PlayerPrefs.SetInt("LastSceneIndex", nextSceneIndex);
-            PlayerPrefs.SetFloat("TimerValue", timer.GetTime());
+
+
+            // Store remaining arrows before transitioning to the next scene
+            PlayerBow playerBow = FindObjectOfType<PlayerBow>();
+            if (playerBow != null)
+            {
+                PlayerPrefs.SetInt("RemainingArrows", playerBow.GetRemainingArrows());
+            }
+
+            // Store player health, mana, and armor before transitioning to the next scene
             PlayerPrefs.SetFloat("PlayerHealth", FindObjectOfType<Health>().currentHealth);
             if (FindObjectOfType<SceneController>() != null && FindObjectOfType<TimeManager>() != null)
             {
@@ -162,6 +172,5 @@ public class SceneController : MonoBehaviour
         LoadScene("FirstCutscene");
     }
 
+    // Other methods...
 }
-
-//bosssss im dyingg !!! hahahahaha

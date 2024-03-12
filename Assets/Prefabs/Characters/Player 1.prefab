@@ -371,6 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMana: 20
+  startingMana: 20
   currentMana: 0
 --- !u!114 &7113331594616666105
 MonoBehaviour:
