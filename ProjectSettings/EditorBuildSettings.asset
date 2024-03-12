@@ -81,6 +81,14 @@ EditorBuildSettings:
     guid: d02b78dd517910f44ae6b4c2d1e2c730
   - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      4/Chapter 4 Cutscene intro.unity
+    guid: 0171519280e76124c914fbf747fe5562
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      4/Chapter 4 cutscene entering DANESTI.unity
+    guid: 5a41f90dbc5eac6449c8b983227fe73b
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
       4/Chapter 4 intro vilalge.unity
     guid: 6ca7ecc187fc49c4dbcb241b868a73ec
   - enabled: 1

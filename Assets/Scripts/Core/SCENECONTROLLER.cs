@@ -38,7 +38,7 @@ public class SceneController : MonoBehaviour
             Health playerHealth = FindObjectOfType<Health>();
             ManaSystem playerMana = FindObjectOfType<ManaSystem>();
             Armor playerArmor = FindObjectOfType<Armor>();
-            PlayerBow playerBow = FindObjectOfType<PlayerBow>(); // Added PlayerBow
+            PlayerBow playerBow = FindObjectOfType<PlayerBow>(); 
 
             if (sceneController != null && timeManager != null && playerHealth != null)
             {
@@ -114,20 +114,21 @@ public class SceneController : MonoBehaviour
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadSceneAsync(nextSceneIndex);
-            PlayerPrefs.SetInt("LastSceneIndex", nextSceneIndex);
 
-
-            // Store remaining arrows before transitioning to the next scene
-            PlayerBow playerBow = FindObjectOfType<PlayerBow>();
-            if (playerBow != null)
+            // Only save data if both TimeManager and SceneController are present
+            TimeManager timeManager = FindObjectOfType<TimeManager>();
+            SceneController sceneController = FindObjectOfType<SceneController>();
+            if (timeManager != null && sceneController != null)
             {
-                PlayerPrefs.SetInt("RemainingArrows", playerBow.GetRemainingArrows());
-            }
+                // Store remaining arrows before transitioning to the next scene
+                PlayerBow playerBow = FindObjectOfType<PlayerBow>();
+                if (playerBow != null)
+                {
+                    PlayerPrefs.SetInt("RemainingArrows", playerBow.GetRemainingArrows());
+                }
 
-            // Store player health, mana, and armor before transitioning to the next scene
-            PlayerPrefs.SetFloat("PlayerHealth", FindObjectOfType<Health>().currentHealth);
-            if (FindObjectOfType<SceneController>() != null && FindObjectOfType<TimeManager>() != null)
-            {
+                // Store player health, mana, and armor before transitioning to the next scene
+                PlayerPrefs.SetFloat("PlayerHealth", FindObjectOfType<Health>().currentHealth);
                 PlayerPrefs.SetInt("PlayerMana", FindObjectOfType<ManaSystem>().currentMana);
                 PlayerPrefs.SetFloat("PlayerArmor", FindObjectOfType<Armor>().currentArmor);
             }
@@ -172,5 +173,5 @@ public class SceneController : MonoBehaviour
         LoadScene("FirstCutscene");
     }
 
-    // Other methods...
+    
 }

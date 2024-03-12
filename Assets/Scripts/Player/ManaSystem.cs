@@ -3,17 +3,17 @@ using UnityEngine;
 public class ManaSystem : MonoBehaviour
 {
     public int maxMana = 20;
-    public int startingMana = 20; 
+    public int startingMana = 20;
     public int currentMana;
 
-    void Start()
+    private void Awake()
     {
-        SetDefaultMana(); 
+        LoadMana();
     }
 
     public void SetDefaultMana()
     {
-        currentMana = maxMana; 
+        currentMana = maxMana;
     }
 
     public bool CanCastSpell()
@@ -26,12 +26,27 @@ public class ManaSystem : MonoBehaviour
         if (CanCastSpell())
         {
             currentMana--;
+            SaveMana();
         }
     }
 
     public void RestoreMana(int amount)
     {
         currentMana = Mathf.Min(currentMana + amount, maxMana);
+        SaveMana();
+    }
+
+    private void LoadMana()
+    {
+        if (PlayerPrefs.HasKey("PlayerMana"))
+        {
+            currentMana = PlayerPrefs.GetInt("PlayerMana");
+        }
+        else
+        {
+            SetDefaultMana();
+            SaveMana();
+        }
     }
 
     public void SaveMana()
