@@ -33,6 +33,24 @@ public class SceneController : MonoBehaviour
     {
         if (scene.buildIndex != 0)
         {
+            SceneController sceneController = FindObjectOfType<SceneController>();
+            TimeManager timeManager = FindObjectOfType<TimeManager>();
+
+            if (sceneController != null && timeManager != null)
+            {
+
+                if (PlayerPrefs.HasKey("PlayerHealth"))
+                {
+                    float playerHealth = PlayerPrefs.GetFloat("PlayerHealth");
+                    FindObjectOfType<Health>().currentHealth = playerHealth;
+                }
+            }
+            else
+            {
+
+                FindObjectOfType<Health>().currentHealth = FindObjectOfType<Health>().startingHealth;
+            }
+
             if (timer != null)
             {
                 timer.StartTimer();
@@ -51,7 +69,7 @@ public class SceneController : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(nextSceneIndex);
             PlayerPrefs.SetInt("LastSceneIndex", nextSceneIndex);
-            PlayerPrefs.SetFloat("TimerValue", timer.GetTime());
+            PlayerPrefs.SetFloat("PlayerHealth", FindObjectOfType<Health>().currentHealth);
         }
         else
         {
@@ -70,7 +88,7 @@ public class SceneController : MonoBehaviour
         if (PlayerPrefs.HasKey("LastSceneIndex"))
         {
             int lastSceneIndex = PlayerPrefs.GetInt("LastSceneIndex");
-            float timerValue = PlayerPrefs.GetFloat("TimerValue", 0); 
+            float timerValue = PlayerPrefs.GetFloat("TimerValue", 0);
 
             SceneManager.LoadScene(lastSceneIndex);
 

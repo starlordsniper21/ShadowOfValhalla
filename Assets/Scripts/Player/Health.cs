@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
+    public float startingHealth = 20; 
+    public float currentHealth { get; set; }
     private Animator anim;
     private bool dead;
     private GameOverManager gameOverManager;
@@ -50,7 +50,7 @@ public class Health : MonoBehaviour
                 {
                     dead = true;
                     SoundManager.instance.PlaySound(deathSoundPlayer);
-                    // Hide the player object
+                   
                     renderer.enabled = false;
                     collider.enabled = false;
                     gameOverManager.gameOver();
@@ -65,7 +65,7 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + value, 0, startingHealth);
     }
 
-    // New method to handle health restoration (called when using a health potion)
+
     public void RestoreHealth(float amount)
     {
         AddHealth(amount);
@@ -77,5 +77,4 @@ public class Health : MonoBehaviour
         invulnerabilityTimer = duration;
         Debug.Log("Invulnerability activated!");
     }
-
 }
