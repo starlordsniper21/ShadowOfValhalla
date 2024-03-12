@@ -6,7 +6,6 @@ public class RandomSpawner : MonoBehaviour
     public GameObject[] ItemPrefab;
     public float radius = 1;
     public int spawnInterval = 15;
-    
 
     void Start()
     {
@@ -26,15 +25,15 @@ public class RandomSpawner : MonoBehaviour
     {
         if (ItemPrefab.Length == 0)
         {
-            Debug.LogWarning("ItemPrefab array is empty. Please assign GameObjects to it in the inspector.");
+            Debug.LogWarning("ItemPrefab array is empty");
             return;
         }
 
-        GameObject randomItem = ItemPrefab[Random.Range(0, ItemPrefab.Length)];
+        int randomIndex = Random.Range(0, ItemPrefab.Length);
+        GameObject randomItem = ItemPrefab[randomIndex];
         Vector3 randomPos = Random.insideUnitCircle.normalized * radius;
         Instantiate(randomItem, transform.position + randomPos, Quaternion.identity);
     }
-
 
     private void OnDrawGizmos()
     {

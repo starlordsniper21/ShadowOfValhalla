@@ -2,44 +2,37 @@ using UnityEngine;
 
 public class BreakableObject : MonoBehaviour
 {
-    public int health = 3; // Health of the vase
-    public GameObject[] dropItems; // Array of items to drop when the vase breaks
-    public AudioClip breakSound;
-    private AudioSource audioSource;
+    [SerializeField] private AudioClip breakSound;
+    public GameObject[] itemPrefabs;
 
-    void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
+        if (other.gameObject.CompareTag("Player"))
         {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
-        audioSource.clip = breakSound;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            TakeDamage(1); // Decrease the vase's health by 1 when hit by the player
+            BreakObject();
         }
     }
 
-    private void TakeDamage(int damage)
+    private void BreakObject()
     {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Break();
-        }
-    }
-
-    private void Break()
-    {
-        audioSource.Play();
-        GameObject itemToDrop = dropItems[Random.Range(0, dropItems.Length)];
-        Instantiate(itemToDrop, transform.position, Quaternion.identity);
+        SpawnItems();
+        PlayBreakSound();
         Destroy(gameObject);
+    }
+
+    private void SpawnItems()
+    {
+        foreach (GameObject itemPrefab in itemPrefabs)
+        {
+            Instantiate(itemPrefab, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void PlayBreakSound()
+    {
+        if (breakSound != null)
+        {
+            SoundManager.instance.PlaySound(breakSound);
+        }
     }
 }
