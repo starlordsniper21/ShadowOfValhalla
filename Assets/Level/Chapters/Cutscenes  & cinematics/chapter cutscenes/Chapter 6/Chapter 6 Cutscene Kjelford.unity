@@ -102211,7 +102211,7 @@ MonoBehaviour:
   characterNameTextB: {fileID: 1211445450}
   nextButton: {fileID: 1211445449}
   fadeImage: {fileID: 618509346}
-  nextSceneName: Chapter 6 Cutscene
+  nextSceneName: Chapter 7 Cutscene
   fadeDuration: 5
 --- !u!61 &542603318
 BoxCollider2D:

@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7baad592e5bcbf34fb910cae86439212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeTime: 12
-  sceneName: chapter 6
+  changeTime: 31
+  sceneName: Chapter 6 Intro meething atros
 --- !u!114 &549810485
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -757,7 +757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeTime: 8.5
-  sceneName: Chapter 6 Intro meething atros
+  sceneName: Chapter 6 Intro story
 --- !u!1 &1514676988
 GameObject:
   m_ObjectHideFlags: 0
