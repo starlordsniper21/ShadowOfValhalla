@@ -24,10 +24,14 @@ public class QuestManager5 : MonoBehaviour
     public GameObject objectToShow9;
     public GameObject objectToShow10;
     public GameObject objectToShow11;
-    public GameObject objectToDestroy1; // Object to destroy after FollowTheEastPathway
-    public GameObject objectToDestroy2; // Object to destroy after FollowThePathway
-    public GameObject objectToShowAfterWarlock1; // Object to show after DEFEATEVILWARLOCK
-    public GameObject objectToShowAfterWarlock2; // Object to show after DEFEATEVILWARLOCK
+    public GameObject objectToShowspawner;
+    public GameObject objectToShowspawner2;
+    public GameObject objectToShowspawner3;
+    public GameObject objectToDestroy1; 
+    public GameObject objectToDestroy2;
+    public GameObject objectToDestroy3;
+    public GameObject objectToShowAfterWarlock1;
+    public GameObject objectToShowAfterWarlock2; 
     public TextMeshProUGUI questProgressText;
 
     private enum QuestState { TravelThroughTheForest, DefeatTheBats1, ContinueThroughTheForest, DefeatBats2, ExamineTheBody, FindTheTravelersCamp, TalkToTheCampLeader, FollowTheEastPathway, DefeatBats3, FollowThePathway, DefeatEvilWarlock, HeadNorth }
@@ -63,6 +67,12 @@ public class QuestManager5 : MonoBehaviour
             objectToShow9.SetActive(false);
         if (objectToShow10 != null)
             objectToShow10.SetActive(false);
+        if (objectToShowspawner != null)
+            objectToShowspawner.SetActive(false);
+        if (objectToShowspawner2 != null)
+            objectToShowspawner2.SetActive(false);
+        if (objectToShowspawner3 != null)
+            objectToShowspawner3.SetActive(false);
         if (objectToShow11 != null)
             objectToShow11.SetActive(false);
         if (objectToShowAfterWarlock1 != null)
@@ -256,6 +266,9 @@ public class QuestManager5 : MonoBehaviour
         if (questState == QuestState.FollowThePathway && objectToDestroy2 != null)
             Destroy(objectToDestroy2);
 
+        if (questState == QuestState.HeadNorth && objectToDestroy3 != null)
+            Destroy(objectToDestroy3);
+
         // Activate objectsToShowAfterWarlock1 and objectToShowAfterWarlock2 after defeating the evil warlock
         if (questState == QuestState.HeadNorth)
         {
@@ -263,6 +276,8 @@ public class QuestManager5 : MonoBehaviour
                 objectToShowAfterWarlock1.SetActive(true);
             if (objectToShowAfterWarlock2 != null)
                 objectToShowAfterWarlock2.SetActive(true);
+
+
         }
 
         switch (questState)
@@ -310,6 +325,14 @@ public class QuestManager5 : MonoBehaviour
             case QuestState.DefeatEvilWarlock:
                 if (objectToShow10 != null)
                     objectToShow10.SetActive(true);
+                if (objectToShowspawner != null)
+                    objectToShowspawner.SetActive(true);
+                if (objectToShowspawner2!= null)
+                    objectToShowspawner2.SetActive(true);
+                if (objectToShowspawner3 != null)
+                    objectToShowspawner3.SetActive(true);
+
+
                 break;
             case QuestState.HeadNorth:
                 if (objectToShow11 != null)

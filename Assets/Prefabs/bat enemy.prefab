@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8103590011838878962}
   - component: {fileID: 6203780701968884186}
   - component: {fileID: 3474839388517765473}
-  - component: {fileID: 3866800702208268061}
   - component: {fileID: 3153518947009170612}
   - component: {fileID: 3665253740772825716}
   m_Layer: 9
@@ -174,19 +173,6 @@ MonoBehaviour:
   healthDamage: 1
   moveSpeed: 3
   movePlayer: {fileID: 0}
---- !u!114 &3866800702208268061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425436744161512574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f58214bab205de428c97f9bf0443663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackForce: 1
 --- !u!95 &3153518947009170612
 Animator:
   serializedVersion: 5

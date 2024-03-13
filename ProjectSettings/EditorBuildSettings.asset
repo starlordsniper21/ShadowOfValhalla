@@ -95,6 +95,14 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/chapter 4.unity
     guid: 20f7d7e05fdb92a45a371b51dc4446a3
   - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      4/Chapter 4 cutscene GORD DEATH SCENE.unity
+    guid: cd66d724e9ca8c348b6ec290441b2af9
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      4/Chapter 4 cutscene GORDS STAFF.unity
+    guid: ec225c094d45a3f42a0ad45a396fb7b3
+  - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Chapter 5 Cutscene.unity
     guid: c20f8b0090935434fad3c60b65d75a0c
   - enabled: 1
