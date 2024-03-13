@@ -3311,6 +3311,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4244527711883545510, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
+      propertyPath: fireRate
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5524852966031650469, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: itemPrefabs.Array.data[0]
       value: 

@@ -988,7 +988,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
   m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
@@ -6731,7 +6731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
   m_sharedMaterial: {fileID: 2797276570483183067, guid: e61ea7aace285044b9b08b8cede03454, type: 2}
@@ -6858,7 +6858,6 @@ MonoBehaviour:
   playerHealth: {fileID: 0}
   totalhealthBar: {fileID: 4120686360541976258}
   currentHealthbar: {fileID: 3034457394821436547}
-  healthText: {fileID: 2960952848057064154}
 --- !u!1 &6359687136169850016
 GameObject:
   m_ObjectHideFlags: 0
@@ -11061,17 +11060,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e75d8163f14f9946bc094f34cafa671, type: 3}
---- !u!114 &2960952848057064154 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6290474859698763170, guid: 6e75d8163f14f9946bc094f34cafa671, type: 3}
-  m_PrefabInstance: {fileID: 9104918776025051000}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &6468653397792627641 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2854840835047716033, guid: 6e75d8163f14f9946bc094f34cafa671, type: 3}

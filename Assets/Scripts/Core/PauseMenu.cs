@@ -32,10 +32,10 @@ public class PauseMenu : MonoBehaviour
         TimeManager timeManager = FindObjectOfType<TimeManager>();
         SceneController sceneController = FindObjectOfType<SceneController>();
 
-        // Check if both TimeManager and SceneController are present
+        // Check if both TimeManager and SceneController are present if wala wont save
         if (timeManager != null && sceneController != null)
         {
-            // Save the timer value and last played scene index
+            // Save the timer value and last played scene if wala wont save
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             float timerValue = timer.GetTime();
 

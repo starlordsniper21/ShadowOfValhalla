@@ -4,18 +4,21 @@ using UnityEngine.UI;
 
 public class ManaPotionManager : MonoBehaviour
 {
+
+    // MANAPOTIONS SAVING LOGIC NATIN BOSS
     public TextMeshProUGUI manaPotionCountText;
     public Button manaPotionButton;
     public int initialManaPotionCount = 0;
 
-    private int manaPotionCount;
-    private ManaSystem manaSystem;  // Reference to the ManaSystem script on the player
+    public int manaPotionCount;
+
+    private ManaSystem manaSystem;  
 
     private void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        // Check if the player object has a ManaSystem script
+       
         if (player != null)
         {
             manaSystem = player.GetComponent<ManaSystem>();
@@ -25,34 +28,66 @@ public class ManaPotionManager : MonoBehaviour
             Debug.LogError("Player object not found or does not have a ManaSystem script.");
         }
 
-        manaPotionCount = initialManaPotionCount;
-        UpdateManaPotionUI();
+      
+        if (FindObjectOfType<TimeManager>() != null && FindObjectOfType<SceneController>() != null)
+        {
+          
+            if (PlayerPrefs.HasKey("RemainingManaPotionCount"))
+            {
+                manaPotionCount = PlayerPrefs.GetInt("RemainingManaPotionCount");
+                UpdateManaPotionUI();
+            }
+            else
+            {
+                manaPotionCount = initialManaPotionCount;
+                UpdateManaPotionUI();
+            }
+        }
+        else
+        {
+            manaPotionCount = initialManaPotionCount;
+            UpdateManaPotionUI();
+        }
     }
 
     public void CollectManaPotion(int amount)
     {
-        // Called when you collect a mana potion
+        
         manaPotionCount++;
         UpdateManaPotionUI();
     }
 
     public void UseManaPotion()
     {
-        // Called when you use a mana potion
+        
         if (manaPotionCount > 0 && manaSystem != null)
         {
             manaPotionCount--;
-            manaSystem.RestoreMana(5); // You can adjust the amount here
+            manaSystem.RestoreMana(5); 
             UpdateManaPotionUI();
         }
     }
 
-    private void UpdateManaPotionUI()
-    {
-       
-        manaPotionCountText.text = "" + manaPotionCount;
 
-    
+    public void UpdateManaPotionUI()
+    {
+        manaPotionCountText.text = "" + manaPotionCount;
         manaPotionButton.gameObject.SetActive(manaPotionCount > 0);
+    }
+
+
+    public void SaveRemainingManaPotionCount()
+    {
+        PlayerPrefs.SetInt("RemainingManaPotionCount", manaPotionCount);
+    }
+
+  
+    public void LoadRemainingManaPotionCount()
+    {
+        if (PlayerPrefs.HasKey("RemainingManaPotionCount"))
+        {
+            manaPotionCount = PlayerPrefs.GetInt("RemainingManaPotionCount");
+            UpdateManaPotionUI();
+        }
     }
 }

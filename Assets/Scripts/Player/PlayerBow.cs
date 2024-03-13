@@ -8,13 +8,13 @@ public class PlayerBow : MonoBehaviour
     public Animator animator;
     [SerializeField] private float arrowSpeed = 10f;
     [SerializeField] private float cooldownTime = 0.5f;
-    public int maxArrows = 10; // Make maxArrows public
+    public int maxArrows = 10; 
     private int remainingArrows;
     private float cooldownTimer = 0f;
     private int collectedArrows = 0;
     private Vector2 playerDirection = Vector2.right;
 
-    public TextMeshProUGUI arrowsText; // Reference to the TextMeshPro Text element
+    public TextMeshProUGUI arrowsText; 
 
     void Awake()
     {
@@ -33,10 +33,10 @@ public class PlayerBow : MonoBehaviour
             cooldownTimer = cooldownTime;
         }
 
-        // Update the TextMeshPro text with the remaining arrows
+        // arrow text
         arrowsText.text = remainingArrows.ToString();
 
-        // For testing purposes, simulate arrow collection by pressing a key
+        // For testing purposes
         if (Input.GetKeyDown(KeyCode.C))
         {
             CollectArrows(3);
@@ -103,7 +103,7 @@ public class PlayerBow : MonoBehaviour
         remainingArrows = amount;
     }
 
-    // Additional methods...
+
 
     public int GetMaxArrows()
     {
