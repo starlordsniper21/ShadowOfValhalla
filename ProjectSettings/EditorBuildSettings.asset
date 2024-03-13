@@ -163,6 +163,9 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/chapter 7 Final boss.unity
     guid: 0a859baedf26827489635564a1cef377
   - enabled: 1
+    path: Assets/Level/Chapters/chapter 7 Final boss phase 2.unity
+    guid: 89fb6f74588b5de428b5d1f6235af9a2
+  - enabled: 1
     path: Assets/Level/Chapters/Chapter 7 finale scenes/KILL CANUTE/KILL CANUTE 1.unity
     guid: 5f39ebefcdf28504986b57afa5b3499d
   - enabled: 1

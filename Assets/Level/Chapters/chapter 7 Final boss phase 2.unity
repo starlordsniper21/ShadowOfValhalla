@@ -172,11 +172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -589.5
+      value: -591.1
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -35.5
+      value: -37.1
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -381,19 +381,16 @@ MonoBehaviour:
   dialogueBox: {fileID: 1702891147}
   dialogueText: {fileID: 1702891146}
   dialogues:
-  - Impressive.  I thought you'd succumb instantly to one of my generals.
-  - You've proven me wrong, Fjord
-  - Enough talk, Canute! This ends here!
-  - Hehehe. Fine. I'll send you to where your parents reside.
+  - BEHOLD!! I NOW POSSES THE POWER OF A GOD!!
+  - YOU ARE NO GOD CANUTE!!
+  - HA HA HA HA HA! YOU MORTAL WILL NOW DIE!!
   characterNameArrayA:
-  - 
   - 
   - FJORD
   - 
   characterNameArrayB:
   - CANUTE
   - 
-  - CANUTE
   - CANUTE
   characterNameTextA: {fileID: 1702891145}
   characterNameTextB: {fileID: 1702891144}
@@ -611,7 +608,7 @@ MonoBehaviour:
   firstquest: {fileID: 0}
   objectToShow1: {fileID: 0}
   objectToShow2: {fileID: 1083130782}
-  objectToShow3: {fileID: 1415867882}
+  objectToShow3: {fileID: 0}
   objectToShow4: {fileID: 0}
   objectToShow5: {fileID: 0}
   objectToDestroy: {fileID: 0}
@@ -52865,6 +52862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: next level
       objectReference: {fileID: 0}
+    - target: {fileID: 1089016393491644288, guid: 146cf96f1c5ec1f4481e8a16d04dc565, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3508551531111319682, guid: 146cf96f1c5ec1f4481e8a16d04dc565, type: 3}
       propertyPath: m_Size.x
       value: 49.41
@@ -52976,7 +52977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6698880014945559796, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: orthographic size
-      value: 10.28
+      value: 11.02
       objectReference: {fileID: 0}
     - target: {fileID: 7445795101156006099, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: target
@@ -55855,11 +55856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8610818641222289048, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.8
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: 8610818641222289048, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7664
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8610818641222289048, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: m_LocalPosition.z

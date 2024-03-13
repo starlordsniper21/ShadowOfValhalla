@@ -161,11 +161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -589.5
+      value: -590.2
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -35.5
+      value: -35.1
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52750,7 +52750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790548023}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16, y: -0.16, z: 0.22088623}
+  m_LocalPosition: {x: -1.7, y: -6.5, z: 0.22088623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52834,7 +52834,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.2, y: 4.53}
+  m_Size: {x: 51.28, y: 65.67}
   m_EdgeRadius: 0
 --- !u!1001 &799267499
 PrefabInstance:
@@ -52862,11 +52862,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7278928862027939518, guid: 146cf96f1c5ec1f4481e8a16d04dc565, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -591.2
+      value: -591.19995
       objectReference: {fileID: 0}
     - target: {fileID: 7278928862027939518, guid: 146cf96f1c5ec1f4481e8a16d04dc565, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.6
+      value: -27.599998
       objectReference: {fileID: 0}
     - target: {fileID: 7278928862027939518, guid: 146cf96f1c5ec1f4481e8a16d04dc565, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52919,11 +52919,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -589.81
+      value: -591.2
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -36
+      value: -33.7
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52959,7 +52959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6698880014945559796, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: orthographic size
-      value: 10.28
+      value: 11.02
       objectReference: {fileID: 0}
     - target: {fileID: 7445795101156006099, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: target
@@ -53030,8 +53030,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570a4a846886a9043a5cb8cc0584b7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaPotionCountText: {fileID: 0}
-  manaPotionButton: {fileID: 0}
+  manaPotionCountText: {fileID: 1283306104}
+  manaPotionButton: {fileID: 1283306105}
   initialManaPotionCount: 0
   manaPotionCount: 0
 --- !u!1 &966199964
@@ -55919,11 +55919,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8610818641222289048, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.7175
+      value: -11.1
       objectReference: {fileID: 0}
     - target: {fileID: 8610818641222289048, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1637
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8610818641222289048, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -56824,6 +56824,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1283306103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2425560388900619210, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+  m_PrefabInstance: {fileID: 1283306098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1283306104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6433952844862204721, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+  m_PrefabInstance: {fileID: 1283306098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1283306105 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7028583060497752749, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+  m_PrefabInstance: {fileID: 1283306098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1283306106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9003473117292749589, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+  m_PrefabInstance: {fileID: 1283306098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1296587138
 GameObject:
   m_ObjectHideFlags: 0
@@ -57461,8 +57505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0945f2ccac20654a8c51e1320a47782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPotionCountText: {fileID: 0}
-  healthPotionButton: {fileID: 0}
+  healthPotionCountText: {fileID: 1283306106}
+  healthPotionButton: {fileID: 1283306103}
   initialHealthPotionCount: 0
   healthRestoreAmount: 2
   healthPotionCount: 0
