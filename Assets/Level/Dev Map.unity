@@ -1608,11 +1608,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -225.5
+      value: -254.2
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -46.9
+      value: -47.7
       objectReference: {fileID: 0}
     - target: {fileID: 9002018611798156263, guid: 6fa4efdc71d40ab4c91572cd2ca23af4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1883,11 +1883,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -171.2
+      value: -247.4
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.8
+      value: -50.2
       objectReference: {fileID: 0}
     - target: {fileID: 3669200342700426856, guid: 35859cd1ac506484b9e1bff69a46a1cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3313,7 +3313,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4244527711883545510, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: fireRate
-      value: 0.2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674157621914511936, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1144991018524057651, guid: cd5fa0d3797fe574abf1b3366eaa6969, type: 3}
+    - target: {fileID: 4674157621914511936, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
+      propertyPath: firingRate
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5524852966031650469, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: itemPrefabs.Array.data[0]

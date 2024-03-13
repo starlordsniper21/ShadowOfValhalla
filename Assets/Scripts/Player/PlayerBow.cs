@@ -63,20 +63,30 @@ public class PlayerBow : MonoBehaviour
 
             if (rb != null)
             {
+                rb.velocity = playerDirection * arrowSpeed;
+
+                if (playerDirection == Vector2.left)
+                {
+                    arrow.transform.rotation = Quaternion.Euler(0, 0, 180);
+                }
                 rb.velocity = firePoint.right * arrowSpeed;
             }
             else
             {
                 Debug.LogWarning("Arrow prefab is missing Rigidbody2D component.");
             }
+
+            // Pass the player's direction to the arrow
+            Arrow arrowScript = arrow.GetComponent<Arrow>();
+            if (arrowScript != null)
+            {
+                arrowScript.Setup(playerDirection);
+            }
         }
-        else
-        {
-            Debug.LogWarning("Arrow prefab or firePoint not assigned in the inspector.");
-        }
+
     }
 
-    public void SetPlayerDirection(Vector2 direction)
+        public void SetPlayerDirection(Vector2 direction)
     {
         playerDirection = direction.normalized;
     }
