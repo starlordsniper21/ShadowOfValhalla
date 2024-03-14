@@ -799,6 +799,11 @@ MonoBehaviour:
   objectToShow3: {fileID: 983544589}
   objectToShow4: {fileID: 727078822}
   questProgressText: {fileID: 1283306103}
+--- !u!1 &190794916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6495174072611855716, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+  m_PrefabInstance: {fileID: 1283306098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &312669949
 GameObject:
   m_ObjectHideFlags: 0
@@ -29391,7 +29396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &727078823
 Transform:
   m_ObjectHideFlags: 0
@@ -62300,7 +62305,7 @@ PrefabInstance:
     - target: {fileID: 7236409143182829345, guid: e5d7d3e6fdeb1b24bae79e80a436d7d9, type: 3}
       propertyPath: gameOverUi
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 190794916}
     - target: {fileID: 8418752216226456174, guid: e5d7d3e6fdeb1b24bae79e80a436d7d9, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -62392,6 +62397,14 @@ PrefabInstance:
     - target: {fileID: 2404601852948944376, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425560388900619210, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1600379911}
+    - target: {fileID: 2425560388900619210, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UseHealthPotion
       objectReference: {fileID: 0}
     - target: {fileID: 2573663267306725974, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_IsActive
@@ -62528,6 +62541,14 @@ PrefabInstance:
     - target: {fileID: 6359687136169850016, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028583060497752749, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1773457801}
+    - target: {fileID: 7028583060497752749, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UseManaPotion
       objectReference: {fileID: 0}
     - target: {fileID: 7969527061127733895, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_Name
@@ -62796,6 +62817,7 @@ MonoBehaviour:
   initialHealthPotionCount: 0
   healthRestoreAmount: 2
   healthPotionCount: 0
+  healthSystem: {fileID: 0}
 --- !u!4 &1600379912
 Transform:
   m_ObjectHideFlags: 0

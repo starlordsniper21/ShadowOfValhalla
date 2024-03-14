@@ -12,7 +12,7 @@ public class HealthPotionManager : MonoBehaviour
 
     public int healthPotionCount; 
 
-    private Health healthSystem;
+    public Health healthSystem;
 
     private void Start()
     {
