@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 1.5
   explosionRadius: 15.02
-  damageAmount: 2
+  damageAmount: 3
   explosionColor: {r: 1, g: 0, b: 0, a: 1}
   animator: {fileID: 2864342427025292860}
   explosionSoundClip: {fileID: 8300000, guid: 191f085bafd05214388e884c927fe72e, type: 3}

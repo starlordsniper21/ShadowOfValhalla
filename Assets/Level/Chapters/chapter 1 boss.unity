@@ -29275,7 +29275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3087529437462414089, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3087529437462414089, guid: 206db9d536ec03243b4de2bfa6f40e96, type: 3}
       propertyPath: itemPrefabs.Array.size
@@ -62795,6 +62795,7 @@ MonoBehaviour:
   healthPotionButton: {fileID: 2095304986}
   initialHealthPotionCount: 0
   healthRestoreAmount: 2
+  healthPotionCount: 0
 --- !u!4 &1600379912
 Transform:
   m_ObjectHideFlags: 0
@@ -63526,6 +63527,7 @@ MonoBehaviour:
   manaPotionCountText: {fileID: 2095304987}
   manaPotionButton: {fileID: 2095304988}
   initialManaPotionCount: 0
+  manaPotionCount: 0
 --- !u!1 &1944786590
 GameObject:
   m_ObjectHideFlags: 0
