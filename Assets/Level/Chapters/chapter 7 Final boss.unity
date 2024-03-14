@@ -56014,6 +56014,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3135027217926837692, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
+      propertyPath: m_Size.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135027217926837692, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
+      propertyPath: m_Size.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241948565992533884, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
+      propertyPath: m_Size.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241948565992533884, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
+      propertyPath: m_Size.y
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 3614932422803824428, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: ItemPrefab.Array.size
       value: 0
@@ -56045,6 +56061,10 @@ PrefabInstance:
     - target: {fileID: 6367605764610814799, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075247164757496658, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8610818641222289048, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: m_RootOrder

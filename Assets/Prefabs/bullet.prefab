@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 5
+  damage: 2
   armorDamage: 5
 --- !u!61 &6918936403858368086
 BoxCollider2D:
