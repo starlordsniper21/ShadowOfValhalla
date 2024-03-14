@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6969650589439629768
 SpriteRenderer:
@@ -173,4 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   myRigidbody: {fileID: 614352507825955388}
-  damage: 1
+  damage: 3

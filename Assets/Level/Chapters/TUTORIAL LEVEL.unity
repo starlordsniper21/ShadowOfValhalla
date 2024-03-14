@@ -54062,6 +54062,7 @@ MonoBehaviour:
   healthPotionButton: {fileID: 1283306099}
   initialHealthPotionCount: 0
   healthRestoreAmount: 2
+  healthPotionCount: 0
 --- !u!4 &276902300
 Transform:
   m_ObjectHideFlags: 0
@@ -54070,7 +54071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276902297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -170.21, y: -9.780001, z: -4.98723}
+  m_LocalPosition: {x: -135.51001, y: 110.42, z: -4.98723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -75625,7 +75626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758780548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -175.7, y: -10.9, z: -4.98723}
+  m_LocalPosition: {x: -141, y: 109.3, z: -4.98723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -79246,6 +79247,7 @@ MonoBehaviour:
   manaPotionCountText: {fileID: 1283306100}
   manaPotionButton: {fileID: 1283306101}
   initialManaPotionCount: 0
+  manaPotionCount: 0
 --- !u!1001 &2022335631
 PrefabInstance:
   m_ObjectHideFlags: 0
