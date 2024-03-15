@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7167de310ef7ca847b18efe3c108ac62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToAttack: 1
+  timeToAttack: 0.5
   animator: {fileID: 2146145834965154615}
   swordSound: {fileID: 8300000, guid: f8ec0b6c3df770f4299cb5a0b50ed88c, type: 3}
   enemyLayer:
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxMana: 20
   startingMana: 20
-  currentMana: 0
+  currentMana: 20
 --- !u!114 &7113331594616666105
 MonoBehaviour:
   m_ObjectHideFlags: 0
