@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3132544994633941253, guid: 47c1c836cd2da2a41ae85cb4ea277ba8, type: 3}
       propertyPath: spawnInterval
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3132544994633941253, guid: 47c1c836cd2da2a41ae85cb4ea277ba8, type: 3}
       propertyPath: ItemPrefab.Array.size
@@ -169,7 +169,7 @@ PrefabInstance:
     - target: {fileID: 3132544994633941253, guid: 47c1c836cd2da2a41ae85cb4ea277ba8, type: 3}
       propertyPath: ItemPrefab.Array.data[2]
       value: 
-      objectReference: {fileID: 1462394033}
+      objectReference: {fileID: 7081748098163181886, guid: b66ae7c22d278ae4baedf733f60e6b2d, type: 3}
     - target: {fileID: 3132544994633941253, guid: 47c1c836cd2da2a41ae85cb4ea277ba8, type: 3}
       propertyPath: ItemPrefab.Array.data[3]
       value: 
@@ -56079,7 +56079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5524852966031650469, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5524852966031650469, guid: f398285507fbc8a48a532133045ef5a6, type: 3}
       propertyPath: dropChance
@@ -59271,11 +59271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7351703037817200607, guid: 18cc592d694ee134696933d9827703d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.6
+      value: -42.1
       objectReference: {fileID: 0}
     - target: {fileID: 7351703037817200607, guid: 18cc592d694ee134696933d9827703d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -60
+      value: -86.7
       objectReference: {fileID: 0}
     - target: {fileID: 7351703037817200607, guid: 18cc592d694ee134696933d9827703d8, type: 3}
       propertyPath: m_LocalPosition.z
