@@ -8,7 +8,7 @@ public class ManaSystem : MonoBehaviour
 
     private void Awake()
     {
-        LoadMana();
+     
     }
 
     public void SetDefaultMana()
@@ -36,18 +36,7 @@ public class ManaSystem : MonoBehaviour
         SaveMana();
     }
 
-    private void LoadMana()
-    {
-        if (PlayerPrefs.HasKey("PlayerMana"))
-        {
-            currentMana = PlayerPrefs.GetInt("PlayerMana");
-        }
-        else
-        {
-            SetDefaultMana();
-            SaveMana();
-        }
-    }
+  
 
     public void SaveMana()
     {
