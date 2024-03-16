@@ -281,7 +281,7 @@ MonoBehaviour:
   startingHealth: 20
   deathSoundPlayer: {fileID: 8300000, guid: d8a526097ccf94b42875d7c3e483dc41, type: 3}
   hurtSoundPlayer: {fileID: 8300000, guid: 15ef553ec01a4ff47b2c196429c582b6, type: 3}
-  invulnerabilityDuration: 2
+  invulnerabilityDuration: 1
 --- !u!95 &2146145834965154615
 Animator:
   serializedVersion: 5
@@ -341,7 +341,7 @@ MonoBehaviour:
   firePoint: {fileID: 7603477561882322248}
   animator: {fileID: 0}
   arrowSpeed: 10
-  cooldownTime: 0.6
+  cooldownTime: 0.3
   maxArrows: 10
   arrowsText: {fileID: 0}
 --- !u!114 &6202010503906355493
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxMana: 20
   startingMana: 20
-  currentMana: 0
+  currentMana: 20
 --- !u!114 &7113331594616666105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,8 +385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6dc6526752b20d4395361a2225d9177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingArmor: 10
-  invulnerabilityDuration: 2
+  startingArmor: 5
+  invulnerabilityDuration: 1
 --- !u!114 &8927163312156816264
 MonoBehaviour:
   m_ObjectHideFlags: 0
