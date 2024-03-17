@@ -150,6 +150,10 @@ EditorBuildSettings:
     guid: 083f259e1b13b0d40b0495d1648ec0aa
   - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
+      7/Chapter 7 intro talk.unity
+    guid: 79ddd35c307f0054b9e28bf69ac8218f
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/Chapter
       7/chapter 7 Intro texts.unity
     guid: 504d65ccad71b7248b656f458525bd55
   - enabled: 1
@@ -160,8 +164,16 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/chapter 7.unity
     guid: 99eae4df45fbfa14b8acf7a328321095
   - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/FINAL BOSS/FINAL
+      BOSS INTRO.unity
+    guid: d510979877f223742a2221d5bd7fbdf8
+  - enabled: 1
     path: Assets/Level/Chapters/chapter 7 Final boss.unity
     guid: 0a859baedf26827489635564a1cef377
+  - enabled: 1
+    path: Assets/Level/Chapters/Cutscenes  & cinematics/chapter cutscenes/FINAL BOSS/FINAL
+      BOSS PHASE 2.unity
+    guid: 9708506ec6e3a734b99cb1093354255d
   - enabled: 1
     path: Assets/Level/Chapters/chapter 7 Final boss phase 2.unity
     guid: 89fb6f74588b5de428b5d1f6235af9a2

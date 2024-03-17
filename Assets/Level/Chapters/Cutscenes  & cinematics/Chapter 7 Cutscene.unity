@@ -757,7 +757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeTime: 8.5
-  sceneName: chapter 7 Intro texts
+  sceneName: Chapter 7 intro talk
 --- !u!1 &1514676988
 GameObject:
   m_ObjectHideFlags: 0
