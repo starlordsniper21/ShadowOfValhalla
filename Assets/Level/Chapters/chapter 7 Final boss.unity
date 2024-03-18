@@ -815,7 +815,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: addc168b4311d2a4eb88341248b67b32, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c167a68d9cd07b343a25a529749f3d0b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f4a02ddf7d93ccd46b1c95ce60ec28d2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.41
   m_Pitch: 1
@@ -57428,6 +57428,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -393
       objectReference: {fileID: 0}
+    - target: {fileID: 1992129983270886959, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_text
+      value: CHAPTER 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2172429944011708299, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2013
@@ -57443,6 +57447,10 @@ PrefabInstance:
     - target: {fileID: 2425560388900619210, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UseHealthPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573663267306725974, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2907249401951808419, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -57460,6 +57468,26 @@ PrefabInstance:
       propertyPath: playerArmor
       value: 
       objectReference: {fileID: 60683484}
+    - target: {fileID: 5517333074498918700, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517333074498918700, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517333074498918700, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563997823110300059, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563997823110300059, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5662758931730808266, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: orthographic size
       value: 14.92
@@ -57567,6 +57595,10 @@ PrefabInstance:
     - target: {fileID: 7028583060497752749, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UseManaPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413137661221241494, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_text
+      value: FINALE
       objectReference: {fileID: 0}
     - target: {fileID: 7969527061127733895, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_Name

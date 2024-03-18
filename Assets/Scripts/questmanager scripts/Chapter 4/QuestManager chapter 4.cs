@@ -171,7 +171,7 @@ public class QuestManager4 : MonoBehaviour
                 questProgressText.text = "Go to the Northeast of the village";
                 break;
             case QuestState.DefeatTheBandits:
-                questProgressText.text = "Defeat the Bandits " + currentBanditsKilled + " / " + BanditsToKill; ;
+                questProgressText.text = "Defeat the Bandit ";
                 break;
             case QuestState.HelpGord:
                 questProgressText.text = "Help Gord";
