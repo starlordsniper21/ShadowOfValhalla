@@ -56,7 +56,9 @@ public class Armor : MonoBehaviour
             if (currentArmor == startingArmor)
             {
                 broken = false;
+                EnableArmorBars();
                 Debug.Log("Armor Repaired!");
+                ArmorBarManager.instance.EnableAllArmorBars();
             }
 
             if (OnArmorChanged != null)

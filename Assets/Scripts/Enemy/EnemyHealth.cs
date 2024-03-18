@@ -5,18 +5,18 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    private int currentHealth;  
+    private int currentHealth;
     [SerializeField] FloatingHealthBar healthBar;
     private Animator anim;
     [SerializeField] private AudioClip deathSoundEnemy;
     [SerializeField] private AudioClip hurtSoundEnemy;
 
     public GameObject[] itemPrefabs;
-    public float dropChance = 0.2f;
+    private bool hasDroppedItem = false;
 
     void Start()
     {
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
         healthBar.UpdateHealthBar(currentHealth, maxHealth);
     }
 
@@ -26,10 +26,9 @@ public class EnemyHealth : MonoBehaviour
         healthBar = GetComponentInChildren<FloatingHealthBar>();
     }
 
-    
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage; 
+        currentHealth -= damage;
         healthBar.UpdateHealthBar(currentHealth, maxHealth);
 
         if (currentHealth > 0)
@@ -51,19 +50,18 @@ public class EnemyHealth : MonoBehaviour
         return (float)currentHealth / maxHealth;
     }
 
-  // enemy dead
+    // enemy dead
     void Die()
     {
-        if (Random.value <= dropChance)
+        if (!hasDroppedItem && itemPrefabs.Length > 0)
         {
-            SpawnItem();
+            // Spawn one random item
+            int randomIndex = Random.Range(0, itemPrefabs.Length);
+            Instantiate(itemPrefabs[randomIndex], transform.position, Quaternion.identity);
+            hasDroppedItem = true; //Added boolean flag para di maginstance spawning ng prefabs
         }
-        Destroy(gameObject);
-    }
 
-    void SpawnItem()
-    {
-        int randomIndex = Random.Range(0, itemPrefabs.Length);
-        Instantiate(itemPrefabs[randomIndex], transform.position, Quaternion.identity);
+        // Destroy the enemy
+        Destroy(gameObject);
     }
 }
