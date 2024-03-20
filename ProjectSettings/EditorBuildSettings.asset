@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Level/Chapters/Cutscenes  & cinematics/FirstCutscene.unity
     guid: 64bfe45dfca0d4d4c97cb8ec5b58a03d
   - enabled: 1
+    path: Assets/Level/Skip tutorial.unity
+    guid: 659cef49e56a8ba4c9eeaab4f2846ec5
+  - enabled: 1
     path: Assets/Level/Chapters/Cutscenes  & cinematics/Tutorial Cutscene.unity
     guid: 458460f664d1a1442a7d9ed53df9a132
   - enabled: 1

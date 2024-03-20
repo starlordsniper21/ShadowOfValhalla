@@ -1495,7 +1495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1378990006}
-  - component: {fileID: 1378990007}
+  - component: {fileID: 1378990008}
   m_Layer: 0
   m_Name: SceneChangeLevel
   m_TagString: Untagged
@@ -1518,7 +1518,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1378990007
+--- !u!114 &1378990008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1527,11 +1527,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1378990005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b84dc34c958bd154a859aa5dddd7d1cd, type: 3}
+  m_Script: {fileID: 11500000, guid: ff3ab0ee8cdf10b42813e47bfb6cde69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   changeTime: 100
-  sceneName: LeaderBoardPanel
+  leaderboardSceneName: LeaderBoardPanel
+  mainMenuSceneName: Main Menu
 --- !u!1 &1514676988
 GameObject:
   m_ObjectHideFlags: 0

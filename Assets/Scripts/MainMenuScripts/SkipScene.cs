@@ -32,7 +32,15 @@ public class SkipScene : MonoBehaviour
 
     public void SkipButton6()
     {
-        SceneManager.LoadSceneAsync("LeaderBoardPanel");
+        Timer timer = FindObjectOfType<Timer>();
+        if (timer != null)
+        {
+            SceneManager.LoadSceneAsync("LeaderBoardPanel");
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync("Main Menu");
+        }
     }
 
     public void SkipButtonspare1()
@@ -42,7 +50,15 @@ public class SkipScene : MonoBehaviour
 
     public void SkipButtonspare2()
     {
-        SceneManager.LoadSceneAsync("LeaderBoardPanel");
+        Timer timer = FindObjectOfType<Timer>();
+        if (timer != null)
+        {
+            SceneManager.LoadSceneAsync("LeaderBoardPanel");
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync("Main Menu");
+        }
     }
 
 }
