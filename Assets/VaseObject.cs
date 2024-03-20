@@ -4,6 +4,7 @@ public class BreakableObject : MonoBehaviour
 {
     [SerializeField] private AudioClip breakSound;
     public GameObject[] itemPrefabs;
+    private bool hasSpawnedItem = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,17 +16,19 @@ public class BreakableObject : MonoBehaviour
 
     private void BreakObject()
     {
-        SpawnItems();
-        PlayBreakSound();
+        if (!hasSpawnedItem && itemPrefabs.Length > 0)
+        {
+            SpawnItems();
+            PlayBreakSound();
+            hasSpawnedItem = true; //Added boolean flag para di magmutiple spawn ng items or prefabs
+        }
         Destroy(gameObject);
     }
 
     private void SpawnItems()
     {
-        foreach (GameObject itemPrefab in itemPrefabs)
-        {
-            Instantiate(itemPrefab, transform.position, Quaternion.identity);
-        }
+        int randomIndex = Random.Range(0, itemPrefabs.Length);
+        Instantiate(itemPrefabs[randomIndex], transform.position, Quaternion.identity);
     }
 
     private void PlayBreakSound()

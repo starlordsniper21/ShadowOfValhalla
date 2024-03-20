@@ -11,7 +11,7 @@ public class LeaderboardUI : MonoBehaviour
     public List<TextMeshProUGUI> timesTextList;
     public TMP_InputField nameInputField;
     public Button submitButton;
-    private Timer timer; 
+    private Timer timer;
     public DataSaver dataSaver;
 
     DatabaseReference reference;
@@ -60,7 +60,7 @@ public class LeaderboardUI : MonoBehaviour
             return;
         }
 
-    
+
         if (timer != null && timer.isTimerRunning)
         {
             string formattedTime = FormatTime(timer.elapsedTime);
@@ -75,7 +75,7 @@ public class LeaderboardUI : MonoBehaviour
             dataSaver.dts.names.Add(playerName);
             dataSaver.dts.time.Add(formattedTime);
 
-          
+
             dataSaver.SaveDataFn();
 
             FetchLeaderboardData();
@@ -105,5 +105,9 @@ public class LeaderboardUI : MonoBehaviour
 
         return string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
     }
+
+
+
+
 
 }

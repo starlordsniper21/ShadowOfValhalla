@@ -59919,7 +59919,7 @@ PrefabInstance:
     - target: {fileID: 3466701491355671098, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
       propertyPath: itemPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2224282638772476068, guid: 7113bfe8e99329048be9c9fe4734d17b, type: 3}
     - target: {fileID: 4084936415608067154, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
       propertyPath: m_Name
       value: Jester
@@ -78992,7 +78992,7 @@ PrefabInstance:
     - target: {fileID: 3466701491355671098, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
       propertyPath: itemPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2224282638772476068, guid: 7113bfe8e99329048be9c9fe4734d17b, type: 3}
     - target: {fileID: 4084936415608067154, guid: e2c2cad5d02a6ad4ba2eff1c14408a72, type: 3}
       propertyPath: m_Name
       value: Jester (1)
