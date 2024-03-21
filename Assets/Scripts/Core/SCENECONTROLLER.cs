@@ -40,9 +40,19 @@ public class SceneController : MonoBehaviour
             Armor playerArmor = FindObjectOfType<Armor>();
             PlayerBow playerBow = FindObjectOfType<PlayerBow>();
             HealthPotionManager healthPotionManager = FindObjectOfType<HealthPotionManager>();
-            ManaPotionManager manaPotionManager = FindObjectOfType<ManaPotionManager>(); 
+            ManaPotionManager manaPotionManager = FindObjectOfType<ManaPotionManager>();
 
-         
+
+            if (sceneController != null && timeManager != null)
+            {
+                if (SceneManager.GetActiveScene().name != "MainMenu")
+                {
+                    PlayerPrefs.SetInt("LastSceneIndex", scene.buildIndex);
+                    PlayerPrefs.SetFloat("TimerValue", timer.GetTime());
+                }
+            }
+
+
             if (timeManager == null && sceneController == null && healthPotionManager != null)
             {
                 
@@ -200,25 +210,7 @@ public class SceneController : MonoBehaviour
         LoadScene("FirstCutscene");
     }
 
-    private void OnApplicationQuit()
-    {
-        // Check if both SceneController and TimeManager are present
-        SceneController sceneController = FindObjectOfType<SceneController>();
-        TimeManager timeManager = FindObjectOfType<TimeManager>();
-
-        // Check if the current scene is not the Main Menu scene
-        if (sceneController != null && timeManager != null && SceneManager.GetActiveScene().name != "Main Menu")
-        {
-            // Save the current scene index and timer value when the application quits
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            float timerValue = timeManager.timer.GetTime();
-
-            PlayerPrefs.SetInt("LastSceneIndex", currentSceneIndex);
-            PlayerPrefs.SetFloat("TimerValue", timerValue);
-
-            PlayerPrefs.Save(); // Make sure to save PlayerPrefs data
-        }
-    }
+   
 }
 // BOSS HELP ME IM DYING AGAIN HAHAHAHA
 
