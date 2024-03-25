@@ -69078,6 +69078,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1909954715793086004, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1018
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909954715793086004, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -363
+      objectReference: {fileID: 0}
     - target: {fileID: 1951712723308974155, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -69085,6 +69093,14 @@ PrefabInstance:
     - target: {fileID: 1992129983270886959, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_text
       value: TUTORIAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993801435802589138, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014869045781100475, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2238786193117383341, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_text
@@ -69149,6 +69165,10 @@ PrefabInstance:
     - target: {fileID: 5563997823110300059, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662758931730808266, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: orthographic size
+      value: 13.4
       objectReference: {fileID: 0}
     - target: {fileID: 5844536484736121112, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_IsActive
@@ -69262,6 +69282,22 @@ PrefabInstance:
       propertyPath: m_text
       value: THE GOD OF WISDOM
       objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: maxX
+      value: -34.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: maxY
+      value: -11.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minX
+      value: -148.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minY
+      value: -46.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7969527061127733895, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_Name
       value: UICanvas
@@ -69289,7 +69325,19 @@ PrefabInstance:
     - target: {fileID: 8702785962669225187, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 60683481}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702785962669225187, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: maxPosition.x
+      value: -34.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702785962669225187, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: maxPosition.y
+      value: -11.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702785962669225187, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minPosition.x
+      value: -148.3
+      objectReference: {fileID: 0}
     - target: {fileID: 9003473117292749589, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_text
       value: 

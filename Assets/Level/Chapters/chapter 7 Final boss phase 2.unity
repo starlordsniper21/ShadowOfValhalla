@@ -57025,6 +57025,22 @@ PrefabInstance:
       propertyPath: m_text
       value: FINALE
       objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: maxX
+      value: 187.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: maxY
+      value: -23.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minX
+      value: -595
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minY
+      value: -43
+      objectReference: {fileID: 0}
     - target: {fileID: 7969527061127733895, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_Name
       value: UICanvas
@@ -57056,7 +57072,7 @@ PrefabInstance:
     - target: {fileID: 8702785962669225187, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 60683481}
+      objectReference: {fileID: 0}
     - target: {fileID: 8702785962669225187, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: maxPosition.y
       value: -23.3

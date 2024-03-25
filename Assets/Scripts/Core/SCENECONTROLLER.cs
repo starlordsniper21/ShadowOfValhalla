@@ -40,9 +40,19 @@ public class SceneController : MonoBehaviour
             Armor playerArmor = FindObjectOfType<Armor>();
             PlayerBow playerBow = FindObjectOfType<PlayerBow>();
             HealthPotionManager healthPotionManager = FindObjectOfType<HealthPotionManager>();
-            ManaPotionManager manaPotionManager = FindObjectOfType<ManaPotionManager>(); 
+            ManaPotionManager manaPotionManager = FindObjectOfType<ManaPotionManager>();
 
-         
+
+            if (sceneController != null && timeManager != null)
+            {
+                if (SceneManager.GetActiveScene().name != "MainMenu")
+                {
+                    PlayerPrefs.SetInt("LastSceneIndex", scene.buildIndex);
+                    PlayerPrefs.SetFloat("TimerValue", timer.GetTime());
+                }
+            }
+
+
             if (timeManager == null && sceneController == null && healthPotionManager != null)
             {
                 
@@ -199,6 +209,8 @@ public class SceneController : MonoBehaviour
     {
         LoadScene("FirstCutscene");
     }
+
+   
 }
 // BOSS HELP ME IM DYING AGAIN HAHAHAHA
 
