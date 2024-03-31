@@ -69102,6 +69102,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2172429944011708299, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1582.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2238786193117383341, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_text
       value: FOLLOW THE TRAIL UNTIL YOU REACH THE END
@@ -69298,6 +69302,30 @@ PrefabInstance:
       propertyPath: minY
       value: -46.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: maxZoom
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minZoom
+      value: 13.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: defaultZoom
+      value: 13.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: defaultPosition.x
+      value: -1018
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: defaultPosition.y
+      value: -363
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624517803826116680, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: defaultPosition.z
+      value: -13.36
+      objectReference: {fileID: 0}
     - target: {fileID: 7969527061127733895, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_Name
       value: UICanvas
@@ -69310,6 +69338,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 60683481}
+    - target: {fileID: 8273290141109526866, guid: 9f8955c13943b1249a347af70497f773, type: 3}
+      propertyPath: minPosition.x
+      value: -157.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8401315567722030146, guid: 9f8955c13943b1249a347af70497f773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -1,27 +1,38 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MinimapCameraDrag : MonoBehaviour
+public class MinimapCameraControl : MonoBehaviour
 {
     private Vector3 touchStartPos;
     private bool isDragging = false;
 
-    public float minX = -10f; // Minimum X position
-    public float maxX = 10f;  // Maximum X position
-    public float minY = -10f; // Minimum Y position
-    public float maxY = 10f;  // Maximum Y position
+    public Camera mapCamera; 
+    public Slider zoomSlider;
+
+    public float minZoom = 2f;     
+    public float maxZoom = 10f;    
+
+    public Vector3 defaultPosition; 
+    public float defaultZoom = 5f;  
+
+    void Start()
+    {
+      
+        defaultPosition = transform.position;
+
+        zoomSlider.value = Mathf.InverseLerp(minZoom, maxZoom, defaultZoom);
+    }
 
     void Update()
     {
-        // Check for touch input
-        if (Input.touchCount > 0)
+       
+        if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
 
-            // Handle touch phase
             switch (touch.phase)
             {
                 case TouchPhase.Began:
-                    // Record the touch start position
                     touchStartPos = touch.position;
                     isDragging = true;
                     break;
@@ -29,20 +40,13 @@ public class MinimapCameraDrag : MonoBehaviour
                 case TouchPhase.Moved:
                     if (isDragging)
                     {
-                        // Convert touch position to world space
-                        Vector3 touchPosWorld = Camera.main.ScreenToWorldPoint(touch.position);
-                        Vector3 touchStartPosWorld = Camera.main.ScreenToWorldPoint(touchStartPos);
-
-                        // Calculate the difference in touch position
+                        Vector3 touchPosWorld = mapCamera.ScreenToWorldPoint(touch.position);
+                        Vector3 touchStartPosWorld = mapCamera.ScreenToWorldPoint(touchStartPos);
                         Vector3 touchDelta = touchPosWorld - touchStartPosWorld;
 
-                        // Apply the movement to the camera
                         Vector3 newPosition = transform.position - touchDelta;
-                        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX); // Clamp X position
-                        newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY); // Clamp Y position
                         transform.position = newPosition;
 
-                        // Update touch start position
                         touchStartPos = touch.position;
                     }
                     break;
@@ -52,5 +56,24 @@ public class MinimapCameraDrag : MonoBehaviour
                     break;
             }
         }
+
+
+        float targetZoom = Mathf.Lerp(minZoom, maxZoom, zoomSlider.value);
+        mapCamera.orthographicSize = targetZoom;
+
+      
+        if (zoomSlider.value == 1)
+        {
+            float currentZoom = mapCamera.orthographicSize;
+            mapCamera.orthographicSize = Mathf.Lerp(currentZoom, maxZoom, Time.deltaTime * 2f); 
+        }
+    }
+
+
+    public void ResetCamera()
+    {
+        transform.position = defaultPosition;
+        mapCamera.orthographicSize = defaultZoom;
+        zoomSlider.value = Mathf.InverseLerp(minZoom, maxZoom, defaultZoom);
     }
 }
